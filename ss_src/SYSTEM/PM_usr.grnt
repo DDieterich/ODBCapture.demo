@@ -1,0 +1,25 @@
+
+
+--
+--  Create PM Grants
+--
+
+set define off
+
+
+
+--  Database System Privileges
+
+grant UNLIMITED TABLESPACE to "PM";
+
+
+--  "sys" BUILD_TYPE Role Grants
+--  "GRANTEE" (delayed) Role Grants
+--  Note: "OBJECT" Schema Object Grants are given during Role creation
+
+grant "CONNECT" to "PM";
+grant "RESOURCE" to "PM";
+
+
+set define on
+

@@ -1,0 +1,37 @@
+
+--
+--  Create OE.INVENTORIES Table
+--
+
+set define off
+
+
+--DBMS_METADATA:OE.INVENTORIES
+
+  CREATE TABLE "OE"."INVENTORIES" 
+   (	"PRODUCT_ID" NUMBER(6,0), 
+	"WAREHOUSE_ID" NUMBER(3,0) CONSTRAINT "INVENTORY_WAREHOUSE_ID_NN" NOT NULL ENABLE, 
+	"QUANTITY_ON_HAND" NUMBER(8,0) CONSTRAINT "INVENTORY_QOH_NN" NOT NULL ENABLE
+   ) SEGMENT CREATION IMMEDIATE  LOGGING;
+  CREATE INDEX "OE"."INVENTORY_IX" ON "OE"."INVENTORIES" ("WAREHOUSE_ID", "PRODUCT_ID") 
+  ;
+ALTER TABLE "OE"."INVENTORIES" ADD CONSTRAINT "INVENTORY_PK" PRIMARY KEY ("PRODUCT_ID", "WAREHOUSE_ID")
+  USING INDEX "OE"."INVENTORY_IX"  ENABLE;
+
+--  Comments
+
+--DBMS_METADATA:OE.INVENTORIES
+
+   COMMENT ON COLUMN "OE"."INVENTORIES"."PRODUCT_ID" IS 'Part of concatenated primary key, references product_information.product_id.';
+   COMMENT ON COLUMN "OE"."INVENTORIES"."WAREHOUSE_ID" IS 'Part of concatenated primary key, references warehouses.warehouse_id.';
+   COMMENT ON TABLE "OE"."INVENTORIES"  IS 'Tracks availability of products by product_it and warehouse_id.';
+
+
+--  Grants
+grant SELECT on "OE"."INVENTORIES" to "PM";
+
+
+--  Synonyms
+
+
+set define on

@@ -1,0 +1,30 @@
+
+--
+--  Create Indexes for HR.JOB_HISTORY TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.JHIST_DEPARTMENT_IX
+
+  CREATE INDEX "HR"."JHIST_DEPARTMENT_IX" ON "HR"."JOB_HISTORY" ("DEPARTMENT_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.JHIST_EMPLOYEE_IX
+
+  CREATE INDEX "HR"."JHIST_EMPLOYEE_IX" ON "HR"."JOB_HISTORY" ("EMPLOYEE_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.JHIST_JOB_IX
+
+  CREATE INDEX "HR"."JHIST_JOB_IX" ON "HR"."JOB_HISTORY" ("JOB_ID") 
+  ;
+
+set define on

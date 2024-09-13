@@ -1,0 +1,16 @@
+
+--
+--  Create Indexes for OE.WAREHOUSES TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:OE.WHS_LOCATION_IX
+
+  CREATE INDEX "OE"."WHS_LOCATION_IX" ON "OE"."WAREHOUSES" ("LOCATION_ID") 
+  ;
+
+set define on

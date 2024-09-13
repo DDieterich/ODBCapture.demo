@@ -1,0 +1,30 @@
+
+--
+--  Create Indexes for OE.ORDER_ITEMS TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:OE.ITEM_ORDER_IX
+
+  CREATE INDEX "OE"."ITEM_ORDER_IX" ON "OE"."ORDER_ITEMS" ("ORDER_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:OE.ITEM_PRODUCT_IX
+
+  CREATE INDEX "OE"."ITEM_PRODUCT_IX" ON "OE"."ORDER_ITEMS" ("PRODUCT_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:OE.ORDER_ITEMS_UK
+
+  CREATE UNIQUE INDEX "OE"."ORDER_ITEMS_UK" ON "OE"."ORDER_ITEMS" ("ORDER_ID", "PRODUCT_ID") 
+  ;
+
+set define on

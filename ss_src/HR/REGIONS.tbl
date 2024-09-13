@@ -1,0 +1,35 @@
+
+--
+--  Create HR.REGIONS Table
+--
+
+set define off
+
+
+--DBMS_METADATA:HR.REGIONS
+
+  CREATE TABLE "HR"."REGIONS" 
+   (	"REGION_ID" NUMBER CONSTRAINT "REGION_ID_NN" NOT NULL ENABLE, 
+	"REGION_NAME" VARCHAR2(25 BYTE)
+   ) SEGMENT CREATION IMMEDIATE  LOGGING;
+  CREATE UNIQUE INDEX "HR"."REG_ID_PK" ON "HR"."REGIONS" ("REGION_ID") 
+  ;
+ALTER TABLE "HR"."REGIONS" ADD CONSTRAINT "REG_ID_PK" PRIMARY KEY ("REGION_ID")
+  USING INDEX "HR"."REG_ID_PK"  ENABLE;
+
+--  Comments
+
+--DBMS_METADATA:HR.REGIONS
+
+   COMMENT ON COLUMN "HR"."REGIONS"."REGION_ID" IS 'Primary key of regions table.';
+   COMMENT ON COLUMN "HR"."REGIONS"."REGION_NAME" IS 'Names of regions. Locations are in the countries of these regions.';
+   COMMENT ON TABLE "HR"."REGIONS"  IS 'Regions table that contains region numbers and names. references with the Countries table.';
+
+
+--  Grants
+
+
+--  Synonyms
+
+
+set define on

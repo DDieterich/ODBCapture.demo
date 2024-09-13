@@ -1,0 +1,18 @@
+
+--
+--  Create PM Schema
+--
+
+set define off
+
+create user "PM"
+   no authentication
+   profile DEFAULT
+   temporary tablespace TEMP
+   ;
+
+--  Current Grant of SYS Objects (but not directories)
+
+grant EXECUTE on "SYS"."DBMS_STATS" to "PM";
+
+set define on

@@ -1,0 +1,40 @@
+
+--
+--  Create OE.ORDER_ITEMS Table
+--
+
+set define off
+
+
+--DBMS_METADATA:OE.ORDER_ITEMS
+
+  CREATE TABLE "OE"."ORDER_ITEMS" 
+   (	"ORDER_ID" NUMBER(12,0), 
+	"LINE_ITEM_ID" NUMBER(3,0) NOT NULL ENABLE, 
+	"PRODUCT_ID" NUMBER(6,0) NOT NULL ENABLE, 
+	"UNIT_PRICE" NUMBER(8,2), 
+	"QUANTITY" NUMBER(8,0)
+   ) SEGMENT CREATION IMMEDIATE  LOGGING;
+  CREATE UNIQUE INDEX "OE"."ORDER_ITEMS_PK" ON "OE"."ORDER_ITEMS" ("ORDER_ID", "LINE_ITEM_ID") 
+  ;
+ALTER TABLE "OE"."ORDER_ITEMS" ADD CONSTRAINT "ORDER_ITEMS_PK" PRIMARY KEY ("ORDER_ID", "LINE_ITEM_ID")
+  USING INDEX "OE"."ORDER_ITEMS_PK"  ENABLE;
+
+--  Comments
+
+--DBMS_METADATA:OE.ORDER_ITEMS
+
+   COMMENT ON COLUMN "OE"."ORDER_ITEMS"."ORDER_ID" IS 'Part of concatenated primary key, references orders.order_id.';
+   COMMENT ON COLUMN "OE"."ORDER_ITEMS"."LINE_ITEM_ID" IS 'Part of concatenated primary key.';
+   COMMENT ON COLUMN "OE"."ORDER_ITEMS"."PRODUCT_ID" IS 'References product_information.product_id.';
+   COMMENT ON TABLE "OE"."ORDER_ITEMS"  IS 'Example of many-to-many resolution.';
+
+
+--  Grants
+grant SELECT on "OE"."ORDER_ITEMS" to "PM";
+
+
+--  Synonyms
+
+
+set define on

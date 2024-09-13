@@ -1,0 +1,16 @@
+
+--
+--  Create Indexes for HR.DEPARTMENTS TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.DEPT_LOCATION_IX
+
+  CREATE INDEX "HR"."DEPT_LOCATION_IX" ON "HR"."DEPARTMENTS" ("LOCATION_ID") 
+  ;
+
+set define on

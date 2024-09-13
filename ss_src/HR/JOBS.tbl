@@ -1,0 +1,45 @@
+
+--
+--  Create HR.JOBS Table
+--
+
+set define off
+
+
+--DBMS_METADATA:HR.JOBS
+
+  CREATE TABLE "HR"."JOBS" 
+   (	"JOB_ID" VARCHAR2(10 BYTE), 
+	"JOB_TITLE" VARCHAR2(35 BYTE) CONSTRAINT "JOB_TITLE_NN" NOT NULL ENABLE, 
+	"MIN_SALARY" NUMBER(6,0), 
+	"MAX_SALARY" NUMBER(6,0)
+   ) SEGMENT CREATION IMMEDIATE  LOGGING;
+  CREATE UNIQUE INDEX "HR"."JOB_ID_PK" ON "HR"."JOBS" ("JOB_ID") 
+  ;
+ALTER TABLE "HR"."JOBS" ADD CONSTRAINT "JOB_ID_PK" PRIMARY KEY ("JOB_ID")
+  USING INDEX "HR"."JOB_ID_PK"  ENABLE;
+
+--  Comments
+
+--DBMS_METADATA:HR.JOBS
+
+   COMMENT ON COLUMN "HR"."JOBS"."JOB_ID" IS 'Primary key of jobs table.';
+   COMMENT ON COLUMN "HR"."JOBS"."JOB_TITLE" IS 'A not null column that shows job title, e.g. AD_VP, FI_ACCOUNTANT';
+   COMMENT ON COLUMN "HR"."JOBS"."MIN_SALARY" IS 'Minimum salary for a job title.';
+   COMMENT ON COLUMN "HR"."JOBS"."MAX_SALARY" IS 'Maximum salary for a job title';
+   COMMENT ON TABLE "HR"."JOBS"  IS 'jobs table with job titles and salary ranges.
+References with employees and job_history table.';
+
+
+--  Grants
+grant SELECT on "HR"."JOBS" to "OE";
+
+
+--  Synonyms
+
+--DBMS_METADATA:OE.JOBS
+
+  CREATE OR REPLACE EDITIONABLE SYNONYM "OE"."JOBS" FOR "HR"."JOBS";
+
+
+set define on

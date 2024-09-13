@@ -1,0 +1,16 @@
+
+--
+--  Create Indexes for OE.INVENTORIES TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:OE.INV_PRODUCT_IX
+
+  CREATE INDEX "OE"."INV_PRODUCT_IX" ON "OE"."INVENTORIES" ("PRODUCT_ID") 
+  ;
+
+set define on

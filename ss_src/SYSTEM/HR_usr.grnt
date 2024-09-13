@@ -1,0 +1,25 @@
+
+
+--
+--  Create HR Grants
+--
+
+set define off
+
+
+
+--  Database System Privileges
+
+grant CREATE MATERIALIZED VIEW to "HR";
+grant CREATE PROCEDURE to "HR";
+grant CREATE SEQUENCE to "HR";
+grant CREATE SESSION to "HR";
+grant CREATE SYNONYM to "HR";
+grant CREATE TABLE to "HR";
+grant CREATE TRIGGER to "HR";
+grant CREATE TYPE to "HR";
+grant CREATE VIEW to "HR";
+
+
+set define on
+

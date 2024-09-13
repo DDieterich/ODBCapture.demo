@@ -1,0 +1,37 @@
+
+--
+--  Create Indexes for HR.EMPLOYEES TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.EMP_DEPARTMENT_IX
+
+  CREATE INDEX "HR"."EMP_DEPARTMENT_IX" ON "HR"."EMPLOYEES" ("DEPARTMENT_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.EMP_JOB_IX
+
+  CREATE INDEX "HR"."EMP_JOB_IX" ON "HR"."EMPLOYEES" ("JOB_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.EMP_MANAGER_IX
+
+  CREATE INDEX "HR"."EMP_MANAGER_IX" ON "HR"."EMPLOYEES" ("MANAGER_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.EMP_NAME_IX
+
+  CREATE INDEX "HR"."EMP_NAME_IX" ON "HR"."EMPLOYEES" ("LAST_NAME", "FIRST_NAME") 
+  ;
+
+set define on

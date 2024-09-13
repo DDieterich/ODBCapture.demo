@@ -1,0 +1,16 @@
+
+--
+--  Create Foreign Keys for HR.COUNTRIES TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "BASE TABLE" Foreign Key
+
+--DBMS_METADATA:HR.COUNTR_REG_FK
+
+  ALTER TABLE "HR"."COUNTRIES" ADD CONSTRAINT "COUNTR_REG_FK" FOREIGN KEY ("REGION_ID")
+	  REFERENCES "HR"."REGIONS" ("REGION_ID") ENABLE;
+
+set define on

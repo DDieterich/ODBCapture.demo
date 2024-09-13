@@ -1,0 +1,17 @@
+
+--
+--  Create Triggers for OE.PURCHASEORDER TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "TRIGGER" Trigger
+
+--DBMS_METADATA:OE.PURCHASEORDER$xd
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "OE"."PURCHASEORDER$xd" after delete or update on "OE"."PURCHASEORDER" for each row BEGIN  IF (deleting) THEN xdb.xdb_pitrig_pkg.pitrig_del('OE','PURCHASEORDER', :old.sys_nc_oid$, '21CF8BB756C20BF1E063020012ACF537' ); END IF;   IF (updating) THEN xdb.xdb_pitrig_pkg.pitrig_upd('OE','PURCHASEORDER', :old.sys_nc_oid$, '21CF8BB756C20BF1E063020012ACF537', user ); END IF; END;
+/
+ALTER TRIGGER "OE"."PURCHASEORDER$xd" ENABLE;
+
+set define on

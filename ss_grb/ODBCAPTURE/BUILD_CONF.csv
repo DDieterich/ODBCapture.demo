@@ -1,0 +1,3 @@
+"BUILD_SEQ","BUILD_TYPE","NOTES"
+10,"ss_src","Oracle Sample Schema Source"
+20,"ss_grb","ODBCapture Configuration Data for Oracle Sample Schema"

@@ -1,0 +1,17 @@
+
+--
+--  Create HR Schema
+--
+
+set define off
+
+create user "HR"
+   no authentication
+   profile DEFAULT
+   temporary tablespace TEMP
+   ;
+
+--  Current Grant of SYS Objects (but not directories)
+
+
+set define on

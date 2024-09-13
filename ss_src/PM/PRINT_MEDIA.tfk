@@ -1,0 +1,16 @@
+
+--
+--  Create Foreign Keys for PM.PRINT_MEDIA TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "BASE TABLE" Foreign Key
+
+--DBMS_METADATA:PM.PRINTMEDIA_FK
+
+  ALTER TABLE "PM"."PRINT_MEDIA" ADD CONSTRAINT "PRINTMEDIA_FK" FOREIGN KEY ("PRODUCT_ID")
+	  REFERENCES "OE"."PRODUCT_INFORMATION" ("PRODUCT_ID") ENABLE;
+
+set define on

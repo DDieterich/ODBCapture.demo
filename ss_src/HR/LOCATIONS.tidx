@@ -1,0 +1,30 @@
+
+--
+--  Create Indexes for HR.LOCATIONS TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.LOC_CITY_IX
+
+  CREATE INDEX "HR"."LOC_CITY_IX" ON "HR"."LOCATIONS" ("CITY") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.LOC_COUNTRY_IX
+
+  CREATE INDEX "HR"."LOC_COUNTRY_IX" ON "HR"."LOCATIONS" ("COUNTRY_ID") 
+  ;
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:HR.LOC_STATE_PROVINCE_IX
+
+  CREATE INDEX "HR"."LOC_STATE_PROVINCE_IX" ON "HR"."LOCATIONS" ("STATE_PROVINCE") 
+  ;
+
+set define on

@@ -1,0 +1,31 @@
+
+
+--
+--  Create OE Grants
+--
+
+set define off
+
+
+
+--  Database System Privileges
+
+grant CREATE DATABASE LINK to "OE";
+grant CREATE MATERIALIZED VIEW to "OE";
+grant CREATE SESSION to "OE";
+grant CREATE SYNONYM to "OE";
+grant CREATE VIEW to "OE";
+grant QUERY REWRITE to "OE";
+grant UNLIMITED TABLESPACE to "OE";
+
+
+--  "sys" BUILD_TYPE Role Grants
+--  "GRANTEE" (delayed) Role Grants
+--  Note: "OBJECT" Schema Object Grants are given during Role creation
+
+grant "RESOURCE" to "OE";
+grant "XDBADMIN" to "OE";
+
+
+set define on
+

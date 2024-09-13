@@ -1,0 +1,23 @@
+
+--
+--  Create SUBDIR Database Directory
+--
+--   Duplicate CREATE DIRECTORY scripts will be created
+--      in different build types because directories are
+--      created based on permissions, not owners.
+--
+
+set define off
+
+
+create or replace directory "SUBDIR"
+   as '/opt/DMSTEX_dev/db-sample-schemas//order_entry//2002/Sep';
+
+
+--  Grants
+
+grant READ on directory "SUBDIR" to "OE" with grant option;
+
+grant WRITE on directory "SUBDIR" to "OE" with grant option;
+
+set define on

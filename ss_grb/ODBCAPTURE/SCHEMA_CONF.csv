@@ -1,0 +1,4 @@
+"USERNAME","BUILD_TYPE","ORACLE_PROVIDED","PROFILE","TEMPORARY_TSPACE","DEFAULT_TSPACE","TS_QUOTA","NOTES"
+"HR","ss_src","N",,,,,"Oracle Sample Schema Human Resources"
+"OE","ss_src","N",,,,,"Oracle Sample Schema Order Entry"
+"PM","ss_src","N",,,,,"Oracle Sample Schema Product Media"

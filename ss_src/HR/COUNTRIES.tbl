@@ -1,0 +1,40 @@
+
+--
+--  Create HR.COUNTRIES Table
+--
+
+set define off
+
+
+--DBMS_METADATA:HR.COUNTRIES
+
+  CREATE TABLE "HR"."COUNTRIES" 
+   (	"COUNTRY_ID" CHAR(2 BYTE) CONSTRAINT "COUNTRY_ID_NN" NOT NULL ENABLE, 
+	"COUNTRY_NAME" VARCHAR2(60 BYTE), 
+	"REGION_ID" NUMBER, 
+	 CONSTRAINT "COUNTRY_C_ID_PK" PRIMARY KEY ("COUNTRY_ID") ENABLE
+   ) ORGANIZATION INDEX NOCOMPRESS ;
+
+--  Comments
+
+--DBMS_METADATA:HR.COUNTRIES
+
+   COMMENT ON COLUMN "HR"."COUNTRIES"."COUNTRY_ID" IS 'Primary key of countries table.';
+   COMMENT ON COLUMN "HR"."COUNTRIES"."COUNTRY_NAME" IS 'Country name';
+   COMMENT ON COLUMN "HR"."COUNTRIES"."REGION_ID" IS 'Region ID for the country. Foreign key to region_id column in the departments table.';
+   COMMENT ON TABLE "HR"."COUNTRIES"  IS 'country table. References with locations table.';
+
+
+--  Grants
+grant REFERENCES on "HR"."COUNTRIES" to "OE";
+grant SELECT on "HR"."COUNTRIES" to "OE";
+
+
+--  Synonyms
+
+--DBMS_METADATA:OE.COUNTRIES
+
+  CREATE OR REPLACE EDITIONABLE SYNONYM "OE"."COUNTRIES" FOR "HR"."COUNTRIES";
+
+
+set define on

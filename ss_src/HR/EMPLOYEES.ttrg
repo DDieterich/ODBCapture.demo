@@ -1,0 +1,35 @@
+
+--
+--  Create Triggers for HR.EMPLOYEES TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "TRIGGER" Trigger
+
+--DBMS_METADATA:HR.SECURE_EMPLOYEES
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "HR"."SECURE_EMPLOYEES" 
+  BEFORE INSERT OR UPDATE OR DELETE ON employees
+BEGIN
+  secure_dml;
+END secure_employees;
+/
+ALTER TRIGGER "HR"."SECURE_EMPLOYEES" DISABLE;
+
+--  NOTE: This is a "TRIGGER" Trigger
+
+--DBMS_METADATA:HR.UPDATE_JOB_HISTORY
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "HR"."UPDATE_JOB_HISTORY" 
+  AFTER UPDATE OF job_id, department_id ON employees
+  FOR EACH ROW
+BEGIN
+  add_job_history(:old.employee_id, :old.hire_date, sysdate,
+                  :old.job_id, :old.department_id);
+END;
+/
+ALTER TRIGGER "HR"."UPDATE_JOB_HISTORY" ENABLE;
+
+set define on

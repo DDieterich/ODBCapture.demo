@@ -1,0 +1,21 @@
+
+--
+--  Create OE.PART_T Type
+--
+
+set define off
+
+
+--DBMS_METADATA:OE.PART_T
+
+  CREATE OR REPLACE EDITIONABLE TYPE "OE"."PART_T" AS OBJECT ("SYS_XDBPD$" "XDB"."XDB$RAW_LIST_T","PART_NUMBER" VARCHAR2(14 CHAR),"QUANTITY" NUMBER(12,4),"UNITPRICE" NUMBER(14,2))NOT FINAL INSTANTIABLE 
+/
+
+
+--  Grants
+
+
+--  Synonyms
+
+
+set define on

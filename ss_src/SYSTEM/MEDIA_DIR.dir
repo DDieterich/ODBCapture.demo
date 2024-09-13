@@ -1,0 +1,21 @@
+
+--
+--  Create MEDIA_DIR Database Directory
+--
+--   Duplicate CREATE DIRECTORY scripts will be created
+--      in different build types because directories are
+--      created based on permissions, not owners.
+--
+
+set define off
+
+
+create or replace directory "MEDIA_DIR"
+   as '/opt/DMSTEX_dev/db-sample-schemas/product_media/';
+
+
+--  Grants
+
+grant READ on directory "MEDIA_DIR" to "PM";
+
+set define on

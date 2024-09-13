@@ -1,0 +1,18 @@
+
+--
+--  Create OE Schema
+--
+
+set define off
+
+create user "OE"
+   no authentication
+   profile DEFAULT
+   temporary tablespace TEMP
+   ;
+
+--  Current Grant of SYS Objects (but not directories)
+
+grant EXECUTE on "SYS"."DBMS_STATS" to "OE";
+
+set define on

@@ -1,0 +1,23 @@
+
+--
+--  Create SS_OE_XMLDIR Database Directory
+--
+--   Duplicate CREATE DIRECTORY scripts will be created
+--      in different build types because directories are
+--      created based on permissions, not owners.
+--
+
+set define off
+
+
+create or replace directory "SS_OE_XMLDIR"
+   as '/opt/DMSTEX_dev/db-sample-schemas//order_entry/';
+
+
+--  Grants
+
+grant READ on directory "SS_OE_XMLDIR" to "OE" with grant option;
+
+grant WRITE on directory "SS_OE_XMLDIR" to "OE" with grant option;
+
+set define on

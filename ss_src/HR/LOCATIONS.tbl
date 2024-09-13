@@ -1,0 +1,56 @@
+
+--
+--  Create HR.LOCATIONS Table
+--
+
+set define off
+
+
+--DBMS_METADATA:HR.LOCATIONS
+
+  CREATE TABLE "HR"."LOCATIONS" 
+   (	"LOCATION_ID" NUMBER(4,0), 
+	"STREET_ADDRESS" VARCHAR2(40 BYTE), 
+	"POSTAL_CODE" VARCHAR2(12 BYTE), 
+	"CITY" VARCHAR2(30 BYTE) CONSTRAINT "LOC_CITY_NN" NOT NULL ENABLE, 
+	"STATE_PROVINCE" VARCHAR2(25 BYTE), 
+	"COUNTRY_ID" CHAR(2 BYTE)
+   ) SEGMENT CREATION IMMEDIATE  LOGGING;
+  CREATE UNIQUE INDEX "HR"."LOC_ID_PK" ON "HR"."LOCATIONS" ("LOCATION_ID") 
+  ;
+ALTER TABLE "HR"."LOCATIONS" ADD CONSTRAINT "LOC_ID_PK" PRIMARY KEY ("LOCATION_ID")
+  USING INDEX "HR"."LOC_ID_PK"  ENABLE;
+
+--  Comments
+
+--DBMS_METADATA:HR.LOCATIONS
+
+   COMMENT ON COLUMN "HR"."LOCATIONS"."LOCATION_ID" IS 'Primary key of locations table';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."STREET_ADDRESS" IS 'Street address of an office, warehouse, or production site of a company.
+Contains building number and street name';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."POSTAL_CODE" IS 'Postal code of the location of an office, warehouse, or production site
+of a company. ';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."CITY" IS 'A not null column that shows city where an office, warehouse, or
+production site of a company is located. ';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."STATE_PROVINCE" IS 'State or Province where an office, warehouse, or production site of a
+company is located.';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."COUNTRY_ID" IS 'Country where an office, warehouse, or production site of a company is
+located. Foreign key to country_id column of the countries table.';
+   COMMENT ON TABLE "HR"."LOCATIONS"  IS 'Locations table that contains specific address of a specific office,
+warehouse, and/or production site of a company. Does not store addresses /
+locations of customers. references with the departments and countries tables. ';
+
+
+--  Grants
+grant REFERENCES on "HR"."LOCATIONS" to "OE";
+grant SELECT on "HR"."LOCATIONS" to "OE";
+
+
+--  Synonyms
+
+--DBMS_METADATA:OE.LOCATIONS
+
+  CREATE OR REPLACE EDITIONABLE SYNONYM "OE"."LOCATIONS" FOR "HR"."LOCATIONS";
+
+
+set define on

@@ -1,0 +1,16 @@
+
+--
+--  Create Indexes for OE.PRODUCT_DESCRIPTIONS TABLE
+--
+
+set define off
+
+
+--  NOTE: This is a "INDEX" Index
+
+--DBMS_METADATA:OE.PROD_NAME_IX
+
+  CREATE INDEX "OE"."PROD_NAME_IX" ON "OE"."PRODUCT_DESCRIPTIONS" ("TRANSLATED_NAME") 
+  ;
+
+set define on

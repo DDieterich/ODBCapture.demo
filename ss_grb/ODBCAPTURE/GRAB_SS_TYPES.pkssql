@@ -1,12 +1,12 @@
 
 --
---  Create ODBCAPTURE.GRAB_SDO Package
+--  Create ODBCAPTURE.GRAB_SS_TYPES Package
 --
 
 set define off
 
 
---DBMS_METADATA:ODBCAPTURE.GRAB_SDO
+--DBMS_METADATA:ODBCAPTURE.GRAB_SS_TYPES
 
   CREATE OR REPLACE EDITIONABLE PACKAGE "ODBCAPTURE"."GRAB_SS_TYPES" AUTHID DEFINER
 as
@@ -144,8 +144,6 @@ as
       (io_fh        in out nocopy fh2.sf_ptr_type
       ,in_position  in            integer
       ,in_lc        in            varchar2 default null);
-
-   ------------------------------------------------------------
 
    -- Create SQL to Decode PM.ADHEADER_TYP
    procedure sql_decode_adheader

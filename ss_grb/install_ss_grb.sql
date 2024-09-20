@@ -27,6 +27,11 @@ set escape ""
 @dbi.sql "./installation_prepare.sql" "" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
+-- PACKAGE Install
+
+@dbi.sql "ODBCAPTURE/GRAB_SS_TYPES.pkssql" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
+
+----------------------------------------
 -- DATA_LOAD Install
 
 @dbi.sql "ODBCAPTURE/BUILD_CONF.cldr" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
@@ -36,6 +41,12 @@ set escape ""
 @dbi.sql "ODBCAPTURE/ROLE_CONF.cldr" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "ODBCAPTURE/SCHEMA_CONF.cldr" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "ODBCAPTURE/TSPACE_CONF.cldr" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
+
+----------------------------------------
+-- PACKAGE BODY Install
+
+@dbi.sql "ODBCAPTURE/GRAB_SS_TYPES.pkbsql" "ODBCAPTURE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
 -- Finalize Installation (Includes SPOOL OFF)

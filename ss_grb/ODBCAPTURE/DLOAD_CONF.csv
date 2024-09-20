@@ -13,6 +13,7 @@
 "ODBCAPTURE","ROLE_CONF","ss_grb","ROLENAME, BUILD_TYPE",,,"build_type in ('ss_src','ss_grb')",,
 "ODBCAPTURE","SCHEMA_CONF","ss_grb","USERNAME",,,"build_type in ('ss_src','ss_grb')",,
 "ODBCAPTURE","TSPACE_CONF","ss_grb","USERNAME, TSPACE_NAME",,,"username in (select username from schema_conf where build_type in ('ss_src'))",,
+"ODBCAPTURE","USER_DEFINED_TYPE_CONF","ss_grb","TYPE_NAME",,,"PACKAGE_NAME = 'GRAB_SS_TYPES'",,
 "OE","CATEGORIES_TAB","ss_src","CATEGORY_ID",,,,,
 "OE","CUSTOMERS","ss_src","CUSTOMER_ID",,,,,
 "OE","INVENTORIES","ss_src","PRODUCT_ID, WAREHOUSE_ID",,,,,

@@ -113,11 +113,15 @@ set escape ""
 @dbi.sql "HR/LOCATIONS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/REGIONS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/CATEGORIES_TAB.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/CUSTOMERS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/INVENTORIES.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/ORDERS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/ORDER_ITEMS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/PRODUCT_DESCRIPTIONS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/PRODUCT_INFORMATION.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/PROMOTIONS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/WAREHOUSES.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "PM/PRINT_MEDIA.cldr" "PM" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
 -- INDEX Install

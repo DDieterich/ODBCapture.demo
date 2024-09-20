@@ -1,0 +1,17 @@
+OPTIONS (SKIP=1)
+LOAD DATA
+APPEND INTO TABLE "OE"."PRODUCT_INFORMATION"
+FIELDS CSV WITH EMBEDDED
+TRAILING NULLCOLS
+   (PRODUCT_ID                     FLOAT EXTERNAL
+   ,PRODUCT_NAME                   CHAR(50)
+   ,PRODUCT_DESCRIPTION            CHAR(2000)
+   ,CATEGORY_ID                    FLOAT EXTERNAL
+   ,WEIGHT_CLASS                   FLOAT EXTERNAL
+   ,WARRANTY_PERIOD                INTERVAL YEAR TO MONTH
+   ,SUPPLIER_ID                    FLOAT EXTERNAL
+   ,PRODUCT_STATUS                 CHAR(20)
+   ,LIST_PRICE                     FLOAT EXTERNAL
+   ,MIN_PRICE                      FLOAT EXTERNAL
+   ,CATALOG_URL                    CHAR(50)
+   )

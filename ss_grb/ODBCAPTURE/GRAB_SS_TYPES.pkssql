@@ -1,0 +1,172 @@
+
+--
+--  Create ODBCAPTURE.GRAB_SDO Package
+--
+
+set define off
+
+
+--DBMS_METADATA:ODBCAPTURE.GRAB_SDO
+
+  CREATE OR REPLACE EDITIONABLE PACKAGE "ODBCAPTURE"."GRAB_SS_TYPES" AUTHID DEFINER
+as
+
+   ------------------------------------------------------------
+   -- OE
+   cust_address_typ_buff         oe.cust_address_typ;
+   customer_typ_buff             oe.customer_typ;
+   inventory_list_typ_buff       oe.inventory_list_typ;
+   inventory_typ_buff            oe.inventory_typ;
+   order_item_list_typ_buff      oe.order_item_list_typ;
+   order_item_typ_buff           oe.order_item_typ;
+   order_list_typ_buff           oe.order_list_typ;
+   order_typ_buff                oe.order_typ;
+   phone_list_typ_buff           oe.phone_list_typ;
+   product_information_typ_buff  oe.product_information_typ;
+   warehouse_typ_buff            oe.warehouse_typ;
+
+   function ctl_cust_address
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_cust_address
+      (in_ca  in  oe.cust_address_typ)
+   return varchar2;
+
+   function ctl_customer
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_customer
+      (in_cust  in  oe.customer_typ)
+   return varchar2;
+
+   function ctl_inventory_list
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_inventory_list
+      (in_il  in  oe.inventory_list_typ)
+   return varchar2;
+
+   function ctl_inventory
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_inventory
+      (in_inv  in  oe.inventory_typ)
+   return varchar2;
+
+   function ctl_order_item_list
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_order_item_list
+      (in_oil  in  oe.order_item_list_typ)
+   return varchar2;
+
+   function ctl_order_item
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_order_item
+      (in_oi  in  oe.order_item_typ)
+   return varchar2;
+
+   function ctl_order_list
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_order_list
+      (in_ol  in  oe.order_list_typ)
+   return varchar2;
+
+   function ctl_order
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_order
+      (in_ord  in  oe.order_typ)
+   return varchar2;
+
+   function ctl_phone_list
+      (in_cname   in varchar2)
+   return varchar2;
+   function dat_phone_list
+      (in_pl  in  oe.phone_list_typ)
+   return varchar2;
+
+   function ctl_product_information
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_product_information
+      (in_pi  in  oe.product_information_typ)
+   return varchar2;
+
+   function ctl_warehouse
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_warehouse
+      (in_wh  in  oe.warehouse_typ)
+   return varchar2;
+
+   ------------------------------------------------------------
+   -- PM
+   adheader_typ_buff  pm.adheader_typ;
+   textdoc_tab_buff   pm.textdoc_tab;
+   textdoc_typ_buff   pm.textdoc_typ;
+
+   function ctl_adheader
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_adheader
+      (in_ah  in  pm.adheader_typ)
+   return clob;
+
+   function ctl_textdoc_tab
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_textdoc_tab
+      (in_tdtab  in  pm.textdoc_tab)
+   return clob;
+
+   function ctl_textdoc
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2;
+   function dat_textdoc
+      (in_tdtyp  in  pm.textdoc_typ)
+   return clob;
+
+   ------------------------------------------------------------
+
+   procedure grb_cldr_define
+      (io_fh        in out nocopy fh2.sf_ptr_type
+      ,in_position  in            integer
+      ,in_lc        in            varchar2 default null);
+
+   procedure grb_cldr_value
+      (io_fh        in out nocopy fh2.sf_ptr_type
+      ,in_position  in            integer
+      ,in_lc        in            varchar2 default null);
+
+   ------------------------------------------------------------
+
+   -- Create SQL to Decode PM.ADHEADER_TYP
+   procedure sql_decode_adheader
+      (in_fh       in out nocopy fh2.sf_ptr_type
+      ,in_tabname  in            varchar2
+      ,in_colname  in            varchar2);
+
+   -- Create SQL to Decode PM.ADHEADER_TYP
+   procedure sql_decode_textdoc_tab
+      (in_fh       in out nocopy fh2.sf_ptr_type
+      ,in_tabname  in            varchar2
+      ,in_colname  in            varchar2);
+
+end grab_ss_types;
+/
+
+
+--  Grants
+
+
+--  Synonyms
+
+
+set define on

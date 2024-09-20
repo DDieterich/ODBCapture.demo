@@ -1,0 +1,666 @@
+
+--
+--  Create ODBCAPTURE.GRAB_SDO Package Body
+--
+
+set define off
+
+
+--DBMS_METADATA:ODBCAPTURE.GRAB_SDO
+
+  CREATE OR REPLACE EDITIONABLE PACKAGE BODY "ODBCAPTURE"."GRAB_SS_TYPES"
+as
+
+
+------------------------------------------------------------
+function ctl_cust_address
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'                         || CHR(10) || in_spaces ||
+          '   (STREET_ADDRESS  CHAR(40) TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,POSTAL_CODE     CHAR(10) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,CITY            CHAR(30) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,STATE_PROVINCE  CHAR(10) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,COUNTRY_ID      CHAR(2)  TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   )';
+end ctl_cust_address;
+-- 
+function dat_cust_address
+      (in_ca  in  oe.cust_address_typ)
+   return varchar2
+is
+begin
+   return '"' || in_ca.street_address  || '";' ||
+                 in_ca.postal_code     || ';' ||
+                 in_ca.city            || ';' ||
+                 in_ca.state_province  || ';' ||
+                 in_ca.country_id      || ';' ;
+end dat_cust_address;
+
+------------------------------------------------------------
+function ctl_customer
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'                                  || CHR(10) || in_spaces ||
+          '   (CUSTOMER_ID        FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,CUST_FIRST_NAME    CHAR(20)       TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,CUST_LAST_NAME     CHAR(20)       TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,CUST_ADDRESS       ' || grab_ss_types.ctl_cust_address(in_spaces||'   ') || CHR(10) || in_spaces ||
+          '   ,PHONE_NUMBERS      ' || grab_ss_types.ctl_phone_list(in_spaces||'   ')   || CHR(10) || in_spaces ||
+          '   ,NLS_LANGUAGE       CHAR(3)        TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,NLS_TERRITORY      CHAR(40)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,CREDIT_LIMIT       FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,CUST_EMAIL         CHAR(40)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,CUST_ORDERS        ' || grab_ss_types.ctl_order_list(in_spaces||'   ')   || CHR(10) || in_spaces ||
+          '   )';
+end ctl_customer;
+-- 
+function dat_customer
+      (in_cust  in  oe.customer_typ)
+   return varchar2
+is
+begin
+   return to_char(in_cust.customer_id)                ||  ';"' ||
+                  in_cust.cust_first_name             || '";"' ||
+                  in_cust.cust_last_name              || '";'  ||
+          grab_ss_types.dat_cust_address(in_cust.cust_address) ||
+          grab_ss_types.dat_phone_list(in_cust.phone_numbers)  ||
+                  in_cust.nls_language                ||  ';'  ||
+                  in_cust.nls_territory               ||  ';'  ||
+          to_char(in_cust.credit_limit)               ||  ';'  ||
+                  in_cust.cust_email                  ||  ';'  ||
+          grab_ss_types.dat_order_list(in_cust.cust_orders);
+end dat_customer;
+
+------------------------------------------------------------
+function ctl_inventory_list
+      (in_cname   in varchar2
+      ,in_spaces  in varchar2 default '   ')
+   return varchar2
+is
+   delim  varchar2(1);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return 'NESTED TABLE TERMINATED BY ''' || delim ||
+        ''' (' || in_cname || ' ' || grab_ss_types.ctl_inventory(in_spaces||'            ') || ')';
+end ctl_inventory_list;
+-- 
+function dat_inventory_list
+      (in_il  in  oe.inventory_list_typ)
+   return varchar2
+is
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   if in_il.EXISTS(1)
+   then
+      for i in 1 .. in_il.COUNT
+      loop
+         ret_txt := ret_txt || GRAB_SS_TYPES.dat_inventory(in_il(i));
+      end loop;
+   end if;
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return ret_txt || delim;
+end dat_inventory_list;
+
+------------------------------------------------------------
+function ctl_inventory
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.INVENTORY_TYP'                                 || CHR(10) || in_spaces ||
+          '   (PRODUCT_ID        FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   ,WAREHOUSE         ' || grab_ss_types.ctl_warehouse(in_spaces||'   ') || CHR(10) || in_spaces ||
+          '   ,QUANTITY_ON_HAND  FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   )';
+end ctl_inventory;
+-- 
+function dat_inventory
+      (in_inv  in  oe.inventory_typ)
+   return varchar2
+is
+begin
+   return to_char(in_inv.product_id)             || ';' ||
+          grab_ss_types.dat_warehouse(in_inv.warehouse) ||
+          to_char(in_inv.quantity_on_hand)       || ';' ;
+end dat_inventory;
+
+------------------------------------------------------------
+function ctl_order_item_list
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+   delim  varchar2(1);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return 'NESTED TABLE TERMINATED BY ''' || delim ||
+        ''' (' || in_cname || ' ' || grab_ss_types.ctl_order_item(in_spaces||'            ') || ')';
+end ctl_order_item_list;
+-- 
+function dat_order_item_list
+      (in_oil  in  oe.order_item_list_typ)
+   return varchar2
+is
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   if in_oil.EXISTS(1)
+   then
+      for i in 1 .. in_oil.COUNT
+      loop
+         ret_txt := ret_txt || GRAB_SS_TYPES.dat_order_item(in_oil(i));
+      end loop;
+   end if;
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return ret_txt || delim;
+end dat_order_item_list;
+
+------------------------------------------------------------
+function ctl_order_item
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.ORDER_ITEM_TYP'                                   || CHR(10) || in_spaces ||
+          '   (ORDER_ID      FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
+          '   ,LINE_ITEM_ID  FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
+          '   ,UNIT_PRICE    FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
+          '   ,QUANTITY      FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
+          '   ,PRODUCT_REF   REF (CONSTANT ''OE.OC_PRODUCT_INFORMATION'', product_id)' || CHR(10) || in_spaces ||
+          '   ,PRODUCT_ID    FILLER FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   )';
+end ctl_order_item;
+-- 
+function dat_order_item
+      (in_oi  in  oe.order_item_typ)
+   return varchar2
+is
+   prod_info  oe.product_information_typ;
+begin
+   select DEREF(in_oi.product_ref) into prod_info from dual;
+   return to_char(in_oi.order_id)       || ';' ||
+          to_char(in_oi.line_item_id)   || ';' ||
+          to_char(in_oi.unit_price)     || ';' ||
+          to_char(in_oi.quantity)       || ';' ||
+          to_char(prod_info.product_id) || ';' ;
+end dat_order_item;
+
+------------------------------------------------------------
+function ctl_order_list
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+   delim  varchar2(1);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return 'NESTED TABLE TERMINATED BY ''' || delim ||
+        ''' (' || in_cname || ' ' || grab_ss_types.ctl_order(in_spaces||'            ') || ')';
+end ctl_order_list;
+-- 
+function dat_order_list
+      (in_ol  in  oe.order_list_typ)
+   return varchar2
+is
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   if in_ol.EXISTS(1)
+   then
+      for i in 1 .. in_ol.COUNT
+      loop
+         ret_txt := ret_txt || GRAB_SS_TYPES.dat_order(in_ol(i));
+      end loop;
+   end if;
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return ret_txt || delim;
+end dat_order_list;
+
+------------------------------------------------------------
+function ctl_order
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.ORDER_TYP'                                         || CHR(10) || in_spaces ||
+          '   (ORDER_ID        FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
+          '   ,ORDER_MODE      CHAR(8) TERMINATED BY '';'''                             || CHR(10) || in_spaces ||
+          '   ,CUSTOMER_REF    REF (CONSTANT ''OE.OC_CUSTOMERS'', customer_id)'         || CHR(10) || in_spaces ||
+          '   ,CUSTOMER_ID     FILLER FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,ORDER_STATUS    FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
+          '   ,ORDER_TOTAL     FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
+          '   ,SALES_REP_ID    FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
+          '   ,ORDER_ITEM_LIST ' || grab_ss_types.ctl_order_item_list(in_spaces||'   ') || CHR(10) || in_spaces ||
+          '   )';
+end ctl_order;
+-- 
+function dat_order
+      (in_ord  in  oe.order_typ)
+   return varchar2
+is
+   cust  oe.customer_typ;
+begin
+   select DEREF(in_ord.customer_ref) into cust from dual;
+   return to_char(in_ord.order_id)      || ';' ||
+          to_char(in_ord.order_mode)    || ';' ||
+          to_char(cust.customer_id)     || ';' ||
+          to_char(in_ord.order_status)  || ';' ||
+          to_char(in_ord.order_total)   || ';' ||
+          to_char(in_ord.sales_rep_id)  || ';' ||
+          grab_ss_types.dat_order_item_list(in_ord.order_item_list) ;
+end dat_order;
+
+------------------------------------------------------------
+function ctl_phone_list
+      (in_cname   in varchar2)
+   return varchar2
+is
+   delim  varchar2(1);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return 'VARRAY TERMINATED BY ''' || delim ||
+        ''' (' || in_cname || '  CHAR(25) TERMINATED BY '';'')';
+end ctl_phone_list;
+-- 
+function dat_phone_list
+      (in_pl  in  oe.phone_list_typ)
+   return varchar2
+is
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   if in_pl.EXISTS(1)
+   then
+      ret_txt := in_pl(1);
+      for i in 2 .. in_pl.COUNT
+      loop
+         ret_txt := ret_txt || ';' || in_pl(i);
+      end loop;
+   end if;
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return ret_txt || delim;
+end dat_phone_list;
+
+------------------------------------------------------------
+function ctl_product_information
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                         || CHR(10) || in_spaces ||
+          '   (PRODUCT_ID           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,PRODUCT_NAME         CHAR(50)   TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,PRODUCT_DESCRIPTION  CHAR(2000) TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,CATEGORY_ID          FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,WEIGHT_CLASS         FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH TERMINATED BY '';'''       || CHR(10) || in_spaces ||
+          '   ,SUPPLIER_ID          FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,PRODUCT_STATUS       CHAR(20)   TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,LIST_PRICE           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,MIN_PRICE            FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,CATALOG_URL          CHAR(20)   TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,INVENTORY_LIST ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST'
+                                                                   ,in_spaces||'   ') || CHR(10) || in_spaces ||
+          '   )';
+end ctl_product_information;
+-- 
+function dat_product_information
+      (in_pi  in  oe.product_information_typ)
+   return varchar2
+is
+begin
+   return to_char(in_pi.product_id)                         ||  ';"' ||
+                  in_pi.product_name                        || '";"' ||
+                  in_pi.product_description                 || '";'  ||
+          to_char(in_pi.category_id)                        ||  ';'  ||
+          to_char(in_pi.weight_class)                       ||  ';'  ||
+          to_char(in_pi.warranty_period, GRAB_DATA.F_IYTOM) ||  ';'  ||
+          to_char(in_pi.supplier_id)                        ||  ';'  ||
+                  in_pi.product_status                      ||  ';'  ||
+          to_char(in_pi.list_price)                         ||  ';'  ||
+          to_char(in_pi.min_price)                          ||  ';"' ||
+                  in_pi.catalog_url                         || '";'  ||
+          grab_ss_types.dat_inventory_list(in_pi.inventory_list) ;
+end dat_product_information;
+
+------------------------------------------------------------
+function ctl_warehouse
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                            || CHR(10) || in_spaces ||
+          '   (WAREHOUSE_ID    FLOAT EXTERNAL TERMINATED BY '';'''             || CHR(10) || in_spaces ||
+          '   ,WAREHOUSE_NAME  CHAR(35) TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,LOCATION_ID     FLOAT EXTERNAL TERMINATED BY '';'''             || CHR(10) || in_spaces ||
+          '   )';
+end ctl_warehouse;
+-- 
+function dat_warehouse
+      (in_wh  in  oe.warehouse_typ)
+   return varchar2
+is
+begin
+   return to_char(in_wh.warehouse_id)   ||  ';"' ||
+                  in_wh.warehouse_name  || '";'  ||
+          to_char(in_wh.location_id)    || '";'  ;
+end dat_warehouse;
+
+------------------------------------------------------------
+function ctl_adheader
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS PM.ADHEADER_TYP'                                  || CHR(10) || in_spaces ||
+          '   (HEADER_NAME     CHAR(256)     TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,CREATION_DATE   DATE '''||GRAB_DATA.F_DATE||''''                     || CHR(10) || in_spaces ||
+          '   ,HEADER_TEXT     CHAR(1024)    TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,LOGO            CHAR(1572864) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   )';
+end ctl_adheader;
+-- 
+function dat_adheader
+      (in_ah  in  pm.adheader_typ)
+   return clob
+is
+begin
+   return '"' || to_char(in_ah.header_name)                     ||  '";' ||
+                 to_char(in_ah.creation_date, GRAB_DATA.F_DATE) ||  ';"' ||
+                 to_char(in_ah.header_text)                     || '";'  ||
+                 COMMON_UTIL.b64_encode(in_ah.logo, TRUE)       ||  ';'  ;
+end dat_adheader;
+
+------------------------------------------------------------
+function ctl_textdoc_tab
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+   delim  varchar2(1);
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return 'NESTED TABLE TERMINATED BY ''' || delim ||
+        ''' (' || in_cname || ' ' || grab_ss_types.ctl_textdoc(in_spaces||'            ') || ')';
+end ctl_textdoc_tab;
+-- 
+function dat_textdoc_tab
+      (in_tdtab  in  pm.textdoc_tab)
+   return clob
+is
+   delim     varchar2(1);
+   ret_txt   clob;
+begin
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
+   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   if in_tdtab.EXISTS(1)
+   then
+      for i in 1 .. in_tdtab.COUNT
+      loop
+         ret_txt := ret_txt || GRAB_SS_TYPES.dat_textdoc(in_tdtab(i));
+      end loop;
+   end if;
+   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
+   return ret_txt || delim;
+end dat_textdoc_tab;
+
+------------------------------------------------------------
+function ctl_textdoc
+      (in_spaces  in  varchar2 default '   ')
+   return varchar2
+is
+begin
+   return 'COLUMN OBJECT TREAT AS PM.TESTDOC_TYP'                 || CHR(10) || in_spaces ||
+          '   (DOCUMENT_TYPE   CHAR(32)      TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,FORMATTED_DOC   CHAR(1572864) TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   )';
+end ctl_textdoc;
+-- 
+function dat_textdoc
+      (in_tdtyp  in  pm.textdoc_typ)
+   return clob
+is
+begin
+   return in_tdtyp.document_typ                                || ';' ||
+          COMMON_UTIL.b64_encode(in_tdtyp.formatted_doc, TRUE) || ';' ;
+end dat_textdoc;
+
+
+------------------------------------------------------------
+-- 
+procedure grb_cldr_define
+      (io_fh        in out nocopy fh2.sf_ptr_type
+      ,in_position  in            integer
+      ,in_lc        in            varchar2 default null) as
+begin
+   case GRAB_DATA.g_desc_tab(in_position).col_type_name
+   -- OE
+   when 'CUSTOMER_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_customer(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => customer_typ_buff);
+   when 'CUST_ADDRESS_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_cust_address(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => cust_address_typ_buff);
+   when 'INVENTORY_LIST_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_inventory_list(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => inventory_list_typ_buff);
+   when 'ORDER_ITEM_LIST_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_order_item_list(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => order_item_list_typ_buff);
+   when 'ORDER_LIST_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_order_list(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => order_list_typ_buff);
+   when 'PHONE_LIST_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_phone_list(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => phone_list_typ_buff);
+   when 'WAREHOUSE_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_warehouse(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => warehouse_typ_buff);
+   -- PM
+   when 'ADHEADER_TYP' then
+      GRAB_DATA.bincol_aa(GRAB_DATA.g_desc_tab(in_position).col_name) := 'GRAB_SS_TYPES.SQL_DECODE_ADHEADER';
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_adheader(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => adheader_typ_buff);
+   when 'TEXTDOC_TYP' then
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_textdoc(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => textdoc_typ_buff);
+   when 'TEXTDOC_TAB' then
+      GRAB_DATA.bincol_aa(GRAB_DATA.g_desc_tab(in_position).col_name) := 'GRAB_SS_TYPES.SQL_DECODE_TEXTDOC_TAB';
+      fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
+              ' ' || ctl_textdoc_tab(grab_data.g_desc_tab(in_position).col_name) );
+      dbms_sql.define_column(c         => grab_data.g_dyn_curs
+                            ,position  => in_position
+                            ,column    => textdoc_tab_buff);
+   else
+      raise_application_error(-20000, 'Bad Column Type Name "' || grab_data.g_desc_tab(in_position).col_type_name ||
+                                                  '" in grab_data.g_desc_tab(' || in_position || ').col_type_name');
+   end case;
+end grb_cldr_define;
+
+
+------------------------------------------------------------
+-- 
+procedure grb_cldr_value
+      (io_fh        in out nocopy fh2.sf_ptr_type
+      ,in_position  in            integer
+      ,in_lc        in            varchar2 default null) as
+begin
+   case GRAB_DATA.g_desc_tab(in_position).col_type_name
+   -- OE
+   when 'CUSTOMER_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => customer_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_customer(customer_typ_buff));
+   when 'CUST_ADDRESS_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => cust_address_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_cust_address(cust_address_typ_buff));
+   when 'INVENTORY_LIST_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => inventory_list_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_inventory_list(inventory_list_typ_buff));
+   when 'ORDER_ITEM_LIST_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => order_item_list_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_order_item_list(order_item_list_typ_buff));
+   when 'ORDER_LIST_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => order_list_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_order_list(order_list_typ_buff));
+   when 'PHONE_LIST_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => phone_list_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_phone_list(phone_list_typ_buff));
+   when 'WAREHOUSE_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => warehouse_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_warehouse(warehouse_typ_buff));
+   -- PM
+   when 'ADHEADER_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => adheader_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_adheader(adheader_typ_buff));
+   when 'TEXTDOC_TYP' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => textdoc_typ_buff);
+      fh2.script_put(io_fh, in_lc || dat_textdoc(textdoc_typ_buff));
+   when 'TEXTDOC_TAB' then
+      dbms_sql.column_value(c         => grab_data.g_dyn_curs
+                           ,position  => in_position
+                           ,value     => textdoc_tab_buff);
+      fh2.script_put(io_fh, in_lc || dat_textdoc_tab(textdoc_tab_buff));
+   else
+      raise_application_error(-20000, 'Bad Column Type Name "' || grab_data.g_desc_tab(in_position).col_type_name ||
+                                                  '" in grab_data.g_desc_tab(' || in_position || ').col_type_name');
+   end case;
+end grb_cldr_value;
+
+
+------------------------------------------------------------
+-- Create SQL to Decode PM.ADHEADER_TYP
+procedure sql_decode_adheader
+      (in_fh       in out nocopy fh2.sf_ptr_type
+      ,in_tabname  in            varchar2
+      ,in_colname  in            varchar2)
+is
+begin
+   fh2.script_put_line(in_fh, '   -- Decode Binary Data for column ' || in_colname);
+   fh2.script_put_line(in_fh, '   DECLARE');
+   fh2.script_put_line(in_fh, '      adheader_typ_buff  pm.adheader_typ;');
+   fh2.script_put_line(in_fh, '   BEGIN');
+   fh2.script_put_line(in_fh, '      for buff in (select ROWID RID, "' || in_colname || '"');
+   fh2.script_put_line(in_fh, '                    from  "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
+   fh2.script_put_line(in_fh, '                    for update of "' || in_colname || '")');
+   fh2.script_put_line(in_fh, '      loop');
+   fh2.script_put_line(in_fh, '         adheader_typ_buff := buff."' || in_colname || '";');
+   fh2.script_put_line(in_fh, '         -- This overwrites the Base64 Encoded String with the original binary data');
+   fh2.script_put_line(in_fh, '         b64_decode(adheader_typ_buff.logo);');
+   fh2.script_put_line(in_fh, '         adheader_typ_buff.logo := the_blob;');
+   fh2.script_put_line(in_fh, '         update "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
+   fh2.script_put_line(in_fh, '           set  "' || in_colname || '" = adheader_typ_buff');
+   fh2.script_put_line(in_fh, '          where rowid = buff.rid;');
+   fh2.script_put_line(in_fh, '      end loop;');
+   fh2.script_put_line(in_fh, '   END;');
+end sql_decode_adheader;
+
+
+------------------------------------------------------------
+-- Create SQL to Decode PM.ADHEADER_TYP
+procedure sql_decode_textdoc_tab
+      (in_fh       in out nocopy fh2.sf_ptr_type
+      ,in_tabname  in            varchar2
+      ,in_colname  in            varchar2)
+is
+begin
+   fh2.script_put_line(in_fh, '   -- Decode Binary Data for column ' || in_colname);
+   fh2.script_put_line(in_fh, '   DECLARE');
+   fh2.script_put_line(in_fh, '      textdoc_tab_buff  pm.textdoc_tab;');
+   fh2.script_put_line(in_fh, '   BEGIN');
+   fh2.script_put_line(in_fh, '      for buff in (select ROWID RID, "' || in_colname || '"');
+   fh2.script_put_line(in_fh, '                    from  "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
+   fh2.script_put_line(in_fh, '                    for update of "' || in_colname || '")');
+   fh2.script_put_line(in_fh, '      loop');
+   fh2.script_put_line(in_fh, '         textdoc_tab_buff := buff."' || in_colname || '";');
+   fh2.script_put_line(in_fh, '         if textdoc_tab_buff.COUNT > 0');
+   fh2.script_put_line(in_fh, '         then');
+   fh2.script_put_line(in_fh, '            for i in 1 .. textdoc_tab_buff.COUNT;');
+   fh2.script_put_line(in_fh, '               if b64_decode(textdoc_tab_buff.EXISTS(i)');
+   fh2.script_put_line(in_fh, '               then');
+   fh2.script_put_line(in_fh, '                  -- This overwrites the Base64 Encoded String with the original binary data');
+   fh2.script_put_line(in_fh, '                  b64_decode(textdoc_tab_buff(i).formatted_doc);');
+   fh2.script_put_line(in_fh, '                  textdoc_tab_buff(i).formatted_doc := the_blob;');
+   fh2.script_put_line(in_fh, '               end if;');
+   fh2.script_put_line(in_fh, '            end loop;');
+   fh2.script_put_line(in_fh, '            update "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
+   fh2.script_put_line(in_fh, '              set  "' || in_colname || '" = textdoc_tab_buff');
+   fh2.script_put_line(in_fh, '             where rowid = buff.rid;');
+   fh2.script_put_line(in_fh, '         end if;');
+   fh2.script_put_line(in_fh, '      end loop;');
+   fh2.script_put_line(in_fh, '   END;');
+end sql_decode_textdoc_tab;
+
+
+end grab_ss_types;
+/
+
+set define on

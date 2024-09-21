@@ -26,14 +26,14 @@ as
    warehouse_typ_buff            oe.warehouse_typ;
 
    function ctl_cust_address
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_cust_address
       (in_ca  in  oe.cust_address_typ)
    return varchar2;
 
    function ctl_customer
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_customer
       (in_cust  in  oe.customer_typ)
@@ -41,14 +41,14 @@ as
 
    function ctl_inventory_list
       (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      ,in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_inventory_list
       (in_il  in  oe.inventory_list_typ)
    return varchar2;
 
    function ctl_inventory
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_inventory
       (in_inv  in  oe.inventory_typ)
@@ -56,14 +56,14 @@ as
 
    function ctl_order_item_list
       (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      ,in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_order_item_list
       (in_oil  in  oe.order_item_list_typ)
    return varchar2;
 
    function ctl_order_item
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_order_item
       (in_oi  in  oe.order_item_typ)
@@ -71,35 +71,36 @@ as
 
    function ctl_order_list
       (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      ,in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_order_list
       (in_ol  in  oe.order_list_typ)
    return varchar2;
 
    function ctl_order
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_order
       (in_ord  in  oe.order_typ)
    return varchar2;
 
    function ctl_phone_list
-      (in_cname   in varchar2)
+      (in_cname   in varchar2
+      ,in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_phone_list
       (in_pl  in  oe.phone_list_typ)
    return varchar2;
 
    function ctl_product_information
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_product_information
       (in_pi  in  oe.product_information_typ)
    return varchar2;
 
    function ctl_warehouse
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_warehouse
       (in_wh  in  oe.warehouse_typ)
@@ -112,7 +113,7 @@ as
    textdoc_typ_buff   pm.textdoc_typ;
 
    function ctl_adheader
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_adheader
       (in_ah  in  pm.adheader_typ)
@@ -120,14 +121,14 @@ as
 
    function ctl_textdoc_tab
       (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      ,in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_textdoc_tab
       (in_tdtab  in  pm.textdoc_tab)
    return clob;
 
    function ctl_textdoc
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2;
    function dat_textdoc
       (in_tdtyp  in  pm.textdoc_typ)

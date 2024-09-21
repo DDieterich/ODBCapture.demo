@@ -14,7 +14,7 @@ as
 
 ------------------------------------------------------------
 function ctl_cust_address
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
@@ -41,7 +41,7 @@ end dat_cust_address;
 
 ------------------------------------------------------------
 function ctl_customer
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
@@ -79,7 +79,7 @@ end dat_customer;
 ------------------------------------------------------------
 function ctl_inventory_list
       (in_cname   in varchar2
-      ,in_spaces  in varchar2 default '   ')
+      ,in_spaces  in varchar2 default '')
    return varchar2
 is
    delim  varchar2(1);
@@ -87,8 +87,8 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim ||
-        ''' (' || in_cname || ' ' || grab_ss_types.ctl_inventory(in_spaces||'            ') || ')';
+   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+          '   (' || in_cname || ' ' || grab_ss_types.ctl_inventory(in_spaces||'   ') || ')';
 end ctl_inventory_list;
 -- 
 function dat_inventory_list
@@ -113,7 +113,7 @@ end dat_inventory_list;
 
 ------------------------------------------------------------
 function ctl_inventory
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
@@ -137,7 +137,7 @@ end dat_inventory;
 ------------------------------------------------------------
 function ctl_order_item_list
       (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      ,in_spaces  in  varchar2 default '')
    return varchar2
 is
    delim  varchar2(1);
@@ -145,8 +145,8 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim ||
-        ''' (' || in_cname || ' ' || grab_ss_types.ctl_order_item(in_spaces||'            ') || ')';
+   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+          '   (' || in_cname || ' ' || grab_ss_types.ctl_order_item(in_spaces||'   ') || ')';
 end ctl_order_item_list;
 -- 
 function dat_order_item_list
@@ -171,15 +171,15 @@ end dat_order_item_list;
 
 ------------------------------------------------------------
 function ctl_order_item
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
    return 'COLUMN OBJECT TREAT AS OE.ORDER_ITEM_TYP'                                   || CHR(10) || in_spaces ||
-          '   (ORDER_ID      FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
-          '   ,LINE_ITEM_ID  FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
-          '   ,UNIT_PRICE    FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
-          '   ,QUANTITY      FLOAT EXTERNAL TERMINATED BY '';'''                       || CHR(10) || in_spaces ||
+          '   (ORDER_ID             FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   ,LINE_ITEM_ID         FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   ,UNIT_PRICE           FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   ,QUANTITY             FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
           '   ,PRODUCT_REF   REF (CONSTANT ''OE.OC_PRODUCT_INFORMATION'', product_id)' || CHR(10) || in_spaces ||
           '   ,PRODUCT_ID    FILLER FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
           '   )';
@@ -201,8 +201,8 @@ end dat_order_item;
 
 ------------------------------------------------------------
 function ctl_order_list
-      (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      (in_cname   in  varchar2
+      ,in_spaces  in  varchar2 default '')
    return varchar2
 is
    delim  varchar2(1);
@@ -210,8 +210,8 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim ||
-        ''' (' || in_cname || ' ' || grab_ss_types.ctl_order(in_spaces||'            ') || ')';
+   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+          '   (' || in_cname || ' ' || grab_ss_types.ctl_order(in_spaces||'   ') || ')';
 end ctl_order_list;
 -- 
 function dat_order_list
@@ -236,18 +236,18 @@ end dat_order_list;
 
 ------------------------------------------------------------
 function ctl_order
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
    return 'COLUMN OBJECT TREAT AS OE.ORDER_TYP'                                         || CHR(10) || in_spaces ||
-          '   (ORDER_ID        FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
-          '   ,ORDER_MODE      CHAR(8) TERMINATED BY '';'''                             || CHR(10) || in_spaces ||
+          '   (ORDER_ID               FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,ORDER_MODE      CHAR(8)               TERMINATED BY '';'''               || CHR(10) || in_spaces ||
           '   ,CUSTOMER_REF    REF (CONSTANT ''OE.OC_CUSTOMERS'', customer_id)'         || CHR(10) || in_spaces ||
           '   ,CUSTOMER_ID     FILLER FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,ORDER_STATUS    FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
-          '   ,ORDER_TOTAL     FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
-          '   ,SALES_REP_ID    FLOAT EXTERNAL TERMINATED BY '';'''                      || CHR(10) || in_spaces ||
+          '   ,ORDER_STATUS           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,ORDER_TOTAL            FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,SALES_REP_ID           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
           '   ,ORDER_ITEM_LIST ' || grab_ss_types.ctl_order_item_list(in_spaces||'   ') || CHR(10) || in_spaces ||
           '   )';
 end ctl_order;
@@ -270,7 +270,8 @@ end dat_order;
 
 ------------------------------------------------------------
 function ctl_phone_list
-      (in_cname   in varchar2)
+      (in_cname   in  varchar2
+      ,in_spaces  in  varchar2 default '')
    return varchar2
 is
    delim  varchar2(1);
@@ -278,8 +279,8 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'VARRAY TERMINATED BY ''' || delim ||
-        ''' (' || in_cname || '  CHAR(25) TERMINATED BY '';'')';
+   return 'VARRAY TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+          '   (' || in_cname || '  CHAR(25) TERMINATED BY '';'')';
 end ctl_phone_list;
 -- 
 function dat_phone_list
@@ -305,24 +306,23 @@ end dat_phone_list;
 
 ------------------------------------------------------------
 function ctl_product_information
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                         || CHR(10) || in_spaces ||
-          '   (PRODUCT_ID           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,PRODUCT_NAME         CHAR(50)   TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,PRODUCT_DESCRIPTION  CHAR(2000) TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,CATEGORY_ID          FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,WEIGHT_CLASS         FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH TERMINATED BY '';'''       || CHR(10) || in_spaces ||
-          '   ,SUPPLIER_ID          FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,PRODUCT_STATUS       CHAR(20)   TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,LIST_PRICE           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,MIN_PRICE            FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,CATALOG_URL          CHAR(20)   TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,INVENTORY_LIST ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST'
-                                                                   ,in_spaces||'   ') || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                                                                    || CHR(10) || in_spaces ||
+          '   (PRODUCT_ID           FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,PRODUCT_NAME         CHAR(1250)             TERMINATED BY '';'' ENCLOSED BY ''"'' "UNISTR(:PRODUCT_NAME)"'        || CHR(10) || in_spaces ||
+          '   ,PRODUCT_DESCRIPTION  CHAR(10000)            TERMINATED BY '';'' ENCLOSED BY ''"'' "UNISTR(:PRODUCT_DESCRIPTION)"' || CHR(10) || in_spaces ||
+          '   ,CATEGORY_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,WEIGHT_CLASS         FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,SUPPLIER_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,PRODUCT_STATUS       CHAR(20)               TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,LIST_PRICE           FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,MIN_PRICE            FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
+          '   ,CATALOG_URL          CHAR(20)               TERMINATED BY '';'' ENCLOSED BY ''"'''                                || CHR(10) || in_spaces ||
+          '   ,INVENTORY_LIST       ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST',in_spaces||'   ')                     || CHR(10) || in_spaces ||
           '   )';
 end ctl_product_information;
 -- 
@@ -332,8 +332,8 @@ function dat_product_information
 is
 begin
    return to_char(in_pi.product_id)                         ||  ';"' ||
-                  in_pi.product_name                        || '";"' ||
-                  in_pi.product_description                 || '";'  ||
+          GRAB_DATA.unistr_encode(in_pi.product_name)       || '";"' ||
+          GRAB_DATA.unistr_encode(in_pi.product_description)|| '";'  ||
           to_char(in_pi.category_id)                        ||  ';'  ||
           to_char(in_pi.weight_class)                       ||  ';'  ||
           to_char(in_pi.warranty_period, GRAB_DATA.F_IYTOM) ||  ';'  ||
@@ -347,14 +347,14 @@ end dat_product_information;
 
 ------------------------------------------------------------
 function ctl_warehouse
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                            || CHR(10) || in_spaces ||
-          '   (WAREHOUSE_ID    FLOAT EXTERNAL TERMINATED BY '';'''             || CHR(10) || in_spaces ||
-          '   ,WAREHOUSE_NAME  CHAR(35) TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,LOCATION_ID     FLOAT EXTERNAL TERMINATED BY '';'''             || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                                  || CHR(10) || in_spaces ||
+          '   (WAREHOUSE_ID    FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,WAREHOUSE_NAME  CHAR(35)       TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,LOCATION_ID     FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
           '   )';
 end ctl_warehouse;
 -- 
@@ -370,7 +370,7 @@ end dat_warehouse;
 
 ------------------------------------------------------------
 function ctl_adheader
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
@@ -396,7 +396,7 @@ end dat_adheader;
 ------------------------------------------------------------
 function ctl_textdoc_tab
       (in_cname   in varchar2
-      ,in_spaces  in  varchar2 default '   ')
+      ,in_spaces  in  varchar2 default '')
    return varchar2
 is
    delim  varchar2(1);
@@ -404,8 +404,8 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim ||
-        ''' (' || in_cname || ' ' || grab_ss_types.ctl_textdoc(in_spaces||'            ') || ')';
+   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+          '   (' || in_cname || ' ' || grab_ss_types.ctl_textdoc(in_spaces||'   ') || ')';
 end ctl_textdoc_tab;
 -- 
 function dat_textdoc_tab
@@ -430,7 +430,7 @@ end dat_textdoc_tab;
 
 ------------------------------------------------------------
 function ctl_textdoc
-      (in_spaces  in  varchar2 default '   ')
+      (in_spaces  in  varchar2 default '')
    return varchar2
 is
 begin
@@ -461,43 +461,43 @@ begin
    -- OE
    when 'CUSTOMER_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_customer(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_customer('   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => customer_typ_buff);
    when 'CUST_ADDRESS_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_cust_address(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_cust_address('   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => cust_address_typ_buff);
    when 'INVENTORY_LIST_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_inventory_list(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_inventory_list(grab_data.g_desc_tab(in_position).col_name,'   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => inventory_list_typ_buff);
    when 'ORDER_ITEM_LIST_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_order_item_list(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_order_item_list(grab_data.g_desc_tab(in_position).col_name,'   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => order_item_list_typ_buff);
    when 'ORDER_LIST_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_order_list(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_order_list(grab_data.g_desc_tab(in_position).col_name,'   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => order_list_typ_buff);
    when 'PHONE_LIST_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_phone_list(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_phone_list(grab_data.g_desc_tab(in_position).col_name,'   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => phone_list_typ_buff);
    when 'WAREHOUSE_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_warehouse(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_warehouse('   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => warehouse_typ_buff);
@@ -505,20 +505,20 @@ begin
    when 'ADHEADER_TYP' then
       GRAB_DATA.bincol_aa(GRAB_DATA.g_desc_tab(in_position).col_name) := 'GRAB_SS_TYPES.SQL_DECODE_ADHEADER';
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_adheader(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_adheader('   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => adheader_typ_buff);
    when 'TEXTDOC_TYP' then
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_textdoc(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_textdoc('   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => textdoc_typ_buff);
    when 'TEXTDOC_TAB' then
       GRAB_DATA.bincol_aa(GRAB_DATA.g_desc_tab(in_position).col_name) := 'GRAB_SS_TYPES.SQL_DECODE_TEXTDOC_TAB';
       fh2.script_put_line(io_fh, in_lc || common_util.old_rpad(grab_data.g_desc_tab(in_position).col_name,30) ||
-              ' ' || ctl_textdoc_tab(grab_data.g_desc_tab(in_position).col_name) );
+              ' ' || ctl_textdoc_tab(grab_data.g_desc_tab(in_position).col_name,'   ') );
       dbms_sql.define_column(c         => grab_data.g_dyn_curs
                             ,position  => in_position
                             ,column    => textdoc_tab_buff);

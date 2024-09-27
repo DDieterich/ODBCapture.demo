@@ -1,2 +1,1 @@
-SP2-0310: unable to open file "../grb_linked_install_scripts/list_invalids.sql"
-Help: https://docs.oracle.com/error-help/db/sp2-0310/
+"OWNER","OBJECT_NAME","OBJECT_TYPE","STATUS"

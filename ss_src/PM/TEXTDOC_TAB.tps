@@ -15,7 +15,6 @@ set define off
 
 
 --  Grants
-grant EXECUTE on "PM"."TEXTDOC_TAB" to "ODBCAPTURE";
 
 
 --  Synonyms

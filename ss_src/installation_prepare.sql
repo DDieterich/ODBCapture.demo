@@ -42,11 +42,6 @@ declare
    end;
 begin
    dbms_output.put_line('Prerequisite BUILD_TYPEs for "ss_src"');
-   do_it('grbendp');
-   do_it('grbjava');
-   do_it('grbras');
-   do_it('grbsdo');
-   do_it('grbsrc');
 end;
 /
 

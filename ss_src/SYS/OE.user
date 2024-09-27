@@ -9,6 +9,8 @@ create user "OE"
    no authentication
    profile DEFAULT
    temporary tablespace TEMP
+   default tablespace USERS
+   quota 512M on USERS
    ;
 
 --  Current Grant of SYS Objects (but not directories)

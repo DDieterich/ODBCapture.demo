@@ -35,6 +35,11 @@ set escape ""
 @dbi.sql "OE/ORDERS_SEQ.seq" "OE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
+-- XML SCHEMA Install
+
+@dbi.sql "OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd" "OE" "&INSTALL_SYSTEM_CONNECT."
+
+----------------------------------------
 -- TYPE Install
 
 @dbi.sql "OE/ACTIONS_T.tps" "OE" "&INSTALL_SYSTEM_CONNECT."
@@ -112,7 +117,6 @@ set escape ""
 @dbi.sql "HR/JOB_HISTORY.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/LOCATIONS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/REGIONS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/CATEGORIES_TAB.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/CUSTOMERS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/INVENTORIES.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/ORDERS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."

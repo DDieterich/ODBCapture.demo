@@ -44,7 +44,7 @@ PDB_SYSTEM="SYSTEM/${SYS_PASS}@OnPrem_EE213_${PDB_NAME}"
 ########################################
 
 build_init
-for BTYPE in 'ss_src'
+for BTYPE in 'ss_src' 'custom_data_load'
 do
    clear_log_files "${BTYPE}"
    run_build  "${BTYPE}"

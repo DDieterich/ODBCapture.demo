@@ -172,20 +172,18 @@ begin
                     for update of "AD_TEXTDOCS_NTAB")
       loop
          textdoc_tab_buff := buff."AD_TEXTDOCS_NTAB";
-         if textdoc_tab_buff.COUNT > 0
-         then
-            for i in 1 .. textdoc_tab_buff.COUNT;
-               if b64_decode(textdoc_tab_buff.EXISTS(i)
-               then
-                  -- This overwrites the Base64 Encoded String with the original binary data
-                  b64_decode(textdoc_tab_buff(i).formatted_doc);
-                  textdoc_tab_buff(i).formatted_doc := the_blob;
-               end if;
-            end loop;
-            update "PM"."PRINT_MEDIA"
-              set  "AD_TEXTDOCS_NTAB" = textdoc_tab_buff
-             where rowid = buff.rid;
-         end if;
+         for i in 1 .. textdoc_tab_buff.COUNT
+         loop
+            if textdoc_tab_buff.EXISTS(i)
+            then
+               -- This overwrites the Base64 Encoded String with the original binary data
+               b64_decode(textdoc_tab_buff(i).formatted_doc);
+               textdoc_tab_buff(i).formatted_doc := the_blob;
+            end if;
+         end loop;
+         update "PM"."PRINT_MEDIA"
+           set  "AD_TEXTDOCS_NTAB" = textdoc_tab_buff
+          where rowid = buff.rid;
       end loop;
    END;
    dbms_lob.freetemporary(l_blob);

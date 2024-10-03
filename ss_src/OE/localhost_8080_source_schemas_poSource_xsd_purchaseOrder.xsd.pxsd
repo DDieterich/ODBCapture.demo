@@ -159,5 +159,6 @@ set define off
   </xs:simpleType>
 </xs:schema>
 ',TRUE,FALSE,FALSE,FALSE,TRUE,'OE'); END;
+/
 
 set define on

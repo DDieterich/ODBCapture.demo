@@ -62,7 +62,10 @@ select 'user: ' || u.username ||
  from  v$database d
  cross join user_users u;
 
+spool oc_popul.log
 @oc_popul.sql
+
+spool off
 
 ----------------------------------------
 set appinfo "Null"

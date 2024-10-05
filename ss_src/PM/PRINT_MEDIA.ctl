@@ -21,9 +21,9 @@ TRAILING NULLCOLS
    ,AD_GRAPHIC_fname               FILLER char(512)
    ,AD_GRAPHIC                     BFILE(AD_GRAPHIC_dname, AD_GRAPHIC_fname)
    ,AD_HEADER                      COLUMN OBJECT TREAT AS PM.ADHEADER_TYP
-      (HEADER_NAME     CHAR(256)     TERMINATED BY ';' ENCLOSED BY '"'
+      (HEADER_NAME     CHAR(256)     TERMINATED BY ';'
       ,CREATION_DATE   DATE 'DD-MON-YYYY HH24:MI:SS'
-      ,HEADER_TEXT     CHAR(1024)    TERMINATED BY ';' ENCLOSED BY '"'
+      ,HEADER_TEXT     CHAR(1024)    TERMINATED BY ';'
       ,LOGO            CHAR(1572864) TERMINATED BY ';'
       )
    )

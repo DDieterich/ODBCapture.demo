@@ -18,12 +18,12 @@ function ctl_cust_address
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'                         || CHR(10) || in_spaces ||
-          '   (STREET_ADDRESS  CHAR(40) TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,POSTAL_CODE     CHAR(10) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,CITY            CHAR(30) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,STATE_PROVINCE  CHAR(10) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,COUNTRY_ID      CHAR(2)  TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'       || CHR(10) || in_spaces ||
+          '   (STREET_ADDRESS  CHAR(40) TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,POSTAL_CODE     CHAR(10) TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,CITY            CHAR(30) TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,STATE_PROVINCE  CHAR(10) TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,COUNTRY_ID      CHAR(2)  TERMINATED BY '';''' || CHR(10) || in_spaces ||
           '   )';
 end ctl_cust_address;
 -- 
@@ -32,11 +32,11 @@ function dat_cust_address
    return varchar2
 is
 begin
-   return '"' || in_ca.street_address  || '";' ||
-                 in_ca.postal_code     || ';' ||
-                 in_ca.city            || ';' ||
-                 in_ca.state_province  || ';' ||
-                 in_ca.country_id      || ';' ;
+   return '"' || replace(in_ca.street_address,';',';;') || '";' ||
+                         in_ca.postal_code              || ';' ||
+                         in_ca.city                     || ';' ||
+                         in_ca.state_province           || ';' ||
+                         in_ca.country_id               || ';' ;
 end dat_cust_address;
 
 ------------------------------------------------------------
@@ -47,8 +47,8 @@ is
 begin
    return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'                                  || CHR(10) || in_spaces ||
           '   (CUSTOMER_ID        FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,CUST_FIRST_NAME    CHAR(20)       TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,CUST_LAST_NAME     CHAR(20)       TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
+          '   ,CUST_FIRST_NAME    CHAR(20)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,CUST_LAST_NAME     CHAR(20)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
           '   ,CUST_ADDRESS       ' || grab_ss_types.ctl_cust_address(in_spaces||'   ') || CHR(10) || in_spaces ||
           '   ,PHONE_NUMBERS      ' || grab_ss_types.ctl_phone_list(in_spaces||'   ')   || CHR(10) || in_spaces ||
           '   ,NLS_LANGUAGE       CHAR(3)        TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
@@ -65,8 +65,8 @@ function dat_customer
 is
 begin
    return to_char(in_cust.customer_id)                ||  ';"' ||
-                  in_cust.cust_first_name             || '";"' ||
-                  in_cust.cust_last_name              || '";'  ||
+          replace(in_cust.cust_first_name,';',';;')   || '";"' ||
+          replace(in_cust.cust_last_name,';',';;')    || '";'  ||
           grab_ss_types.dat_cust_address(in_cust.cust_address) ||
           grab_ss_types.dat_phone_list(in_cust.phone_numbers)  ||
                   in_cust.nls_language                ||  ';'  ||
@@ -310,19 +310,19 @@ function ctl_product_information
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                                                                    || CHR(10) || in_spaces ||
-          '   (PRODUCT_ID           FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,PRODUCT_NAME         CHAR(1250)             TERMINATED BY '';'' ENCLOSED BY ''"'' "UNISTR(:PRODUCT_NAME)"'        || CHR(10) || in_spaces ||
-          '   ,PRODUCT_DESCRIPTION  CHAR(10000)            TERMINATED BY '';'' ENCLOSED BY ''"'' "UNISTR(:PRODUCT_DESCRIPTION)"' || CHR(10) || in_spaces ||
-          '   ,CATEGORY_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,WEIGHT_CLASS         FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,SUPPLIER_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,PRODUCT_STATUS       CHAR(20)               TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,LIST_PRICE           FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,MIN_PRICE            FLOAT EXTERNAL         TERMINATED BY '';'''                                                  || CHR(10) || in_spaces ||
-          '   ,CATALOG_URL          CHAR(20)               TERMINATED BY '';'' ENCLOSED BY ''"'''                                || CHR(10) || in_spaces ||
-          '   ,INVENTORY_LIST       ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST',in_spaces||'   ')                     || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                                                           || CHR(10) || in_spaces ||
+          '   (PRODUCT_ID           FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,PRODUCT_NAME         CHAR(1250)             TERMINATED BY '';'' "UNISTR(to_char(:PRODUCT_NAME))"'        || CHR(10) || in_spaces ||
+          '   ,PRODUCT_DESCRIPTION  CHAR(10000)            TERMINATED BY '';'' "UNISTR(to_char(:PRODUCT_DESCRIPTION))"' || CHR(10) || in_spaces ||
+          '   ,CATEGORY_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,WEIGHT_CLASS         FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,SUPPLIER_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,PRODUCT_STATUS       CHAR(20)               TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,LIST_PRICE           FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,MIN_PRICE            FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,CATALOG_URL          CHAR(20)               TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
+          '   ,INVENTORY_LIST       ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST',in_spaces||'   ')            || CHR(10) || in_spaces ||
           '   )';
 end ctl_product_information;
 -- 
@@ -331,18 +331,18 @@ function dat_product_information
    return varchar2
 is
 begin
-   return to_char(in_pi.product_id)                         ||  ';"' ||
-          GRAB_DATA.unistr_encode(in_pi.product_name)       || '";"' ||
-          GRAB_DATA.unistr_encode(in_pi.product_description)|| '";'  ||
-          to_char(in_pi.category_id)                        ||  ';'  ||
-          to_char(in_pi.weight_class)                       ||  ';'  ||
-          to_char(in_pi.warranty_period, GRAB_DATA.F_IYTOM) ||  ';'  ||
-          to_char(in_pi.supplier_id)                        ||  ';'  ||
-                  in_pi.product_status                      ||  ';'  ||
-          to_char(in_pi.list_price)                         ||  ';'  ||
-          to_char(in_pi.min_price)                          ||  ';"' ||
-                  in_pi.catalog_url                         || '";'  ||
-          grab_ss_types.dat_inventory_list(in_pi.inventory_list) ;
+   return                      to_char(in_pi.product_id)                         ||  ';"' ||
+       GRAB_DATA.unistr_encode(replace(in_pi.product_name,';',';;'))             || '";"' ||
+       GRAB_DATA.unistr_encode(replace(in_pi.product_description,';',';;'))      || '";'  ||
+                               to_char(in_pi.category_id)                        ||  ';'  ||
+                               to_char(in_pi.weight_class)                       ||  ';'  ||
+                               to_char(in_pi.warranty_period, GRAB_DATA.F_IYTOM) ||  ';'  ||
+                               to_char(in_pi.supplier_id)                        ||  ';'  ||
+                                       in_pi.product_status                      ||  ';'  ||
+                               to_char(in_pi.list_price)                         ||  ';'  ||
+                               to_char(in_pi.min_price)                          ||  ';"' ||
+                               replace(in_pi.catalog_url,';',';;')               || '";'  ||
+      grab_ss_types.dat_inventory_list(in_pi.inventory_list)                     ;
 end dat_product_information;
 
 ------------------------------------------------------------
@@ -351,10 +351,10 @@ function ctl_warehouse
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                                  || CHR(10) || in_spaces ||
-          '   (WAREHOUSE_ID    FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,WAREHOUSE_NAME  CHAR(35)       TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,LOCATION_ID     FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                || CHR(10) || in_spaces ||
+          '   (WAREHOUSE_ID    FLOAT EXTERNAL TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,WAREHOUSE_NAME  CHAR(35)       TERMINATED BY '';''' || CHR(10) || in_spaces ||
+          '   ,LOCATION_ID     FLOAT EXTERNAL TERMINATED BY '';''' || CHR(10) || in_spaces ||
           '   )';
 end ctl_warehouse;
 -- 
@@ -363,9 +363,9 @@ function dat_warehouse
    return varchar2
 is
 begin
-   return to_char(in_wh.warehouse_id)   ||  ';"' ||
-                  in_wh.warehouse_name  || '";'  ||
-          to_char(in_wh.location_id)    || '";'  ;
+   return to_char(in_wh.warehouse_id)            ||  ';"' ||
+          replace(in_wh.warehouse_name,';',';;') || '";'  ||
+          to_char(in_wh.location_id)             || '";'  ;
 end dat_warehouse;
 
 ------------------------------------------------------------
@@ -374,11 +374,11 @@ function ctl_adheader
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS PM.ADHEADER_TYP'                                  || CHR(10) || in_spaces ||
-          '   (HEADER_NAME     CHAR(256)     TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,CREATION_DATE   DATE '''||GRAB_DATA.F_DATE||''''                     || CHR(10) || in_spaces ||
-          '   ,HEADER_TEXT     CHAR(1024)    TERMINATED BY '';'' ENCLOSED BY ''"''' || CHR(10) || in_spaces ||
-          '   ,LOGO            CHAR(1572864) TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS PM.ADHEADER_TYP'                  || CHR(10) || in_spaces ||
+          '   (HEADER_NAME     CHAR(256)     TERMINATED BY '';'''   || CHR(10) || in_spaces ||
+          '   ,CREATION_DATE   DATE ''' || GRAB_DATA.F_DATE || '''' || CHR(10) || in_spaces ||
+          '   ,HEADER_TEXT     CHAR(1024)    TERMINATED BY '';'''   || CHR(10) || in_spaces ||
+          '   ,LOGO            CHAR(1572864) TERMINATED BY '';'''   || CHR(10) || in_spaces ||
           '   )';
 end ctl_adheader;
 -- 
@@ -387,9 +387,9 @@ function dat_adheader
    return clob
 is
 begin
-   return '"' || to_char(in_ah.header_name)                     ||  '";' ||
+   return '"' || replace(in_ah.header_name,';',';;')            || '";'  ||
                  to_char(in_ah.creation_date, GRAB_DATA.F_DATE) ||  ';"' ||
-                 to_char(in_ah.header_text)                     || '";'  ||
+                 replace(in_ah.header_text,';',';;')            || '";'  ||
                  COMMON_UTIL.b64_encode(in_ah.logo, TRUE)       ||  ';'  ;
 end dat_adheader;
 

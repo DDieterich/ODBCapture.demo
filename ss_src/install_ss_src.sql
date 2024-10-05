@@ -35,12 +35,12 @@ set escape ""
 @dbi.sql "OE/ORDERS_SEQ.seq" "OE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
--- XML SCHEMA Install
+-- XML_SCHEMA Install
 
 @dbi.sql "OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd" "OE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
--- TYPE Install
+-- TYPE_SPEC Install
 
 @dbi.sql "OE/ACTIONS_T.tps" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/ACTION_T.tps" "OE" "&INSTALL_SYSTEM_CONNECT."
@@ -128,7 +128,7 @@ set escape ""
 @dbi.sql "PM/PRINT_MEDIA.cldr" "PM" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
--- INDEX Install
+-- TABLE_INDEX Install
 
 @dbi.sql "HR/DEPARTMENTS.tidx" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/EMPLOYEES.tidx" "HR" "&INSTALL_SYSTEM_CONNECT."
@@ -161,7 +161,7 @@ set escape ""
 @dbi.sql "OE/TORONTO_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
--- TYPE BODY Install
+-- TYPE_BODY Install
 
 @dbi.sql "OE/CATALOG_TYP.tpb" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/COMPOSITE_CATEGORY_TYP.tpb" "OE" "&INSTALL_SYSTEM_CONNECT."
@@ -184,14 +184,14 @@ set escape ""
 @dbi.sql "PM/PRINT_MEDIA.tfk" "PM" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
--- TRIGGER Install
+-- TABLE_TRIGGER Install
 
 @dbi.sql "HR/EMPLOYEES.ttrg" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/ORDER_ITEMS.ttrg" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/PURCHASEORDER.ttrg" "OE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
--- TRIGGER Install
+-- VIEW_TRIGGER Install
 
 @dbi.sql "OE/OC_ORDERS.vtrg" "OE" "&INSTALL_SYSTEM_CONNECT."
 

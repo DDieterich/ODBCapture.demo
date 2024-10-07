@@ -9,12 +9,14 @@ TRAILING NULLCOLS
    ,AD_COMPOSITE                   CHAR(1572864)
    ,AD_SOURCETEXT                  CHAR(1048576)
    ,AD_FINALTEXT                   CHAR(1048576)
+      -- NCLOB data must be decoded with UNISTR after loading
    ,AD_FLTEXTN                     CHAR(5242880)
    ,AD_TEXTDOCS_NTAB               NESTED TABLE TERMINATED BY ''
       (AD_TEXTDOCS_NTAB COLUMN OBJECT TREAT AS PM.TESTDOC_TYP
          (DOCUMENT_TYPE   CHAR(32)      TERMINATED BY ''
          ,FORMATTED_DOC   CHAR(1572864) TERMINATED BY ''
          ))
+   ,ZAD_TEXTDOCS_NTAB FILLER CHAR(1) -- Skip Trailing Comma
       -- BLOB data must be decoded from Base64 after loading
    ,AD_PHOTO                       CHAR(1572864)
    ,AD_GRAPHIC_dname               FILLER char(512)

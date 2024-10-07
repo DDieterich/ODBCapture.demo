@@ -13,8 +13,10 @@ TRAILING NULLCOLS
       ,STATE_PROVINCE  CHAR(10) TERMINATED BY ''
       ,COUNTRY_ID      CHAR(2)  TERMINATED BY ''
       )
+   ,ZCUST_ADDRESS FILLER CHAR(1) -- Skip Trailing Comma
    ,PHONE_NUMBERS                  VARRAY TERMINATED BY ''
       (PHONE_NUMBERS  CHAR(25) TERMINATED BY '')
+   ,ZPHONE_NUMBERS FILLER CHAR(1) -- Skip Trailing Comma
    ,NLS_LANGUAGE                   CHAR(3)
    ,NLS_TERRITORY                  CHAR(30)
    ,CREDIT_LIMIT                   FLOAT EXTERNAL
@@ -33,6 +35,7 @@ TRAILING NULLCOLS
       ,SDO_ORDINATES VARRAY TERMINATED BY ''
          (SDO_ORDINATES  FLOAT EXTERNAL TERMINATED BY '')
       )
+   ,ZCUST_GEO_LOCATION FILLER CHAR(1) -- Skip Trailing Comma
    ,DATE_OF_BIRTH                  DATE 'DD-MON-YYYY HH24:MI:SS'
    ,MARITAL_STATUS                 CHAR(20)
    ,GENDER                         CHAR(1)

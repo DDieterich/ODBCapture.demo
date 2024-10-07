@@ -108,6 +108,42 @@ set escape ""
 @dbi.sql "PM/PRINT_MEDIA.tbl" "PM" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
+prompt Compile All started
+begin
+   DBMS_UTILITY.compile_schema(schema      => 'HR'
+                              ,compile_all => FALSE);
+end;
+/
+begin
+   DBMS_UTILITY.compile_schema(schema      => 'OE'
+                              ,compile_all => FALSE);
+end;
+/
+begin
+   DBMS_UTILITY.compile_schema(schema      => 'PM'
+                              ,compile_all => FALSE);
+end;
+/
+prompt Compile All is done.
+----------------------------------------
+-- VIEW Install
+
+@dbi.sql "HR/EMP_DETAILS_VIEW.vw" "HR" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/ACCOUNT_MANAGERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/BOMBAY_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/CUSTOMERS_VIEW.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/OC_CORPORATE_CUSTOMERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/OC_CUSTOMERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/OC_INVENTORIES.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/OC_ORDERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/OC_PRODUCT_INFORMATION.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/ORDERS_VIEW.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/PRODUCTS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/PRODUCT_PRICES.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/SYDNEY_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+@dbi.sql "OE/TORONTO_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
+
+----------------------------------------
 -- DATA_LOAD Install
 
 @dbi.sql "HR/COUNTRIES.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
@@ -141,24 +177,6 @@ set escape ""
 @dbi.sql "OE/PRODUCT_DESCRIPTIONS.tidx" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/PRODUCT_INFORMATION.tidx" "OE" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/WAREHOUSES.tidx" "OE" "&INSTALL_SYSTEM_CONNECT."
-
-----------------------------------------
--- VIEW Install
-
-@dbi.sql "HR/EMP_DETAILS_VIEW.vw" "HR" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/ACCOUNT_MANAGERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/BOMBAY_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/CUSTOMERS_VIEW.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/OC_CORPORATE_CUSTOMERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/OC_CUSTOMERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/OC_INVENTORIES.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/OC_ORDERS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/OC_PRODUCT_INFORMATION.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/ORDERS_VIEW.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/PRODUCTS.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/PRODUCT_PRICES.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/SYDNEY_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "OE/TORONTO_INVENTORY.vw" "OE" "&INSTALL_SYSTEM_CONNECT."
 
 ----------------------------------------
 -- TYPE_BODY Install

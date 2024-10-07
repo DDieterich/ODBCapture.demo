@@ -63,6 +63,9 @@ select 'user: ' || u.username ||
  cross join user_users u;
 
 spool oc_popul.log
+
+alter type OE.CATALOG_TYP compile;
+
 @oc_popul.sql
 
 spool off

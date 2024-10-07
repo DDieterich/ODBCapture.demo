@@ -10,7 +10,7 @@
   <Parking>Street</Parking>
   <VClearance>10 ft</VClearance>
 </Warehouse>
-","Southlake, Texas",1400,2001;8307;-103.00195;36.500374;;
+","Southlake, Texas",1400,20018307-103.0019536.500374
 2,"<?xml version=""1.0""?>
 <Warehouse>
   <Building>Rented</Building>
@@ -22,7 +22,7 @@
   <Parking>Lot</Parking>
   <VClearance>12 ft</VClearance>
 </Warehouse>
-","San Francisco",1500,2001;8307;-124.21014;41.998016;;
+","San Francisco",1500,20018307-124.2101441.998016
 3,"<?xml version=""1.0""?>
 <Warehouse>
   <Building>Rented</Building>
@@ -33,7 +33,7 @@
   <Parking>Street</Parking>
   <VClearance>11.5 ft</VClearance>
 </Warehouse>
-","New Jersey",1600,2001;8307;-74.695305;41.35733;;
+","New Jersey",1600,20018307-74.69530541.35733
 4,"<?xml version=""1.0""?>
 <Warehouse>
   <Building>Owned</Building>
@@ -45,9 +45,9 @@
   <Parking>Lot</Parking>
   <VClearance>15 ft</VClearance>
 </Warehouse>
-","Seattle, Washington",1700,2001;8307;-123.61526;46.257458;;
-5,,"Toronto",1800,;;;;;
-6,,"Sydney",2200,;;;;;
-7,,"Mexico City",3200,;;;;;
-8,,"Beijing",2000,;;;;;
-9,,"Bombay",2100,;;;;;
+","Seattle, Washington",1700,20018307-123.6152646.257458
+5,,"Toronto",1800,
+6,,"Sydney",2200,
+7,,"Mexico City",3200,
+8,,"Beijing",2000,
+9,,"Bombay",2100,

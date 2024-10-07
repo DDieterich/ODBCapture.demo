@@ -11,6 +11,9 @@ set define off
   CREATE OR REPLACE EDITIONABLE PACKAGE BODY "ODBCAPTURE"."GRAB_SS_TYPES" 
 as
 
+-- Termination Character for Object Fields
+OTC               varchar2(1)   := grab_data.grb_cldr_obj_delim;
+TERMINATED_BY_OTC varchar2(100) := 'TERMINATED BY ''' || OTC || '''';
 
 ------------------------------------------------------------
 function ctl_cust_address
@@ -18,12 +21,12 @@ function ctl_cust_address
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'       || CHR(10) || in_spaces ||
-          '   (STREET_ADDRESS  CHAR(40) TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,POSTAL_CODE     CHAR(10) TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,CITY            CHAR(30) TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,STATE_PROVINCE  CHAR(10) TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,COUNTRY_ID      CHAR(2)  TERMINATED BY '';''' || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'         || CHR(10) || in_spaces ||
+          '   (STREET_ADDRESS  CHAR(40) ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,POSTAL_CODE     CHAR(10) ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,CITY            CHAR(30) ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,STATE_PROVINCE  CHAR(10) ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,COUNTRY_ID      CHAR(2)  ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_cust_address;
 -- 
@@ -32,11 +35,11 @@ function dat_cust_address
    return varchar2
 is
 begin
-   return '"' || replace(in_ca.street_address,';',';;') || '";' ||
-                         in_ca.postal_code              || ';' ||
-                         in_ca.city                     || ';' ||
-                         in_ca.state_province           || ';' ||
-                         in_ca.country_id               || ';' ;
+   return in_ca.street_address || OTC ||
+          in_ca.postal_code    || OTC ||
+          in_ca.city           || OTC ||
+          in_ca.state_province || OTC ||
+          in_ca.country_id     || OTC ;
 end dat_cust_address;
 
 ------------------------------------------------------------
@@ -46,15 +49,15 @@ function ctl_customer
 is
 begin
    return 'COLUMN OBJECT TREAT AS OE.CUST_ADDRESS_TYP'                                  || CHR(10) || in_spaces ||
-          '   (CUSTOMER_ID        FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,CUST_FIRST_NAME    CHAR(20)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,CUST_LAST_NAME     CHAR(20)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   (CUSTOMER_ID        FLOAT EXTERNAL ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
+          '   ,CUST_FIRST_NAME    CHAR(20)       ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
+          '   ,CUST_LAST_NAME     CHAR(20)       ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
           '   ,CUST_ADDRESS       ' || grab_ss_types.ctl_cust_address(in_spaces||'   ') || CHR(10) || in_spaces ||
           '   ,PHONE_NUMBERS      ' || grab_ss_types.ctl_phone_list(in_spaces||'   ')   || CHR(10) || in_spaces ||
-          '   ,NLS_LANGUAGE       CHAR(3)        TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,NLS_TERRITORY      CHAR(40)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,CREDIT_LIMIT       FLOAT EXTERNAL TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
-          '   ,CUST_EMAIL         CHAR(40)       TERMINATED BY '';'''                   || CHR(10) || in_spaces ||
+          '   ,NLS_LANGUAGE       CHAR(3)        ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
+          '   ,NLS_TERRITORY      CHAR(40)       ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
+          '   ,CREDIT_LIMIT       FLOAT EXTERNAL ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
+          '   ,CUST_EMAIL         CHAR(40)       ' || TERMINATED_BY_OTC                 || CHR(10) || in_spaces ||
           '   ,CUST_ORDERS        ' || grab_ss_types.ctl_order_list(in_spaces||'   ')   || CHR(10) || in_spaces ||
           '   )';
 end ctl_customer;
@@ -64,15 +67,15 @@ function dat_customer
    return varchar2
 is
 begin
-   return to_char(in_cust.customer_id)                ||  ';"' ||
-          replace(in_cust.cust_first_name,';',';;')   || '";"' ||
-          replace(in_cust.cust_last_name,';',';;')    || '";'  ||
-          grab_ss_types.dat_cust_address(in_cust.cust_address) ||
-          grab_ss_types.dat_phone_list(in_cust.phone_numbers)  ||
-                  in_cust.nls_language                ||  ';'  ||
-                  in_cust.nls_territory               ||  ';'  ||
-          to_char(in_cust.credit_limit)               ||  ';'  ||
-                  in_cust.cust_email                  ||  ';'  ||
+   return to_char(in_cust.customer_id)                 || OTC ||
+                  in_cust.cust_first_name              || OTC ||
+                  in_cust.cust_last_name               || OTC ||
+          grab_ss_types.dat_cust_address(in_cust.cust_address)||
+          grab_ss_types.dat_phone_list(in_cust.phone_numbers) ||
+                  in_cust.nls_language                 || OTC ||
+                  in_cust.nls_territory                || OTC ||
+          to_char(in_cust.credit_limit)                || OTC ||
+                  in_cust.cust_email                   || OTC ||
           grab_ss_types.dat_order_list(in_cust.cust_orders);
 end dat_customer;
 
@@ -118,9 +121,9 @@ function ctl_inventory
 is
 begin
    return 'COLUMN OBJECT TREAT AS OE.INVENTORY_TYP'                                 || CHR(10) || in_spaces ||
-          '   (PRODUCT_ID        FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   (PRODUCT_ID        FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
           '   ,WAREHOUSE         ' || grab_ss_types.ctl_warehouse(in_spaces||'   ') || CHR(10) || in_spaces ||
-          '   ,QUANTITY_ON_HAND  FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   ,QUANTITY_ON_HAND  FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
           '   )';
 end ctl_inventory;
 -- 
@@ -129,9 +132,9 @@ function dat_inventory
    return varchar2
 is
 begin
-   return to_char(in_inv.product_id)             || ';' ||
+   return to_char(in_inv.product_id)             || OTC ||
           grab_ss_types.dat_warehouse(in_inv.warehouse) ||
-          to_char(in_inv.quantity_on_hand)       || ';' ;
+          to_char(in_inv.quantity_on_hand)       || OTC ;
 end dat_inventory;
 
 ------------------------------------------------------------
@@ -176,12 +179,12 @@ function ctl_order_item
 is
 begin
    return 'COLUMN OBJECT TREAT AS OE.ORDER_ITEM_TYP'                                   || CHR(10) || in_spaces ||
-          '   (ORDER_ID             FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
-          '   ,LINE_ITEM_ID         FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
-          '   ,UNIT_PRICE           FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
-          '   ,QUANTITY             FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   (ORDER_ID             FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
+          '   ,LINE_ITEM_ID         FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
+          '   ,UNIT_PRICE           FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
+          '   ,QUANTITY             FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
           '   ,PRODUCT_REF   REF (CONSTANT ''OE.OC_PRODUCT_INFORMATION'', product_id)' || CHR(10) || in_spaces ||
-          '   ,PRODUCT_ID    FILLER FLOAT EXTERNAL TERMINATED BY '';'''                || CHR(10) || in_spaces ||
+          '   ,PRODUCT_ID    FILLER FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
           '   )';
 end ctl_order_item;
 -- 
@@ -192,11 +195,11 @@ is
    prod_info  oe.product_information_typ;
 begin
    select DEREF(in_oi.product_ref) into prod_info from dual;
-   return to_char(in_oi.order_id)       || ';' ||
-          to_char(in_oi.line_item_id)   || ';' ||
-          to_char(in_oi.unit_price)     || ';' ||
-          to_char(in_oi.quantity)       || ';' ||
-          to_char(prod_info.product_id) || ';' ;
+   return to_char(in_oi.order_id)       || OTC ||
+          to_char(in_oi.line_item_id)   || OTC ||
+          to_char(in_oi.unit_price)     || OTC ||
+          to_char(in_oi.quantity)       || OTC ||
+          to_char(prod_info.product_id) || OTC ;
 end dat_order_item;
 
 ------------------------------------------------------------
@@ -241,13 +244,13 @@ function ctl_order
 is
 begin
    return 'COLUMN OBJECT TREAT AS OE.ORDER_TYP'                                         || CHR(10) || in_spaces ||
-          '   (ORDER_ID               FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,ORDER_MODE      CHAR(8)               TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   (ORDER_ID               FLOAT EXTERNAL ' || TERMINATED_BY_OTC             || CHR(10) || in_spaces ||
+          '   ,ORDER_MODE      CHAR(8)               ' || TERMINATED_BY_OTC             || CHR(10) || in_spaces ||
           '   ,CUSTOMER_REF    REF (CONSTANT ''OE.OC_CUSTOMERS'', customer_id)'         || CHR(10) || in_spaces ||
-          '   ,CUSTOMER_ID     FILLER FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,ORDER_STATUS           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,ORDER_TOTAL            FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
-          '   ,SALES_REP_ID           FLOAT EXTERNAL TERMINATED BY '';'''               || CHR(10) || in_spaces ||
+          '   ,CUSTOMER_ID     FILLER FLOAT EXTERNAL ' || TERMINATED_BY_OTC             || CHR(10) || in_spaces ||
+          '   ,ORDER_STATUS           FLOAT EXTERNAL ' || TERMINATED_BY_OTC             || CHR(10) || in_spaces ||
+          '   ,ORDER_TOTAL            FLOAT EXTERNAL ' || TERMINATED_BY_OTC             || CHR(10) || in_spaces ||
+          '   ,SALES_REP_ID           FLOAT EXTERNAL ' || TERMINATED_BY_OTC             || CHR(10) || in_spaces ||
           '   ,ORDER_ITEM_LIST ' || grab_ss_types.ctl_order_item_list(in_spaces||'   ') || CHR(10) || in_spaces ||
           '   )';
 end ctl_order;
@@ -259,12 +262,12 @@ is
    cust  oe.customer_typ;
 begin
    select DEREF(in_ord.customer_ref) into cust from dual;
-   return to_char(in_ord.order_id)      || ';' ||
-          to_char(in_ord.order_mode)    || ';' ||
-          to_char(cust.customer_id)     || ';' ||
-          to_char(in_ord.order_status)  || ';' ||
-          to_char(in_ord.order_total)   || ';' ||
-          to_char(in_ord.sales_rep_id)  || ';' ||
+   return to_char(in_ord.order_id)      || OTC ||
+          to_char(in_ord.order_mode)    || OTC ||
+          to_char(cust.customer_id)     || OTC ||
+          to_char(in_ord.order_status)  || OTC ||
+          to_char(in_ord.order_total)   || OTC ||
+          to_char(in_ord.sales_rep_id)  || OTC ||
           grab_ss_types.dat_order_item_list(in_ord.order_item_list) ;
 end dat_order;
 
@@ -280,7 +283,7 @@ begin
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
    return 'VARRAY TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
-          '   (' || in_cname || '  CHAR(25) TERMINATED BY '';'')';
+          '   (' || in_cname || '  CHAR(25) ' || TERMINATED_BY_OTC || ')';
 end ctl_phone_list;
 -- 
 function dat_phone_list
@@ -297,7 +300,7 @@ begin
       ret_txt := in_pl(1);
       for i in 2 .. in_pl.COUNT
       loop
-         ret_txt := ret_txt || ';' || in_pl(i);
+         ret_txt := ret_txt || OTC || in_pl(i);
       end loop;
    end if;
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
@@ -310,19 +313,19 @@ function ctl_product_information
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                                                           || CHR(10) || in_spaces ||
-          '   (PRODUCT_ID           FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,PRODUCT_NAME         CHAR(1250)             TERMINATED BY '';'' "UNISTR(to_char(:PRODUCT_NAME))"'        || CHR(10) || in_spaces ||
-          '   ,PRODUCT_DESCRIPTION  CHAR(10000)            TERMINATED BY '';'' "UNISTR(to_char(:PRODUCT_DESCRIPTION))"' || CHR(10) || in_spaces ||
-          '   ,CATEGORY_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,WEIGHT_CLASS         FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,SUPPLIER_ID          FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,PRODUCT_STATUS       CHAR(20)               TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,LIST_PRICE           FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,MIN_PRICE            FLOAT EXTERNAL         TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,CATALOG_URL          CHAR(20)               TERMINATED BY '';'''                                         || CHR(10) || in_spaces ||
-          '   ,INVENTORY_LIST       ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST',in_spaces||'   ')            || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.PRODUCT_INFORMATION_TYP'                                                                   || CHR(10) || in_spaces ||
+          '   (PRODUCT_ID           FLOAT EXTERNAL         ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,PRODUCT_NAME         CHAR(1250)             ' || TERMINATED_BY_OTC || ' "UNISTR(to_char(:PRODUCT_NAME))"'        || CHR(10) || in_spaces ||
+          '   ,PRODUCT_DESCRIPTION  CHAR(10000)            ' || TERMINATED_BY_OTC || ' "UNISTR(to_char(:PRODUCT_DESCRIPTION))"' || CHR(10) || in_spaces ||
+          '   ,CATEGORY_ID          FLOAT EXTERNAL         ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,WEIGHT_CLASS         FLOAT EXTERNAL         ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,WARRANTY_PERIOD      INTERVAL YEAR TO MONTH ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,SUPPLIER_ID          FLOAT EXTERNAL         ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,PRODUCT_STATUS       CHAR(20)               ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,LIST_PRICE           FLOAT EXTERNAL         ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,MIN_PRICE            FLOAT EXTERNAL         ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,CATALOG_URL          CHAR(20)               ' || TERMINATED_BY_OTC                                               || CHR(10) || in_spaces ||
+          '   ,INVENTORY_LIST       ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST',in_spaces||'   ')                    || CHR(10) || in_spaces ||
           '   )';
 end ctl_product_information;
 -- 
@@ -331,17 +334,17 @@ function dat_product_information
    return varchar2
 is
 begin
-   return                      to_char(in_pi.product_id)                         ||  ';"' ||
-       GRAB_DATA.unistr_encode(replace(in_pi.product_name,';',';;'))             || '";"' ||
-       GRAB_DATA.unistr_encode(replace(in_pi.product_description,';',';;'))      || '";'  ||
-                               to_char(in_pi.category_id)                        ||  ';'  ||
-                               to_char(in_pi.weight_class)                       ||  ';'  ||
-                               to_char(in_pi.warranty_period, GRAB_DATA.F_IYTOM) ||  ';'  ||
-                               to_char(in_pi.supplier_id)                        ||  ';'  ||
-                                       in_pi.product_status                      ||  ';'  ||
-                               to_char(in_pi.list_price)                         ||  ';'  ||
-                               to_char(in_pi.min_price)                          ||  ';"' ||
-                               replace(in_pi.catalog_url,';',';;')               || '";'  ||
+   return                      to_char(in_pi.product_id)                         || OTC ||
+               GRAB_DATA.unistr_encode(in_pi.product_name)                       || OTC ||
+               GRAB_DATA.unistr_encode(in_pi.product_description)                || OTC ||
+                               to_char(in_pi.category_id)                        || OTC ||
+                               to_char(in_pi.weight_class)                       || OTC ||
+                               to_char(in_pi.warranty_period, GRAB_DATA.F_IYTOM) || OTC ||
+                               to_char(in_pi.supplier_id)                        || OTC ||
+                                       in_pi.product_status                      || OTC ||
+                               to_char(in_pi.list_price)                         || OTC ||
+                               to_char(in_pi.min_price)                          || OTC ||
+                                      in_pi.catalog_url                          || OTC ||
       grab_ss_types.dat_inventory_list(in_pi.inventory_list)                     ;
 end dat_product_information;
 
@@ -351,10 +354,10 @@ function ctl_warehouse
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                || CHR(10) || in_spaces ||
-          '   (WAREHOUSE_ID    FLOAT EXTERNAL TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,WAREHOUSE_NAME  CHAR(35)       TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,LOCATION_ID     FLOAT EXTERNAL TERMINATED BY '';''' || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS OE.WAREHOUSE_TYP'                  || CHR(10) || in_spaces ||
+          '   (WAREHOUSE_ID    FLOAT EXTERNAL ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,WAREHOUSE_NAME  CHAR(35)       ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,LOCATION_ID     FLOAT EXTERNAL ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_warehouse;
 -- 
@@ -363,9 +366,9 @@ function dat_warehouse
    return varchar2
 is
 begin
-   return to_char(in_wh.warehouse_id)            ||  ';"' ||
-          replace(in_wh.warehouse_name,';',';;') || '";'  ||
-          to_char(in_wh.location_id)             || '";'  ;
+   return to_char(in_wh.warehouse_id)  || OTC ||
+                  in_wh.warehouse_name || OTC ||
+          to_char(in_wh.location_id)   || OTC ;
 end dat_warehouse;
 
 ------------------------------------------------------------
@@ -374,11 +377,11 @@ function ctl_adheader
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS PM.ADHEADER_TYP'                  || CHR(10) || in_spaces ||
-          '   (HEADER_NAME     CHAR(256)     TERMINATED BY '';'''   || CHR(10) || in_spaces ||
-          '   ,CREATION_DATE   DATE ''' || GRAB_DATA.F_DATE || '''' || CHR(10) || in_spaces ||
-          '   ,HEADER_TEXT     CHAR(1024)    TERMINATED BY '';'''   || CHR(10) || in_spaces ||
-          '   ,LOGO            CHAR(1572864) TERMINATED BY '';'''   || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS PM.ADHEADER_TYP'                                        || CHR(10) || in_spaces ||
+          '   (HEADER_NAME     CHAR(256) '                           || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,CREATION_DATE   DATE ''' || GRAB_DATA.F_DATE || ''' ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,HEADER_TEXT     CHAR(1024) '                          || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,LOGO            CHAR(1572864) '                       || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_adheader;
 -- 
@@ -387,10 +390,10 @@ function dat_adheader
    return clob
 is
 begin
-   return '"' || replace(in_ah.header_name,';',';;')            || '";'  ||
-                 to_char(in_ah.creation_date, GRAB_DATA.F_DATE) ||  ';"' ||
-                 replace(in_ah.header_text,';',';;')            || '";'  ||
-                 COMMON_UTIL.b64_encode(in_ah.logo, TRUE)       ||  ';'  ;
+   return     in_ah.header_name                      || OTC ||
+      to_char(in_ah.creation_date, GRAB_DATA.F_DATE) || OTC ||
+              in_ah.header_text                      || OTC ||
+      COMMON_UTIL.b64_encode(in_ah.logo, TRUE)       || OTC ;
 end dat_adheader;
 
 ------------------------------------------------------------
@@ -434,9 +437,9 @@ function ctl_textdoc
    return varchar2
 is
 begin
-   return 'COLUMN OBJECT TREAT AS PM.TESTDOC_TYP'                 || CHR(10) || in_spaces ||
-          '   (DOCUMENT_TYPE   CHAR(32)      TERMINATED BY '';''' || CHR(10) || in_spaces ||
-          '   ,FORMATTED_DOC   CHAR(1572864) TERMINATED BY '';''' || CHR(10) || in_spaces ||
+   return 'COLUMN OBJECT TREAT AS PM.TESTDOC_TYP'                   || CHR(10) || in_spaces ||
+          '   (DOCUMENT_TYPE   CHAR(32)      ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
+          '   ,FORMATTED_DOC   CHAR(1572864) ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_textdoc;
 -- 
@@ -445,8 +448,8 @@ function dat_textdoc
    return clob
 is
 begin
-   return in_tdtyp.document_typ                                || ';' ||
-          COMMON_UTIL.b64_encode(in_tdtyp.formatted_doc, TRUE) || ';' ;
+   return in_tdtyp.document_typ                                || OTC ||
+          COMMON_UTIL.b64_encode(in_tdtyp.formatted_doc, TRUE) || OTC ;
 end dat_textdoc;
 
 

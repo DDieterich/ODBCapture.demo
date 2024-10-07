@@ -193,3 +193,19 @@ end;
 
 commit;
 
+begin
+   -- Decode UNISTR Data for column AD_FLTEXTN
+   for buff in (select ROWID RID, "AD_FLTEXTN"
+                 from  "PM"."PRINT_MEDIA"
+                 for update of "AD_FLTEXTN")
+   loop
+      -- This overwrites the UNISTR Encoded String with the original UNICODE data
+      update "PM"."PRINT_MEDIA"
+        set  "AD_FLTEXTN" = UNISTR(to_char("AD_FLTEXTN"))
+       where rowid = buff.rid;
+   end loop;
+end;
+/
+
+commit;
+

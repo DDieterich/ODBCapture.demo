@@ -1,0 +1,110 @@
+
+SQL*Loader: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:30 2024
+Version 23.4.0.24.05
+
+Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   PM/PRINT_MEDIA.ctl
+Data File:      PM/PRINT_MEDIA.csv
+  Bad File:     PM/PRINT_MEDIA.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 2
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:   Last non-white character = 0X19(character '')
+                Preserving continuation characters as data
+Path used:      Conventional
+Silent options: FEEDBACK
+Table "PM"."PRINT_MEDIA", loaded when TABLE_TYP = 0X50(character 'P')
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+TABLE_TYP                               1     1   ,  O(") CHARACTER            
+  (FILLER FIELD)
+PRODUCT_ID                           NEXT     *   ,  O(") CHARACTER            
+AD_ID                                NEXT     *   ,  O(") CHARACTER            
+AD_COMPOSITE                         NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 1572864
+AD_SOURCETEXT                        NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 1048576
+AD_FINALTEXT                         NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 1048576
+AD_FLTEXTN                           NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 5242880
+AD_TEXTDOCS_NTAB                  DERIVED                 SID
+    Arguments are:
+        AD_TEXTDOCS_NTAB_SID
+AD_TEXTDOCS_NTAB_SID                 NEXT    32   ,  O(") CHARACTER            
+  (FILLER FIELD)
+AD_PHOTO                             NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 1572864
+AD_GRAPHIC_DNAME                     NEXT   512   ,  O(") CHARACTER            
+  (FILLER FIELD)
+AD_GRAPHIC_FNAME                     NEXT   512   ,  O(") CHARACTER            
+  (FILLER FIELD)
+AD_GRAPHIC                        DERIVED                 BFILE
+    Arguments are:
+        AD_GRAPHIC_DNAME
+        AD_GRAPHIC_FNAME
+AD_HEADER                         DERIVED     *           COLUMN OBJECT        
+
+*** Fields in AD_HEADER treated as type PM.ADHEADER_TYP
+HEADER_NAME                          NEXT   256 O(X17) O(") CHARACTER            
+CREATION_DATE                        NEXT     * O(X17) O(") DATE DD-MON-YYYY HH24:MI:SS
+HEADER_TEXT                          NEXT  1024 O(X17) O(") CHARACTER            
+LOGO                                 NEXT ***** O(X17) O(") CHARACTER            
+    Maximum field length is 1572864
+*** End of fields in AD_HEADER
+
+
+Table "PM"."TEXTDOCS_NESTEDTAB", loaded when TABLE_TYP = 0X54(character 'T')
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+SID for table rows are derived from:
+        TEXTDOC_SID
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+TABLE_TYP                               1     1   ,  O(") CHARACTER            
+  (FILLER FIELD)
+TEXTDOC_SID                          NEXT    32   ,  O(") CHARACTER            
+  (FILLER FIELD)
+DOCUMENT_TYP                         NEXT    32   ,  O(") CHARACTER            
+FORMATTED_DOC                        NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 1572864
+
+value used for ROWS parameter changed from 250 to 1
+
+Table "PM"."PRINT_MEDIA":
+  4 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  12 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Table "PM"."TEXTDOCS_NESTEDTAB":
+  12 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  4 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:               13634712 bytes(1 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          2
+Total logical records read:            16
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Oct 11 01:30:30 2024
+Run ended on Fri Oct 11 01:30:33 2024
+
+Elapsed time was:     00:00:03.01
+CPU time was:         00:00:00.09

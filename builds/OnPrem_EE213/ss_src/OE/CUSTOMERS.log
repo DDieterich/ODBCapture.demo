@@ -1,0 +1,109 @@
+
+SQL*Loader: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:11 2024
+Version 23.4.0.24.05
+
+Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   OE/CUSTOMERS.ctl
+Data File:      OE/CUSTOMERS.csv
+  Bad File:     OE/CUSTOMERS.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK
+Table "OE"."CUSTOMERS", loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+CUSTOMER_ID                         FIRST     *   ,  O(") CHARACTER            
+CUST_FIRST_NAME                      NEXT    20   ,  O(") CHARACTER            
+CUST_LAST_NAME                       NEXT    20   ,  O(") CHARACTER            
+CUST_ADDRESS                      DERIVED     *           COLUMN OBJECT        
+
+*** Fields in CUST_ADDRESS treated as type OE.CUST_ADDRESS_TYP
+STREET_ADDRESS                       NEXT    40 O(X17) O(") CHARACTER            
+POSTAL_CODE                          NEXT    10 O(X17) O(") CHARACTER            
+CITY                                 NEXT    30 O(X17) O(") CHARACTER            
+STATE_PROVINCE                       NEXT    10 O(X17) O(") CHARACTER            
+COUNTRY_ID                           NEXT     2 O(X17) O(") CHARACTER            
+*** End of fields in CUST_ADDRESS
+
+ZCUST_ADDRESS                        NEXT     1   ,  O(") CHARACTER            
+  (FILLER FIELD)
+PHONE_NUMBERS                     DERIVED     *  WHT      VARRAY               
+
+*** Fields in PHONE_NUMBERS
+PHONE_NUMBERS                       FIRST    25 O(X17) O(") CHARACTER            
+*** End of fields in PHONE_NUMBERS
+
+ZPHONE_NUMBERS                       NEXT     1   ,  O(") CHARACTER            
+  (FILLER FIELD)
+NLS_LANGUAGE                         NEXT     3   ,  O(") CHARACTER            
+NLS_TERRITORY                        NEXT    30   ,  O(") CHARACTER            
+CREDIT_LIMIT                         NEXT     *   ,  O(") CHARACTER            
+CUST_EMAIL                           NEXT    40   ,  O(") CHARACTER            
+ACCOUNT_MGR_ID                       NEXT     *   ,  O(") CHARACTER            
+CUST_GEO_LOCATION                 DERIVED     *           COLUMN OBJECT        
+
+*** Fields in CUST_GEO_LOCATION treated as type MDSYS.SDO_GEOMETRY
+SDO_GTYPE                            NEXT     * O(X17) O(") CHARACTER            
+SDO_SRID                             NEXT     * O(X17) O(") CHARACTER            
+SDO_POINT                         DERIVED     *           COLUMN OBJECT        
+
+*** Fields in CUST_GEO_LOCATION.SDO_POINT treated as type MDSYS.SDO_POINT_TYPE
+X                                    NEXT     * O(X17) O(") CHARACTER            
+Y                                    NEXT     * O(X17) O(") CHARACTER            
+Z                                    NEXT     * O(X17) O(") CHARACTER            
+*** End of fields in CUST_GEO_LOCATION.SDO_POINT
+
+SDO_ELEM_INFO                     DERIVED     *  WHT      VARRAY               
+
+*** Fields in CUST_GEO_LOCATION.SDO_ELEM_INFO
+SDO_ELEM_INFO                       FIRST     * O(X17) O(") CHARACTER            
+*** End of fields in CUST_GEO_LOCATION.SDO_ELEM_INFO
+
+SDO_ORDINATES                     DERIVED     *  WHT      VARRAY               
+
+*** Fields in CUST_GEO_LOCATION.SDO_ORDINATES
+SDO_ORDINATES                       FIRST     * O(X17) O(") CHARACTER            
+*** End of fields in CUST_GEO_LOCATION.SDO_ORDINATES
+
+*** End of fields in CUST_GEO_LOCATION
+
+ZCUST_GEO_LOCATION                   NEXT     1   ,  O(") CHARACTER            
+  (FILLER FIELD)
+DATE_OF_BIRTH                        NEXT     *   ,  O(") DATE DD-MON-YYYY HH24:MI:SS
+MARITAL_STATUS                       NEXT    20   ,  O(") CHARACTER            
+GENDER                               NEXT     1   ,  O(") CHARACTER            
+INCOME_LEVEL                         NEXT    20   ,  O(") CHARACTER            
+
+
+Table "OE"."CUSTOMERS":
+  319 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 791000 bytes(250 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:           319
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Oct 11 01:30:11 2024
+Run ended on Fri Oct 11 01:30:12 2024
+
+Elapsed time was:     00:00:00.70
+CPU time was:         00:00:00.09

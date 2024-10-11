@@ -1,0 +1,59 @@
+
+SQL*Loader: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:01 2024
+Version 23.4.0.24.05
+
+Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   HR/EMPLOYEES.ctl
+Data File:      HR/EMPLOYEES.csv
+  Bad File:     HR/EMPLOYEES.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK
+Table "HR"."EMPLOYEES", loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+EMPLOYEE_ID                         FIRST     *   ,  O(") CHARACTER            
+FIRST_NAME                           NEXT    20   ,  O(") CHARACTER            
+LAST_NAME                            NEXT    25   ,  O(") CHARACTER            
+EMAIL                                NEXT    25   ,  O(") CHARACTER            
+PHONE_NUMBER                         NEXT    20   ,  O(") CHARACTER            
+HIRE_DATE                            NEXT     *   ,  O(") DATE DD-MON-YYYY HH24:MI:SS
+JOB_ID                               NEXT    10   ,  O(") CHARACTER            
+SALARY                               NEXT     *   ,  O(") CHARACTER            
+COMMISSION_PCT                       NEXT     *   ,  O(") CHARACTER            
+MANAGER_ID                           NEXT     *   ,  O(") CHARACTER            
+DEPARTMENT_ID                        NEXT     *   ,  O(") CHARACTER            
+
+
+Table "HR"."EMPLOYEES":
+  107 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 415000 bytes(250 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:           107
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Oct 11 01:30:01 2024
+Run ended on Fri Oct 11 01:30:01 2024
+
+Elapsed time was:     00:00:00.28
+CPU time was:         00:00:00.04

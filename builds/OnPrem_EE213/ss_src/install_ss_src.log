@@ -1,282 +1,3 @@
-build.sh
-Running from /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
-
-Setup Variables
-
-build_initialize.sql
-
-SQL*Plus: Release 23.0.0.0.0 - Production on Fri Oct 11 01:28:31 2024
-Version 23.4.0.24.05
-
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
-
-
-Connected to:
-Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: CDB$ROOT, tstmp: 11-OCT-24 06.28.31.492571 AM +00:00
-
-Elapsed: 00:00:00.01
-
-Show PDBs
-
-    CON_ID CON_NAME			  OPEN MODE  RESTRICTED
----------- ------------------------------ ---------- ----------
-	 2 PDB$SEED			  READ ONLY  NO
-	 3 TESTPDB			  READ WRITE NO
-	 4 E213PDB1			  READ WRITE NO
-	 6 DEVPDB			  READ WRITE NO
-
-Create PDB
-ALTER PLUGGABLE DATABASE "DEVPDB" CLOSE IMMEDIATE INSTANCES=ALL;
-DROP PLUGGABLE DATABASE "DEVPDB" INCLUDING DATAFILES;
-create pluggable database "DEVPDB"
-  admin user "PDB_ADMIN" identified by "PDB_ADMIN_Password"
-  default tablespace users datafile '/opt/oracle/oradata/EE213CDB/DEVPDB/users01.dbf' size 5M autoextend on
-  FILE_NAME_CONVERT = ('pdbseed', 'DEVPDB')
-  STORAGE UNLIMITED TEMPFILE REUSE;
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:23.62
-
-Open PDB
-
-Pluggable database altered.
-
-Elapsed: 00:00:08.64
-
-Show Services
-
-NAME
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-EE213CDB
-e213pdb1
-SYS$BACKGROUND
-SYS$USERS
-testpdb
-devpdb
-EE213CDBXDB
-
-7 rows selected.
-
-Elapsed: 00:00:00.02
-
-Update DEFAULT Profile
-
-Session altered.
-
-Elapsed: 00:00:00.03
-
-Profile altered.
-
-Elapsed: 00:00:00.16
-
-Session altered.
-
-Elapsed: 00:00:00.00
-Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-Clear old ss_src logs
-
-Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_src
-
-/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql ss_src
-
-SQL*Plus: Release 23.0.0.0.0 - Production on Fri Oct 11 01:29:04 2024
-Version 23.4.0.24.05
-
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
-
-
-Connected to:
-Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.29.04.251718 AM +00:00
-
-Elapsed: 00:00:00.01
-Setup Abort on Error
-
-CONNECTION
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.29.04.320107 AM +00:00
-
-Identify this Module in V$SESSION
-
-**************************
-*  Run SYS Installation  *
-**************************
-
-=== DBI Started: SYS/HR.user
-
-User created.
-
-=== DBI Completed at 2024-10-11T06:29:04 for a duration of .18 seconds (started at 2024-10-11T06:29:04)
-=== DBI Started: SYS/OE.user
-
-User created.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:04 for a duration of .08 seconds (started at 2024-10-11T06:29:04)
-=== DBI Started: SYS/PM.user
-
-User created.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:04 for a duration of .07 seconds (started at 2024-10-11T06:29:04)
-Setup Continue on Error
-
-*****************************
-*  Run SYSTEM Installation  *
-*****************************
-
-Connected.
-
-CONNECTION
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.29.04.920048 AM +00:00
-
-1 row selected.
-
-=== DBI Started: SYSTEM/MEDIA_DIR.dir
-
-Directory created.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .07 seconds (started at 2024-10-11T06:29:04)
-=== DBI Started: SYSTEM/SS_OE_XMLDIR.dir
-
-Directory created.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .06 seconds (started at 2024-10-11T06:29:05)
-=== DBI Started: SYSTEM/SUBDIR.dir
-
-Directory created.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .07 seconds (started at 2024-10-11T06:29:05)
-=== DBI Started: SYSTEM/HR_usr.grnt
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .23 seconds (started at 2024-10-11T06:29:05)
-=== DBI Started: SYSTEM/OE_usr.grnt
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .16 seconds (started at 2024-10-11T06:29:05)
-=== DBI Started: SYSTEM/PM_usr.grnt
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-
-Grant succeeded.
-
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .05 seconds (started at 2024-10-11T06:29:05)
-
-*************************
-*  Install Application	*
-*************************
-
 === DBI Started: ./installation_prepare.sql
 
 Create Temp Publicly Updateable Table
@@ -1153,7 +874,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/COUNTRIES.ctl
-  25 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1167,7 +887,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/DEPARTMENTS.ctl
-  27 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1181,7 +900,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/EMPLOYEES.ctl
-  107 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1195,7 +913,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/JOBS.ctl
-  19 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1209,7 +926,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/JOB_HISTORY.ctl
-  10 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1223,7 +939,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/LOCATIONS.ctl
-  23 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1237,7 +952,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=HR/REGIONS.ctl
-  5 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1251,7 +965,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/CUSTOMERS.ctl
-  319 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1265,7 +978,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/INVENTORIES.ctl
-  1112 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1279,7 +991,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/ORDERS.ctl
-  105 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1293,7 +1004,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/ORDER_ITEMS.ctl
-  665 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1307,7 +1017,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/PRODUCT_DESCRIPTIONS.ctl
-  8640 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1321,7 +1030,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/PRODUCT_INFORMATION.ctl
-  288 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1335,7 +1043,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/PROMOTIONS.ctl
-  2 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1349,7 +1056,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=OE/WAREHOUSES.ctl
-  9 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1363,8 +1069,6 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=PM/PRINT_MEDIA.ctl
-  4 Rows successfully loaded.
-  12 Rows successfully loaded.
 
 
 PL/SQL procedure successfully completed.
@@ -1708,304 +1412,3 @@ PL/SQL procedure successfully completed.
 
 
 Switch Spooling Off
-=== DBI Completed at 2024-10-11T06:30:43 for a duration of 6.76 seconds (started at 2024-10-11T06:30:36)
-not spooling currently
-
-"ss_src" Installation is Done.
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
----------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.30.43.814921 AM +00:00
-
-1 row selected.
-
-Elapsed: 00:00:00.01
-
-User altered.
-
-
-User altered.
-
-
-User altered.
-
-Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
-
-Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_src
-
-report_status.sql ss_src
-
-SQL*Plus: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:44 2024
-Version 23.4.0.24.05
-
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
-
-Last Successful login time: Fri Oct 11 2024 01:30:43 -05:00
-
-Connected to:
-Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-
-Load Installation Files
-
-Confirm/Create odbcapture_installation_logs Table
-
-PL/SQL procedure successfully completed.
-
-
-sqlldr_control=./odbcapture_installation_logs.ctl
-  19 Rows successfully loaded.
-
-old   2:    if '&_RC.' != '0' then
-new   2:    if '0' != '0' then
-old   3:       raise_application_error(-20000, 'Control file "odbcapture_installation_logs.ctl" returned error: &_RC.');
-new   3:       raise_application_error(-20000, 'Control file "odbcapture_installation_logs.ctl" returned error: 0');
-
-PL/SQL procedure successfully completed.
-
-
-Reporting Summary of Build Type Log Errors
-Processing file HR/COUNTRIES.log (2024-10-11 06:30:45)
-Processing file HR/DEPARTMENTS.log (2024-10-11 06:30:45)
-Processing file HR/EMPLOYEES.log (2024-10-11 06:30:45)
-Processing file HR/JOBS.log (2024-10-11 06:30:45)
-Processing file HR/JOB_HISTORY.log (2024-10-11 06:30:45)
-Processing file HR/LOCATIONS.log (2024-10-11 06:30:45)
-Processing file HR/REGIONS.log (2024-10-11 06:30:45)
-Processing file OE/CUSTOMERS.log (2024-10-11 06:30:45)
-Processing file OE/INVENTORIES.log (2024-10-11 06:30:45)
-Processing file OE/ORDERS.log (2024-10-11 06:30:45)
-Processing file OE/ORDER_ITEMS.log (2024-10-11 06:30:45)
-Processing file OE/PRODUCT_DESCRIPTIONS.log (2024-10-11 06:30:45)
-Processing file OE/PRODUCT_INFORMATION.log (2024-10-11 06:30:45)
-Processing file OE/PROMOTIONS.log (2024-10-11 06:30:45)
-Processing file OE/WAREHOUSES.log (2024-10-11 06:30:45)
-Processing file PM/PRINT_MEDIA.log (2024-10-11 06:30:45)
-Processing file install_ss_src.log (2024-10-11 06:30:45)
-Processing file install_sys.log (2024-10-11 06:30:45)
-Processing file install_system.log (2024-10-11 06:30:45)
-
-PL/SQL procedure successfully completed.
-
-
-Reporting Invalid Objects
-
-Reporting JUnit XML Database Build Status
-
-Reorting JUnit XML Installation Log
-SQL> Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
-
-Move Log Files to Build Folder
-Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_src
-renamed 'db_build_junit_report.xml' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/db_build_junit_report.xml'
-renamed 'install_ss_src.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/install_ss_src.log'
-renamed 'install_sys.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/install_sys.log'
-renamed 'install_system.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/install_system.log'
-renamed 'log_files_junit_report.xml' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/log_files_junit_report.xml'
-renamed 'odbcapture_installation_logs.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/odbcapture_installation_logs.log'
-renamed 'HR/COUNTRIES.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/COUNTRIES.log'
-renamed 'HR/DEPARTMENTS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/DEPARTMENTS.log'
-renamed 'HR/EMPLOYEES.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/EMPLOYEES.log'
-renamed 'HR/JOB_HISTORY.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/JOB_HISTORY.log'
-renamed 'HR/JOBS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/JOBS.log'
-renamed 'HR/LOCATIONS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/LOCATIONS.log'
-renamed 'HR/REGIONS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/HR/REGIONS.log'
-renamed 'OE/CUSTOMERS.bad' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/CUSTOMERS.bad'
-renamed 'OE/CUSTOMERS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/CUSTOMERS.log'
-renamed 'OE/INVENTORIES.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/INVENTORIES.log'
-renamed 'OE/ORDER_ITEMS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/ORDER_ITEMS.log'
-renamed 'OE/ORDERS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/ORDERS.log'
-renamed 'OE/PRODUCT_DESCRIPTIONS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/PRODUCT_DESCRIPTIONS.log'
-renamed 'OE/PRODUCT_INFORMATION.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/PRODUCT_INFORMATION.log'
-renamed 'OE/PROMOTIONS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/PROMOTIONS.log'
-renamed 'OE/WAREHOUSES.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/OE/WAREHOUSES.log'
-renamed 'PM/PRINT_MEDIA.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/ss_src/PM/PRINT_MEDIA.log'
-
-Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
-
-Clear old custom_data_load logs
-
-Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../custom_data_load
-
-/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql custom_data_load
-
-SQL*Plus: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:47 2024
-Version 23.4.0.24.05
-
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
-
-
-Connected to:
-Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.30.48.156151 AM +00:00
-
-Elapsed: 00:00:00.01
-Identify this Module in V$SESSION
-
-*****************************
-*  Run SYSTEM Installation  *
-*****************************
-
-Connected.
-
-CONNECTION
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.30.48.276325 AM +00:00
-
-
-Type altered.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-1 row created.
-
-
-Commit complete.
-
-
-"SS Custom Data Load" Installation is Done.
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
----------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 11-OCT-24 06.30.48.853264 AM +00:00
-
-Elapsed: 00:00:00.00
-O/S Message: No such file or directory
-Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
-
-Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../custom_data_load
-
-report_status.sql custom_data_load
-
-SQL*Plus: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:48 2024
-Version 23.4.0.24.05
-
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
-
-Last Successful login time: Fri Oct 11 2024 01:30:48 -05:00
-
-Connected to:
-Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-Report Status not Implemented.
-Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
-Version 21.3.0.0.0
-
-Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
-
-Move Log Files to Build Folder
-Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../custom_data_load
-renamed 'oc_popul.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/custom_data_load/oc_popul.log'
-
-Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213

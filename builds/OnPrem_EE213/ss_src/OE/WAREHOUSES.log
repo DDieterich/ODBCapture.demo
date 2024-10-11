@@ -1,0 +1,81 @@
+
+SQL*Loader: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:27 2024
+Version 23.4.0.24.05
+
+Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   OE/WAREHOUSES.ctl
+Data File:      OE/WAREHOUSES.csv
+  Bad File:     OE/WAREHOUSES.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK
+Table "OE"."WAREHOUSES", loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+WAREHOUSE_ID                        FIRST     *   ,  O(") CHARACTER            
+WAREHOUSE_SPEC                       NEXT *****   ,  O(") CHARACTER            
+    Maximum field length is 1048576
+WAREHOUSE_NAME                       NEXT    35   ,  O(") CHARACTER            
+LOCATION_ID                          NEXT     *   ,  O(") CHARACTER            
+WH_GEO_LOCATION                   DERIVED     *           COLUMN OBJECT        
+
+*** Fields in WH_GEO_LOCATION treated as type MDSYS.SDO_GEOMETRY
+SDO_GTYPE                            NEXT     * O(X17) O(") CHARACTER            
+SDO_SRID                             NEXT     * O(X17) O(") CHARACTER            
+SDO_POINT                         DERIVED     *           COLUMN OBJECT        
+
+*** Fields in WH_GEO_LOCATION.SDO_POINT treated as type MDSYS.SDO_POINT_TYPE
+X                                    NEXT     * O(X17) O(") CHARACTER            
+Y                                    NEXT     * O(X17) O(") CHARACTER            
+Z                                    NEXT     * O(X17) O(") CHARACTER            
+*** End of fields in WH_GEO_LOCATION.SDO_POINT
+
+SDO_ELEM_INFO                     DERIVED     *  WHT      VARRAY               
+
+*** Fields in WH_GEO_LOCATION.SDO_ELEM_INFO
+SDO_ELEM_INFO                       FIRST     * O(X17) O(") CHARACTER            
+*** End of fields in WH_GEO_LOCATION.SDO_ELEM_INFO
+
+SDO_ORDINATES                     DERIVED     *  WHT      VARRAY               
+
+*** Fields in WH_GEO_LOCATION.SDO_ORDINATES
+SDO_ORDINATES                       FIRST     * O(X17) O(") CHARACTER            
+*** End of fields in WH_GEO_LOCATION.SDO_ORDINATES
+
+*** End of fields in WH_GEO_LOCATION
+
+
+value used for ROWS parameter changed from 250 to 1
+
+Table "OE"."WAREHOUSES":
+  9 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                1050964 bytes(1 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:             9
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Oct 11 01:30:27 2024
+Run ended on Fri Oct 11 01:30:29 2024
+
+Elapsed time was:     00:00:01.50
+CPU time was:         00:00:00.04

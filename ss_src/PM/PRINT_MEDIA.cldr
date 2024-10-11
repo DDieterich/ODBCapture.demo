@@ -131,6 +131,7 @@ begin
    cnt := 0;
    for buff in (select ROWID RID, "AD_COMPOSITE"
                  from  "PM"."PRINT_MEDIA"
+                 where "AD_COMPOSITE" is not null
                  for update of "AD_COMPOSITE")
    loop
       b64_decode(buff."AD_COMPOSITE");
@@ -218,6 +219,7 @@ begin
    -- Decode UNISTR Data for column AD_FLTEXTN
    for buff in (select ROWID RID, "AD_FLTEXTN"
                  from  "PM"."PRINT_MEDIA"
+                 where "AD_FLTEXTN" is not null
                  for update of "AD_FLTEXTN")
    loop
       -- This overwrites the UNISTR Encoded String with the original UNICODE data

@@ -85,13 +85,15 @@ function ctl_inventory_list
       ,in_spaces  in varchar2 default '')
    return varchar2
 is
-   delim  varchar2(1);
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
 begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   ret_txt := 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+              '   (' || in_cname || ' ' || grab_ss_types.ctl_inventory(in_spaces||'   ') || ')';
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
-          '   (' || in_cname || ' ' || grab_ss_types.ctl_inventory(in_spaces||'   ') || ')';
+   return ret_txt;
 end ctl_inventory_list;
 -- 
 function dat_inventory_list
@@ -143,13 +145,15 @@ function ctl_order_item_list
       ,in_spaces  in  varchar2 default '')
    return varchar2
 is
-   delim  varchar2(1);
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
 begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   ret_txt := 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+              '   (' || in_cname || ' ' || grab_ss_types.ctl_order_item(in_spaces||'   ') || ')';
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
-          '   (' || in_cname || ' ' || grab_ss_types.ctl_order_item(in_spaces||'   ') || ')';
+   return ret_txt;
 end ctl_order_item_list;
 -- 
 function dat_order_item_list
@@ -208,13 +212,15 @@ function ctl_order_list
       ,in_spaces  in  varchar2 default '')
    return varchar2
 is
-   delim  varchar2(1);
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
 begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   ret_txt := 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+              '   (' || in_cname || ' ' || grab_ss_types.ctl_order(in_spaces||'   ') || ')';
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
-          '   (' || in_cname || ' ' || grab_ss_types.ctl_order(in_spaces||'   ') || ')';
+   return ret_txt;
 end ctl_order_list;
 -- 
 function dat_order_list
@@ -277,13 +283,15 @@ function ctl_phone_list
       ,in_spaces  in  varchar2 default '')
    return varchar2
 is
-   delim  varchar2(1);
+   delim     varchar2(1);
+   ret_txt   varchar2(32767);
 begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
    delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
+   ret_txt := 'VARRAY TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
+              '   (' || in_cname || '  CHAR(25) ' || TERMINATED_BY_OTC || ')';
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'VARRAY TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
-          '   (' || in_cname || '  CHAR(25) ' || TERMINATED_BY_OTC || ')';
+   return ret_txt;
 end ctl_phone_list;
 -- 
 function dat_phone_list
@@ -382,7 +390,9 @@ begin
           '   ,CREATION_DATE   DATE ''' || GRAB_DATA.F_DATE || ''' ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   ,HEADER_TEXT     CHAR(1024) '                          || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   ,LOGO            CHAR(1572864) '                       || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
-          '   )';
+          '   )'                                                                          || CHR(10) || in_spaces ||
+          '-- Add this after "LOAD DATA" because LOGO includes Base64 multi-line data.'   || CHR(10) || in_spaces ||
+          'CONTINUEIF LAST = ''' || CHR(25) || '''   -- CHR(25)';
 end ctl_adheader;
 -- 
 function dat_adheader
@@ -393,7 +403,10 @@ begin
    return     in_ah.header_name                      || OTC ||
       to_char(in_ah.creation_date, GRAB_DATA.F_DATE) || OTC ||
               in_ah.header_text                      || OTC ||
-      COMMON_UTIL.b64_encode(in_ah.logo, TRUE)       || OTC ;
+       replace
+          (COMMON_UTIL.b64_encode
+             (in_ah.logo, TRUE)
+          ,CHR(10), CHR(25)||CHR(10) )               || OTC ;
 end dat_adheader;
 
 ------------------------------------------------------------
@@ -402,33 +415,51 @@ function ctl_textdoc_tab
       ,in_spaces  in  varchar2 default '')
    return varchar2
 is
-   delim  varchar2(1);
 begin
-   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
-   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
-   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return 'NESTED TABLE TERMINATED BY ''' || delim || '''' || CHR(10) || in_spaces ||
-          '   (' || in_cname || ' ' || grab_ss_types.ctl_textdoc(in_spaces||'   ') || ')';
+   return 'SID (' || in_cname || '_SID)'          || CHR(10) || in_spaces ||
+          in_cname || '_SID FILLER CHAR(32)'      || CHR(10) || in_spaces ||
+          '-- SQL*Loader-434: Can not load LOB/XML in a nested table along with the parent table.'
+                                                  || CHR(10) || in_spaces ||
+          '-- https://docs.oracle.com/en/database/oracle/oracle-database/21/errmg/SQL-Loader-00100.html#GUID-538A8B3F-0E15-4092-82FD-DEB70FDF9A6D'
+                                                  || CHR(10) ||
+          '-- '                                   || CHR(10) ||
+          'APPEND WHEN TABLE_TYP = ''P'''         || CHR(10) || in_spaces ||
+          '(TABLE_TYP FILLER POSITION(1) CHAR(1)' || CHR(10) ||
+          ''                                         || CHR(10) ||
+          'INTO TABLE "PM"."TEXTDOCS_NESTEDTAB"'     || CHR(10) ||
+          'APPEND WHEN TABLE_TYP = ''T'''            || CHR(10) ||
+          'SID (TEXTDOC_SID)'                        || CHR(10) ||
+          'FIELDS CSV WITH EMBEDDED'                 || CHR(10) ||
+          'TRAILING NULLCOLS'                        || CHR(10) ||
+          '   (TABLE_TYP FILLER POSITION(1) CHAR(1)' || CHR(10) ||
+          '   ,TEXTDOC_SID FILLER CHAR(32)'          || CHR(10) ||
+          '   ,DOCUMENT_TYP           CHAR(32)'      || CHR(10) ||
+          '   ,FORMATTED_DOC          CHAR(1572864)' || CHR(10) ||
+          '   )'                                     || CHR(10) ||
+          ''                                         || CHR(10) ;
 end ctl_textdoc_tab;
 -- 
 function dat_textdoc_tab
       (in_tdtab  in  pm.textdoc_tab)
    return clob
 is
-   delim     varchar2(1);
+   l_guid    raw(16) := sys_guid();
    ret_txt   clob;
 begin
-   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl + 1;
-   delim                        := grab_data.grb_cldr_delim_nt(grab_data.grb_cldr_array_lvl);
    if in_tdtab.EXISTS(1)
    then
+      ret_txt := '"' || rawtohex(l_guid) || '"';
       for i in 1 .. in_tdtab.COUNT
       loop
-         ret_txt := ret_txt || GRAB_SS_TYPES.dat_textdoc(in_tdtab(i));
+         ret_txt := ret_txt || '"T","TEXTDOC_SID","DOCUMENT_TYP","FORMATTED_DOC"'  || CHR(10) ||
+                               '"'  || 'T'                                  || '"' ||
+                               ',"' || rawtohex(l_guid)                     || '"' ||
+                               ',"' || in_tdtab(i).document_typ             || '"' ||
+                               ',"' || COMMON_UTIL.b64_encode
+                                          (in_tdtab(i).formatted_doc, TRUE) || '"' ;
       end loop;
    end if;
-   grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
-   return ret_txt || delim;
+   return ret_txt;
 end dat_textdoc_tab;
 
 ------------------------------------------------------------
@@ -608,11 +639,13 @@ procedure sql_decode_adheader
 is
 begin
    fh2.script_put_line(in_fh, '   -- Decode Binary Data for column ' || in_colname);
+   fh2.script_put_line(in_fh, '   cnt := 0;');
    fh2.script_put_line(in_fh, '   DECLARE');
    fh2.script_put_line(in_fh, '      adheader_typ_buff  pm.adheader_typ;');
    fh2.script_put_line(in_fh, '   BEGIN');
    fh2.script_put_line(in_fh, '      for buff in (select ROWID RID, "' || in_colname || '"');
    fh2.script_put_line(in_fh, '                    from  "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
+   fh2.script_put_line(in_fh, '                    where "' || in_colname || '" is not null');
    fh2.script_put_line(in_fh, '                    for update of "' || in_colname || '")');
    fh2.script_put_line(in_fh, '      loop');
    fh2.script_put_line(in_fh, '         adheader_typ_buff := buff."' || in_colname || '";');
@@ -622,8 +655,10 @@ begin
    fh2.script_put_line(in_fh, '         update "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
    fh2.script_put_line(in_fh, '           set  "' || in_colname || '" = adheader_typ_buff');
    fh2.script_put_line(in_fh, '          where rowid = buff.rid;');
+   fh2.script_put_line(in_fh, '         cnt := cnt + 1;');
    fh2.script_put_line(in_fh, '      end loop;');
    fh2.script_put_line(in_fh, '   END;');
+   fh2.script_put_line(in_fh, '   dbms_output.put_line(cnt || '' "' || in_colname || '" updates.'');');
 end sql_decode_adheader;
 
 
@@ -636,6 +671,7 @@ procedure sql_decode_textdoc_tab
 is
 begin
    fh2.script_put_line(in_fh, '   -- Decode Binary Data for column ' || in_colname);
+   fh2.script_put_line(in_fh, '   cnt := 0;');
    fh2.script_put_line(in_fh, '   DECLARE');
    fh2.script_put_line(in_fh, '      textdoc_tab_buff  pm.textdoc_tab;');
    fh2.script_put_line(in_fh, '   BEGIN');
@@ -651,6 +687,7 @@ begin
    fh2.script_put_line(in_fh, '               -- This overwrites the Base64 Encoded String with the original binary data');
    fh2.script_put_line(in_fh, '               b64_decode(textdoc_tab_buff(i).formatted_doc);');
    fh2.script_put_line(in_fh, '               textdoc_tab_buff(i).formatted_doc := the_blob;');
+   fh2.script_put_line(in_fh, '               cnt := cnt + 1;');
    fh2.script_put_line(in_fh, '            end if;');
    fh2.script_put_line(in_fh, '         end loop;');
    fh2.script_put_line(in_fh, '         update "' || GRAB_SCRIPTS.g_schema_name || '"."' || in_tabname || '"');
@@ -658,6 +695,7 @@ begin
    fh2.script_put_line(in_fh, '          where rowid = buff.rid;');
    fh2.script_put_line(in_fh, '      end loop;');
    fh2.script_put_line(in_fh, '   END;');
+   fh2.script_put_line(in_fh, '   dbms_output.put_line(cnt || '' "' || in_colname || '" updates.'');');
 end sql_decode_textdoc_tab;
 
 

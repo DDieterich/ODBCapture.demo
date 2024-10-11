@@ -70,6 +70,7 @@ end;
 declare
    l_blob          blob;
    the_blob        blob;
+   cnt             pls_integer;
    procedure b64_decode
          (in_blob  in BLOB)
    is
@@ -122,9 +123,12 @@ declare
       end loop;
    end b64_decode;
 begin
+   dbms_output.put_line('Decode Binary Data');
+   dbms_output.put_line('------------------');
    dbms_lob.createtemporary(l_blob, true);
    dbms_lob.createtemporary(the_blob, true);
    -- Decode Binary Data for column AD_COMPOSITE
+   cnt := 0;
    for buff in (select ROWID RID, "AD_COMPOSITE"
                  from  "PM"."PRINT_MEDIA"
                  for update of "AD_COMPOSITE")
@@ -134,13 +138,17 @@ begin
       update "PM"."PRINT_MEDIA"
         set  "AD_COMPOSITE" = the_blob
        where rowid = buff.rid;
+      cnt := cnt + 1;
    end loop;
+   dbms_output.put_line(cnt || ' "AD_COMPOSITE" updates.');
    -- Decode Binary Data for column AD_HEADER
+   cnt := 0;
    DECLARE
       adheader_typ_buff  pm.adheader_typ;
    BEGIN
       for buff in (select ROWID RID, "AD_HEADER"
                     from  "PM"."PRINT_MEDIA"
+                    where "AD_HEADER" is not null
                     for update of "AD_HEADER")
       loop
          adheader_typ_buff := buff."AD_HEADER";
@@ -150,11 +158,15 @@ begin
          update "PM"."PRINT_MEDIA"
            set  "AD_HEADER" = adheader_typ_buff
           where rowid = buff.rid;
+         cnt := cnt + 1;
       end loop;
    END;
+   dbms_output.put_line(cnt || ' "AD_HEADER" updates.');
    -- Decode Binary Data for column AD_PHOTO
+   cnt := 0;
    for buff in (select ROWID RID, "AD_PHOTO"
                  from  "PM"."PRINT_MEDIA"
+                 where "AD_PHOTO" is not null
                  for update of "AD_PHOTO")
    loop
       b64_decode(buff."AD_PHOTO");
@@ -162,8 +174,11 @@ begin
       update "PM"."PRINT_MEDIA"
         set  "AD_PHOTO" = the_blob
        where rowid = buff.rid;
+      cnt := cnt + 1;
    end loop;
+   dbms_output.put_line(cnt || ' "AD_PHOTO" updates.');
    -- Decode Binary Data for column AD_TEXTDOCS_NTAB
+   cnt := 0;
    DECLARE
       textdoc_tab_buff  pm.textdoc_tab;
    BEGIN
@@ -179,6 +194,7 @@ begin
                -- This overwrites the Base64 Encoded String with the original binary data
                b64_decode(textdoc_tab_buff(i).formatted_doc);
                textdoc_tab_buff(i).formatted_doc := the_blob;
+               cnt := cnt + 1;
             end if;
          end loop;
          update "PM"."PRINT_MEDIA"
@@ -186,6 +202,7 @@ begin
           where rowid = buff.rid;
       end loop;
    END;
+   dbms_output.put_line(cnt || ' "AD_TEXTDOCS_NTAB" updates.');
    dbms_lob.freetemporary(l_blob);
    dbms_lob.freetemporary(the_blob);
 end;
@@ -193,7 +210,11 @@ end;
 
 commit;
 
+declare
+   cnt    pls_integer := 0;
 begin
+   dbms_output.put_line('Decode UNISTR Data');
+   dbms_output.put_line('------------------');
    -- Decode UNISTR Data for column AD_FLTEXTN
    for buff in (select ROWID RID, "AD_FLTEXTN"
                  from  "PM"."PRINT_MEDIA"
@@ -203,7 +224,9 @@ begin
       update "PM"."PRINT_MEDIA"
         set  "AD_FLTEXTN" = UNISTR(to_char("AD_FLTEXTN"))
        where rowid = buff.rid;
+      cnt := cnt + 1;
    end loop;
+   dbms_output.put_line(cnt || ' "AD_FLTEXTN" updates.');
 end;
 /
 

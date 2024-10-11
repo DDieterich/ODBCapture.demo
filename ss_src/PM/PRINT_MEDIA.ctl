@@ -1,9 +1,13 @@
-OPTIONS (SKIP=1)
+OPTIONS (SKIP=2)
 LOAD DATA
-APPEND INTO TABLE "PM"."PRINT_MEDIA"
+CONTINUEIF LAST = ''   -- CHR(25)
+
+INTO TABLE "PM"."PRINT_MEDIA"
+APPEND WHEN TABLE_TYP = 'P'
 FIELDS CSV WITH EMBEDDED
 TRAILING NULLCOLS
-   (PRODUCT_ID                     FLOAT EXTERNAL
+   (TABLE_TYP FILLER POSITION(1) CHAR(1)
+   ,PRODUCT_ID                     FLOAT EXTERNAL
    ,AD_ID                          FLOAT EXTERNAL
       -- BLOB data must be decoded from Base64 after loading
    ,AD_COMPOSITE                   CHAR(1572864)
@@ -11,12 +15,8 @@ TRAILING NULLCOLS
    ,AD_FINALTEXT                   CHAR(1048576)
       -- NCLOB data must be decoded with UNISTR after loading
    ,AD_FLTEXTN                     CHAR(5242880)
-   ,AD_TEXTDOCS_NTAB               NESTED TABLE TERMINATED BY ''
-      (AD_TEXTDOCS_NTAB COLUMN OBJECT TREAT AS PM.TESTDOC_TYP
-         (DOCUMENT_TYPE   CHAR(32)      TERMINATED BY ''
-         ,FORMATTED_DOC   CHAR(1572864) TERMINATED BY ''
-         ))
-   ,ZAD_TEXTDOCS_NTAB FILLER CHAR(1) -- Skip Trailing Comma
+   ,AD_TEXTDOCS_NTAB               SID (AD_TEXTDOCS_NTAB_SID)
+   ,AD_TEXTDOCS_NTAB_SID FILLER CHAR(32)
       -- BLOB data must be decoded from Base64 after loading
    ,AD_PHOTO                       CHAR(1572864)
    ,AD_GRAPHIC_dname               FILLER char(512)
@@ -28,4 +28,15 @@ TRAILING NULLCOLS
       ,HEADER_TEXT     CHAR(1024) TERMINATED BY ''
       ,LOGO            CHAR(1572864) TERMINATED BY ''
       )
+   )
+
+INTO TABLE "PM"."TEXTDOCS_NESTEDTAB"
+APPEND WHEN TABLE_TYP = 'T'
+SID (TEXTDOC_SID)
+FIELDS CSV WITH EMBEDDED
+TRAILING NULLCOLS
+   (TABLE_TYP FILLER POSITION(1) CHAR(1)
+   ,TEXTDOC_SID FILLER CHAR(32)
+   ,DOCUMENT_TYP                   CHAR(32)
+   ,FORMATTED_DOC                  CHAR(1572864)
    )

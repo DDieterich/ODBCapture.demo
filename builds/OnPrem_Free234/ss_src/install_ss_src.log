@@ -1,0 +1,1414 @@
+=== DBI Started: ./installation_prepare.sql
+
+Create Temp Publicly Updateable Table
+
+Table created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+
+Check for Prerequisite BUILD_TYPEs
+Prerequisite BUILD_TYPEs for "ss_src"
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:29:05 for a duration of .3 seconds (started at 2024-10-11T06:29:05)
+=== DBI Started: HR/DEPARTMENTS_SEQ.seq
+
+Sequence created.
+
+=== DBI Completed at 2024-10-11T06:29:05 for a duration of .08 seconds (started at 2024-10-11T06:29:05)
+=== DBI Started: HR/EMPLOYEES_SEQ.seq
+
+Sequence created.
+
+=== DBI Completed at 2024-10-11T06:29:06 for a duration of .02 seconds (started at 2024-10-11T06:29:06)
+=== DBI Started: HR/LOCATIONS_SEQ.seq
+
+Sequence created.
+
+=== DBI Completed at 2024-10-11T06:29:06 for a duration of .06 seconds (started at 2024-10-11T06:29:06)
+=== DBI Started: OE/ORDERS_SEQ.seq
+
+Sequence created.
+
+=== DBI Completed at 2024-10-11T06:29:06 for a duration of .03 seconds (started at 2024-10-11T06:29:06)
+=== DBI Started: OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of 3.08 seconds (started at 2024-10-11T06:29:06)
+=== DBI Started: OE/ACTIONS_T.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .1 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/ACTION_T.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .08 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/ACTION_V.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/CATALOG_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .06 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/CATEGORY_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .07 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/COMPOSITE_CATEGORY_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .02 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/CORPORATE_CUSTOMER_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/CUSTOMER_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/CUST_ADDRESS_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .04 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/INVENTORY_LIST_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/INVENTORY_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .04 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/LEAF_CATEGORY_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/LINEITEMS_T.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .04 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/LINEITEM_T.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/LINEITEM_V.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .14 seconds (started at 2024-10-11T06:29:09)
+=== DBI Started: OE/ORDER_ITEM_LIST_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/ORDER_ITEM_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .02 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/ORDER_LIST_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/ORDER_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/PART_T.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/PHONE_LIST_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/PRODUCT_INFORMATION_TYP.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/PRODUCT_REF_LIST_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/PURCHASEORDER_T.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .09 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/REJECTION_T.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/SHIPPING_INSTRUCTIONS_T.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .02 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/SUBCATEGORY_REF_LIST_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/WAREHOUSE_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: PM/ADHEADER_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: PM/TEXTDOC_TAB.tps
+
+Warning: Type created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: PM/TEXTDOC_TYP.tps
+
+Type created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: OE/GET_PHONE_NUMBER_F.func
+
+Function created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: HR/ADD_JOB_HISTORY.proc
+
+Warning: Procedure created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: HR/SECURE_DML.proc
+
+Procedure created.
+
+=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: HR/COUNTRIES.tbl
+
+Table created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+=== DBI Completed at 2024-10-11T06:29:11 for a duration of .17 seconds (started at 2024-10-11T06:29:10)
+=== DBI Started: HR/DEPARTMENTS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+=== DBI Completed at 2024-10-11T06:29:24 for a duration of 13.24 seconds (started at 2024-10-11T06:29:11)
+=== DBI Started: HR/EMPLOYEES.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+=== DBI Completed at 2024-10-11T06:29:24 for a duration of .42 seconds (started at 2024-10-11T06:29:24)
+=== DBI Started: HR/JOBS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+=== DBI Completed at 2024-10-11T06:29:24 for a duration of .22 seconds (started at 2024-10-11T06:29:24)
+=== DBI Started: HR/JOB_HISTORY.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+=== DBI Completed at 2024-10-11T06:29:25 for a duration of .26 seconds (started at 2024-10-11T06:29:24)
+=== DBI Started: HR/LOCATIONS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+=== DBI Completed at 2024-10-11T06:29:25 for a duration of .25 seconds (started at 2024-10-11T06:29:25)
+=== DBI Started: HR/REGIONS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+=== DBI Completed at 2024-10-11T06:29:25 for a duration of .15 seconds (started at 2024-10-11T06:29:25)
+=== DBI Started: OE/CATEGORIES_TAB.tbl
+
+Table created.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:29:44 for a duration of 18.45 seconds (started at 2024-10-11T06:29:25)
+=== DBI Started: OE/CUSTOMERS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:44 for a duration of .38 seconds (started at 2024-10-11T06:29:44)
+=== DBI Started: OE/INVENTORIES.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:44 for a duration of .17 seconds (started at 2024-10-11T06:29:44)
+=== DBI Started: OE/ORDERS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:44 for a duration of .33 seconds (started at 2024-10-11T06:29:44)
+=== DBI Started: OE/ORDER_ITEMS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:45 for a duration of .15 seconds (started at 2024-10-11T06:29:44)
+=== DBI Started: OE/PRODUCT_DESCRIPTIONS.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:45 for a duration of .13 seconds (started at 2024-10-11T06:29:45)
+=== DBI Started: OE/PRODUCT_INFORMATION.tbl
+
+Table created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:45 for a duration of .3 seconds (started at 2024-10-11T06:29:45)
+=== DBI Started: OE/PROMOTIONS.tbl
+
+Table created.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:29:45 for a duration of .08 seconds (started at 2024-10-11T06:29:45)
+=== DBI Started: OE/PURCHASEORDER.tbl
+
+Table created.
+
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:29:46 for a duration of .43 seconds (started at 2024-10-11T06:29:45)
+=== DBI Started: OE/WAREHOUSES.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Comment created.
+
+
+Grant succeeded.
+
+=== DBI Completed at 2024-10-11T06:29:46 for a duration of .19 seconds (started at 2024-10-11T06:29:46)
+=== DBI Started: PM/PRINT_MEDIA.tbl
+
+Table created.
+
+
+Index created.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:29:47 for a duration of .86 seconds (started at 2024-10-11T06:29:46)
+Compile All started
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+Compile All is done.
+=== DBI Started: HR/EMP_DETAILS_VIEW.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .31 seconds (started at 2024-10-11T06:29:51)
+=== DBI Started: OE/ACCOUNT_MANAGERS.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/BOMBAY_INVENTORY.vw
+
+View created.
+
+
+Warning: View created with compilation errors.
+
+
+Comment created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/CUSTOMERS_VIEW.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .07 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/OC_CORPORATE_CUSTOMERS.vw
+
+View created.
+
+
+Warning: View created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .09 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/OC_CUSTOMERS.vw
+
+View created.
+
+
+Warning: View created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .06 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/OC_INVENTORIES.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .07 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/OC_ORDERS.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .11 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/OC_PRODUCT_INFORMATION.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/ORDERS_VIEW.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .05 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/PRODUCTS.vw
+
+View created.
+
+
+View created.
+
+
+Comment created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .07 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/PRODUCT_PRICES.vw
+
+View created.
+
+
+View created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .05 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/SYDNEY_INVENTORY.vw
+
+View created.
+
+
+View created.
+
+
+Comment created.
+
+=== DBI Completed at 2024-10-11T06:29:52 for a duration of .05 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: OE/TORONTO_INVENTORY.vw
+
+View created.
+
+
+View created.
+
+
+Comment created.
+
+=== DBI Completed at 2024-10-11T06:29:53 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Started: HR/COUNTRIES.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/COUNTRIES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:29:57 for a duration of 4.08 seconds (started at 2024-10-11T06:29:53)
+=== DBI Started: HR/DEPARTMENTS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/DEPARTMENTS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:29:59 for a duration of 2.26 seconds (started at 2024-10-11T06:29:57)
+=== DBI Started: HR/EMPLOYEES.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/EMPLOYEES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:01 for a duration of 2.11 seconds (started at 2024-10-11T06:29:59)
+=== DBI Started: HR/JOBS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/JOBS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:03 for a duration of 2.13 seconds (started at 2024-10-11T06:30:01)
+=== DBI Started: HR/JOB_HISTORY.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/JOB_HISTORY.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:05 for a duration of 1.88 seconds (started at 2024-10-11T06:30:03)
+=== DBI Started: HR/LOCATIONS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/LOCATIONS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:07 for a duration of 2.19 seconds (started at 2024-10-11T06:30:05)
+=== DBI Started: HR/REGIONS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/REGIONS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:09 for a duration of 1.9 seconds (started at 2024-10-11T06:30:07)
+=== DBI Started: OE/CUSTOMERS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/CUSTOMERS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:12 for a duration of 2.46 seconds (started at 2024-10-11T06:30:09)
+=== DBI Started: OE/INVENTORIES.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/INVENTORIES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:14 for a duration of 1.95 seconds (started at 2024-10-11T06:30:12)
+=== DBI Started: OE/ORDERS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/ORDERS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:16 for a duration of 2.07 seconds (started at 2024-10-11T06:30:14)
+=== DBI Started: OE/ORDER_ITEMS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/ORDER_ITEMS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:18 for a duration of 2.15 seconds (started at 2024-10-11T06:30:16)
+=== DBI Started: OE/PRODUCT_DESCRIPTIONS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/PRODUCT_DESCRIPTIONS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:22 for a duration of 3.86 seconds (started at 2024-10-11T06:30:18)
+=== DBI Started: OE/PRODUCT_INFORMATION.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/PRODUCT_INFORMATION.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:24 for a duration of 2.06 seconds (started at 2024-10-11T06:30:22)
+=== DBI Started: OE/PROMOTIONS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/PROMOTIONS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:26 for a duration of 2.03 seconds (started at 2024-10-11T06:30:24)
+=== DBI Started: OE/WAREHOUSES.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/WAREHOUSES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2024-10-11T06:30:29 for a duration of 3.22 seconds (started at 2024-10-11T06:30:26)
+=== DBI Started: PM/PRINT_MEDIA.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=PM/PRINT_MEDIA.ctl
+
+
+PL/SQL procedure successfully completed.
+
+Decode Binary Data
+------------------
+4 "AD_COMPOSITE" updates.
+4 "AD_HEADER" updates.
+4 "AD_PHOTO" updates.
+12 "AD_TEXTDOCS_NTAB" updates.
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+Decode UNISTR Data
+------------------
+4 "AD_FLTEXTN" updates.
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of 4.58 seconds (started at 2024-10-11T06:30:29)
+=== DBI Started: HR/DEPARTMENTS.tidx
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .06 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: HR/EMPLOYEES.tidx
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .1 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: HR/JOB_HISTORY.tidx
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .08 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: HR/LOCATIONS.tidx
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .12 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: OE/CUSTOMERS.tidx
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .16 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: OE/INVENTORIES.tidx
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .05 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: OE/ORDERS.tidx
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .08 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: OE/ORDER_ITEMS.tidx
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:34 for a duration of .14 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: OE/PRODUCT_DESCRIPTIONS.tidx
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .58 seconds (started at 2024-10-11T06:30:34)
+=== DBI Started: OE/PRODUCT_INFORMATION.tidx
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .03 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: OE/WAREHOUSES.tidx
+
+Index created.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .03 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: OE/CATALOG_TYP.tpb
+
+Warning: Type Body created with compilation errors.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .06 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: OE/COMPOSITE_CATEGORY_TYP.tpb
+
+Type body created.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .03 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: OE/LEAF_CATEGORY_TYP.tpb
+
+Type body created.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .02 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: HR/COUNTRIES.tfk
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .13 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: HR/DEPARTMENTS.tfk
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .06 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: HR/EMPLOYEES.tfk
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:35 for a duration of .1 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: HR/JOB_HISTORY.tfk
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .12 seconds (started at 2024-10-11T06:30:35)
+=== DBI Started: HR/LOCATIONS.tfk
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .09 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/CUSTOMERS.tfk
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .05 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/INVENTORIES.tfk
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .06 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/ORDERS.tfk
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .09 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/ORDER_ITEMS.tfk
+
+Table altered.
+
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .05 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/PRODUCT_DESCRIPTIONS.tfk
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .04 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/WAREHOUSES.tfk
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .06 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: PM/PRINT_MEDIA.tfk
+
+Table altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .04 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: HR/EMPLOYEES.ttrg
+
+Trigger created.
+
+
+Trigger altered.
+
+
+Trigger created.
+
+
+Trigger altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .17 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/ORDER_ITEMS.ttrg
+
+Trigger created.
+
+
+Trigger altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .07 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/PURCHASEORDER.ttrg
+
+Trigger created.
+
+
+Trigger altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .05 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: OE/OC_ORDERS.vtrg
+
+Trigger created.
+
+
+Trigger altered.
+
+
+Trigger created.
+
+
+Trigger altered.
+
+=== DBI Completed at 2024-10-11T06:30:36 for a duration of .1 seconds (started at 2024-10-11T06:30:36)
+=== DBI Started: ./installation_finalize.sql
+
+Drop Temp Publicly Updateable Table
+
+Synonym dropped.
+
+
+Table dropped.
+
+
+fix_invalid_public_synonyms
+
+Re-create Invalid Public Synonyms
+
+PL/SQL procedure successfully completed.
+
+
+compile_all
+Compile All started
+HR Compiled.
+OE Compiled.
+PM Compiled.
+Compile All is done.
+
+PL/SQL procedure successfully completed.
+
+
+alter_foreign_keys_ENABLE
+Alter Foreign Keys started.
+  ENABLE 'HR','OE','PM'
+alter table "HR"."COUNTRIES" ENABLE constraint "COUNTR_REG_FK";
+alter table "HR"."DEPARTMENTS" ENABLE constraint "DEPT_LOC_FK";
+alter table "HR"."DEPARTMENTS" ENABLE constraint "DEPT_MGR_FK";
+alter table "HR"."EMPLOYEES" ENABLE constraint "EMP_DEPT_FK";
+alter table "HR"."EMPLOYEES" ENABLE constraint "EMP_JOB_FK";
+alter table "HR"."EMPLOYEES" ENABLE constraint "EMP_MANAGER_FK";
+alter table "HR"."JOB_HISTORY" ENABLE constraint "JHIST_DEPT_FK";
+alter table "HR"."JOB_HISTORY" ENABLE constraint "JHIST_EMP_FK";
+alter table "HR"."JOB_HISTORY" ENABLE constraint "JHIST_JOB_FK";
+alter table "HR"."LOCATIONS" ENABLE constraint "LOC_C_ID_FK";
+alter table "OE"."CUSTOMERS" ENABLE constraint "CUSTOMERS_ACCOUNT_MANAGER_FK";
+alter table "OE"."INVENTORIES" ENABLE constraint "INVENTORIES_PRODUCT_ID_FK";
+alter table "OE"."INVENTORIES" ENABLE constraint "INVENTORIES_WAREHOUSES_FK";
+alter table "OE"."ORDERS" ENABLE constraint "ORDERS_CUSTOMER_ID_FK";
+alter table "OE"."ORDERS" ENABLE constraint "ORDERS_SALES_REP_FK";
+alter table "OE"."ORDER_ITEMS" ENABLE constraint "ORDER_ITEMS_ORDER_ID_FK";
+alter table "OE"."ORDER_ITEMS" ENABLE constraint "ORDER_ITEMS_PRODUCT_ID_FK";
+alter table "OE"."PRODUCT_DESCRIPTIONS" ENABLE constraint "PD_PRODUCT_ID_FK";
+alter table "OE"."WAREHOUSES" ENABLE constraint "WAREHOUSES_LOCATION_FK";
+alter table "PM"."PRINT_MEDIA" ENABLE constraint "PRINTMEDIA_FK";
+Alter Foreign Keys is done.
+
+PL/SQL procedure successfully completed.
+
+
+alter_triggers_ENABLE
+Alter Triggers started.
+  ENABLE 'HR','OE','PM'
+alter trigger "HR"."SECURE_EMPLOYEES" ENABLE;
+alter trigger "HR"."UPDATE_JOB_HISTORY" ENABLE;
+alter trigger "OE"."INSERT_ORD_LINE" ENABLE;
+alter trigger "OE"."ORDERS_ITEMS_TRG" ENABLE;
+alter trigger "OE"."ORDERS_TRG" ENABLE;
+alter trigger "OE"."PURCHASEORDER$xd" ENABLE;
+Alter Triggers is done.
+
+PL/SQL procedure successfully completed.
+
+
+update_id_sequences
+Update ID Sequences started
+Identity Sequence Updates is done.
+
+PL/SQL procedure successfully completed.
+
+
+Switch Spooling Off

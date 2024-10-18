@@ -1,0 +1,55 @@
+
+SQL*Loader: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:20 2024
+Version 23.4.0.24.05
+
+Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   OE/PRODUCT_DESCRIPTIONS.ctl
+Data File:      OE/PRODUCT_DESCRIPTIONS.csv
+  Bad File:     OE/PRODUCT_DESCRIPTIONS.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK
+Table "OE"."PRODUCT_DESCRIPTIONS", loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+PRODUCT_ID                          FIRST     *   ,  O(") CHARACTER            
+LANGUAGE_ID                          NEXT     3   ,  O(") CHARACTER            
+TRANSLATED_NAME                      NEXT   250   ,  O(") CHARACTER            
+    SQL string for column : "UNISTR(to_char(:TRANSLATED_NAME))"
+TRANSLATED_DESCRIPTION               NEXT 10000   ,  O(") CHARACTER            
+    SQL string for column : "UNISTR(to_char(:TRANSLATED_DESCRIPTION))"
+
+value used for ROWS parameter changed from 250 to 99
+
+Table "OE"."PRODUCT_DESCRIPTIONS":
+  8640 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                1041282 bytes(99 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:          8640
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Oct 11 01:30:20 2024
+Run ended on Fri Oct 11 01:30:22 2024
+
+Elapsed time was:     00:00:02.09
+CPU time was:         00:00:00.15

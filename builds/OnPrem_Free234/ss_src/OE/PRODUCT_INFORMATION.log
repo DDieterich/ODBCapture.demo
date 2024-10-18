@@ -1,0 +1,59 @@
+
+SQL*Loader: Release 23.0.0.0.0 - Production on Fri Oct 11 01:30:23 2024
+Version 23.4.0.24.05
+
+Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   OE/PRODUCT_INFORMATION.ctl
+Data File:      OE/PRODUCT_INFORMATION.csv
+  Bad File:     OE/PRODUCT_INFORMATION.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK
+Table "OE"."PRODUCT_INFORMATION", loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+PRODUCT_ID                          FIRST     *   ,  O(") CHARACTER            
+PRODUCT_NAME                         NEXT    50   ,  O(") CHARACTER            
+PRODUCT_DESCRIPTION                  NEXT  2000   ,  O(") CHARACTER            
+CATEGORY_ID                          NEXT     *   ,  O(") CHARACTER            
+WEIGHT_CLASS                         NEXT     *   ,  O(") CHARACTER            
+WARRANTY_PERIOD                      NEXT     *   ,  O(") INTERVAL             
+SUPPLIER_ID                          NEXT     *   ,  O(") CHARACTER            
+PRODUCT_STATUS                       NEXT    20   ,  O(") CHARACTER            
+LIST_PRICE                           NEXT     *   ,  O(") CHARACTER            
+MIN_PRICE                            NEXT     *   ,  O(") CHARACTER            
+CATALOG_URL                          NEXT    50   ,  O(") CHARACTER            
+
+
+Table "OE"."PRODUCT_INFORMATION":
+  288 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 983500 bytes(250 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:           288
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Oct 11 01:30:23 2024
+Run ended on Fri Oct 11 01:30:24 2024
+
+Elapsed time was:     00:00:00.34
+CPU time was:         00:00:00.03

@@ -179,22 +179,24 @@ INSERT INTO oe.categories_tab
     WHERE g.category_id IN (10, 20, 30)) as
          oe.subcategory_ref_list_typ)));
 
+--
 --  Not Needed for custom data load
+--
 --ALTER TYPE category_typ
 -- ADD ATTRIBUTE (parent_category_id number(2)) CASCADE;
-
+--
 --UPDATE oe.categories_tab
 --  SET parent_category_id = 90
 --  WHERE category_id IN (10, 20, 30);
-
+--
 --UPDATE oe.categories_tab
 --  SET parent_category_id = 10
 --  WHERE category_id IN (11, 12, 13, 14, 15, 16, 17, 19);
-
+--
 --UPDATE oe.categories_tab
 --  SET parent_category_id = 20
 --  WHERE category_id IN (21, 22, 23, 24, 25, 29);
-
+--
 --UPDATE oe.categories_tab
 --  SET parent_category_id = 30
 --  WHERE category_id IN (31, 32, 33, 39);

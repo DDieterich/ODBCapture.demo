@@ -1,3 +1,6 @@
 "BUILD_SEQ","BUILD_TYPE","NOTES"
 10,"ss_src","Oracle Sample Schema Source"
-20,"ss_grb","ODBCapture Configuration Data for Oracle Sample Schema"
+30,"grbsrc","ODBCapture Source Code Script Generation"
+32,"grbsdo","SDO,LCTR (Placeholder) - Spatial - Oracle Locator - Graph (MDSYS, MDDATA)"
+34,"grbxrep","Oracle XDB Repository"
+38,"ss_grb","ODBCapture Configuration Data for Oracle Sample Schema"

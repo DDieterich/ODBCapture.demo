@@ -1,0 +1,17 @@
+
+
+--
+--  Future Grant SYS Objects (but not directories)
+--
+
+set define off
+
+
+
+--  "SYS" Object Grants
+
+grant SELECT on "SYS"."DBA_XML_SCHEMAS" to "ODBCAPTURE";
+
+
+set define on
+

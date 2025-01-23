@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.CUST_ADDRESS_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."CUST_ADDRESS_TYP" 
-                                        
+
   AS OBJECT
     ( street_address     VARCHAR2(40)
     , postal_code        VARCHAR2(10)

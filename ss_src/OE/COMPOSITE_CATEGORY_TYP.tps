@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.COMPOSITE_CATEGORY_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."COMPOSITE_CATEGORY_TYP" 
-                                       
+
  UNDER category_typ
       (
     subcategory_ref_list subcategory_ref_list_typ

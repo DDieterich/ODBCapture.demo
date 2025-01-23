@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.LEAF_CATEGORY_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."LEAF_CATEGORY_TYP" 
-                                       
+
  UNDER category_typ
     (
     product_ref_list    product_ref_list_typ

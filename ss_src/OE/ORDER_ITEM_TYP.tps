@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.ORDER_ITEM_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."ORDER_ITEM_TYP" 
-                                       
+
  AS OBJECT
     ( order_id           NUMBER(12)
     , line_item_id       NUMBER(3)

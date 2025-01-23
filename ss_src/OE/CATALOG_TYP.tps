@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.CATALOG_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."CATALOG_TYP" 
-                                       
+
  UNDER composite_category_typ
       (
     MEMBER FUNCTION getCatalogName RETURN VARCHAR2

@@ -1,5 +1,5 @@
 "USERNAME","BUILD_TYPE","ORACLE_PROVIDED","PROFILE","TEMPORARY_TSPACE","DEFAULT_TSPACE","TS_QUOTA","NOTES"
 "HR","ss_src","N",,,"USERS","512M","Oracle Sample Schema Human Resources"
+"ODBCAPTURE","grbsrc","N",,,"USERS","512M","Oracle Database Source Code Capture Application"
 "OE","ss_src","N",,,"USERS","512M","Oracle Sample Schema Order Entry"
 "PM","ss_src","N",,,"USERS","512M","Oracle Sample Schema Product Media"
-"ODBCAPTURE","grbsrc","N",,,"USERS","512M","Oracle Database Source Code Capture Application"

@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.WAREHOUSE_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."WAREHOUSE_TYP" 
-                                       
+
  AS OBJECT
     ( warehouse_id       NUMBER(3)
     , warehouse_name     VARCHAR2(35)

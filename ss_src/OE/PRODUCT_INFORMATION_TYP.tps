@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.PRODUCT_INFORMATION_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."PRODUCT_INFORMATION_TYP" 
-                                       
+
  AS OBJECT
     ( product_id           NUMBER(6)
     , product_name         VARCHAR2(50)

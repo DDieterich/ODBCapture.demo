@@ -9,7 +9,7 @@ set define off
 --DBMS_METADATA:OE.CATEGORY_TYP
 
   CREATE OR REPLACE EDITIONABLE TYPE "OE"."CATEGORY_TYP" 
-                                       
+
  AS OBJECT
     ( category_name           VARCHAR2(50)
     , category_description    VARCHAR2(1000)

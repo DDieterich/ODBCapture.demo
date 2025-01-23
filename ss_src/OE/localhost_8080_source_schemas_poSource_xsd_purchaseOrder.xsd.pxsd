@@ -8,7 +8,7 @@ set define off
 --DBMS_METADATA:OE.http://localhost:8080/source/schemas/poSource/xsd/purchaseOrder.xsd
 
   BEGIN dbms_xmlschema.registerSchema('http://localhost:8080/source/schemas/poSource/xsd/purchaseOrder.xsd',
- '<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" version="1.0" xdb:storeVarrayAsTable="true" xdb:numProps="26" xdb:flags="2105639" xdb:schemaURL="http://localhost:8080/source/schemas/poSource/xsd/purchaseOrder.xsd" xdb:schemaOwner="OE">
+ '<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://xmlns.oracle.com/xdb" version="1.0" xdb:storeVarrayAsTable="true" xdb:numProps="26" xdb:flags="6299937" xdb:schemaURL="http://localhost:8080/source/schemas/poSource/xsd/purchaseOrder.xsd" xdb:schemaOwner="OE">
   <xs:element name="PurchaseOrder" type="PurchaseOrderType" xdb:defaultTable="PURCHASEORDER" xdb:propNumber="4449" xdb:global="true" xdb:SQLName="PurchaseOrder" xdb:SQLType="PURCHASEORDER_T" xdb:SQLSchema="OE" xdb:memType="258" xdb:defaultTableSchema="OE"/>
   <xs:complexType name="PurchaseOrderType" xdb:SQLType="PURCHASEORDER_T" xdb:SQLSchema="OE">
     <xs:sequence>

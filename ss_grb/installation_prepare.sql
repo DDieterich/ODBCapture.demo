@@ -42,9 +42,9 @@ declare
    end;
 begin
    dbms_output.put_line('Prerequisite BUILD_TYPEs for "ss_grb"');
-   do_it('grbxrep');
    do_it('grbsdo');
    do_it('grbsrc');
+   do_it('grbxrep');
    do_it('ss_src');
 end;
 /

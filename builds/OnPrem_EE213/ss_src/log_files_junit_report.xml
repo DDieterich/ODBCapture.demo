@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="install_ss_src.log" tests="118" errors="0" hostname="EE213CDB" id="3" time="76" timestamp="2024-10-11T06:30:45">
+  <testsuite name="install_ss_src.log" tests="118" errors="0" hostname="EE213CDB" id="3" time="65" timestamp="2025-01-23T05:34:15">
     <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
     </testcase>
     <testcase name="./installation_prepare.sql" assertions="9" classname="..sql" status="PASS" time="0">
@@ -13,24 +13,24 @@ Synonym created.
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for &quot;ss_src&quot;
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .3 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:47 for a duration of .18 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
     <testcase name="HR/ADD_JOB_HISTORY.proc" assertions="3" classname="HR.proc" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/ADD_JOB_HISTORY.proc
 Warning: Procedure created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
-    <testcase name="HR/COUNTRIES.cldr" assertions="6" classname="HR.cldr" status="PASS" time="4">
+    <testcase name="HR/COUNTRIES.cldr" assertions="6" classname="HR.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: HR/COUNTRIES.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/COUNTRIES.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:29:57 for a duration of 4.08 seconds (started at 2024-10-11T06:29:53)
+=== DBI Completed at 2025-01-23T05:33:37 for a duration of 3.04 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
     <testcase name="HR/COUNTRIES.tbl" assertions="10" classname="HR.tbl" status="PASS" time="0">
@@ -44,14 +44,14 @@ Comment created.
 Grant succeeded.
 Grant succeeded.
 Synonym created.
-=== DBI Completed at 2024-10-11T06:29:11 for a duration of .17 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:51 for a duration of .29 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="HR/COUNTRIES.tfk" assertions="3" classname="HR.tfk" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/COUNTRIES.tfk
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .13 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .06 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="HR/DEPARTMENTS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="2">
@@ -61,10 +61,10 @@ Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/DEPARTMENTS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:29:59 for a duration of 2.26 seconds (started at 2024-10-11T06:29:57)
+=== DBI Completed at 2025-01-23T05:33:39 for a duration of 1.52 seconds (started at 2025-01-23T05:33:37)
       </system-out>
     </testcase>
-    <testcase name="HR/DEPARTMENTS.tbl" assertions="12" classname="HR.tbl" status="PASS" time="13">
+    <testcase name="HR/DEPARTMENTS.tbl" assertions="12" classname="HR.tbl" status="PASS" time="14">
       <system-out>
 === DBI Started: HR/DEPARTMENTS.tbl
 Table created.
@@ -77,7 +77,7 @@ Comment created.
 Comment created.
 Grant succeeded.
 Synonym created.
-=== DBI Completed at 2024-10-11T06:29:24 for a duration of 13.24 seconds (started at 2024-10-11T06:29:11)
+=== DBI Completed at 2025-01-23T05:33:05 for a duration of 14.27 seconds (started at 2025-01-23T05:32:51)
       </system-out>
     </testcase>
     <testcase name="HR/DEPARTMENTS.tfk" assertions="4" classname="HR.tfk" status="PASS" time="0">
@@ -85,31 +85,31 @@ Synonym created.
 === DBI Started: HR/DEPARTMENTS.tfk
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .06 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .07 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="HR/DEPARTMENTS.tidx" assertions="3" classname="HR.tidx" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/DEPARTMENTS.tidx
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .06 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:04 for a duration of .05 seconds (started at 2025-01-23T05:34:04)
       </system-out>
     </testcase>
     <testcase name="HR/DEPARTMENTS_SEQ.seq" assertions="3" classname="HR.seq" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/DEPARTMENTS_SEQ.seq
 Sequence created.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .08 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:47 for a duration of .03 seconds (started at 2025-01-23T05:32:47)
       </system-out>
     </testcase>
-    <testcase name="HR/EMPLOYEES.cldr" assertions="6" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/EMPLOYEES.cldr" assertions="6" classname="HR.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: HR/EMPLOYEES.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/EMPLOYEES.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:01 for a duration of 2.11 seconds (started at 2024-10-11T06:29:59)
+=== DBI Completed at 2025-01-23T05:33:40 for a duration of 1.33 seconds (started at 2025-01-23T05:33:39)
       </system-out>
     </testcase>
     <testcase name="HR/EMPLOYEES.tbl" assertions="22" classname="HR.tbl" status="PASS" time="0">
@@ -135,7 +135,7 @@ Comment created.
 Grant succeeded.
 Grant succeeded.
 Synonym created.
-=== DBI Completed at 2024-10-11T06:29:24 for a duration of .42 seconds (started at 2024-10-11T06:29:24)
+=== DBI Completed at 2025-01-23T05:33:05 for a duration of .38 seconds (started at 2025-01-23T05:33:05)
       </system-out>
     </testcase>
     <testcase name="HR/EMPLOYEES.tfk" assertions="5" classname="HR.tfk" status="PASS" time="0">
@@ -144,7 +144,7 @@ Synonym created.
 Table altered.
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .1 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .3 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="HR/EMPLOYEES.tidx" assertions="6" classname="HR.tidx" status="PASS" time="0">
@@ -154,7 +154,7 @@ Index created.
 Index created.
 Index created.
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .1 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .15 seconds (started at 2025-01-23T05:34:04)
       </system-out>
     </testcase>
     <testcase name="HR/EMPLOYEES.ttrg" assertions="6" classname="HR.ttrg" status="PASS" time="0">
@@ -164,14 +164,14 @@ Trigger created.
 Trigger altered.
 Trigger created.
 Trigger altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .17 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .11 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="HR/EMPLOYEES_SEQ.seq" assertions="3" classname="HR.seq" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/EMPLOYEES_SEQ.seq
 Sequence created.
-=== DBI Completed at 2024-10-11T06:29:06 for a duration of .02 seconds (started at 2024-10-11T06:29:06)
+=== DBI Completed at 2025-01-23T05:32:47 for a duration of .02 seconds (started at 2025-01-23T05:32:47)
       </system-out>
     </testcase>
     <testcase name="HR/EMP_DETAILS_VIEW.vw" assertions="4" classname="HR.vw" status="PASS" time="0">
@@ -179,17 +179,17 @@ Sequence created.
 === DBI Started: HR/EMP_DETAILS_VIEW.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .31 seconds (started at 2024-10-11T06:29:51)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .15 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
-    <testcase name="HR/JOBS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/JOBS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: HR/JOBS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/JOBS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:03 for a duration of 2.13 seconds (started at 2024-10-11T06:30:01)
+=== DBI Completed at 2025-01-23T05:33:41 for a duration of 1.31 seconds (started at 2025-01-23T05:33:40)
       </system-out>
     </testcase>
     <testcase name="HR/JOBS.tbl" assertions="12" classname="HR.tbl" status="PASS" time="0">
@@ -205,17 +205,17 @@ Comment created.
 Comment created.
 Grant succeeded.
 Synonym created.
-=== DBI Completed at 2024-10-11T06:29:24 for a duration of .22 seconds (started at 2024-10-11T06:29:24)
+=== DBI Completed at 2025-01-23T05:33:06 for a duration of .18 seconds (started at 2025-01-23T05:33:05)
       </system-out>
     </testcase>
-    <testcase name="HR/JOB_HISTORY.cldr" assertions="6" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/JOB_HISTORY.cldr" assertions="6" classname="HR.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: HR/JOB_HISTORY.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/JOB_HISTORY.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:05 for a duration of 1.88 seconds (started at 2024-10-11T06:30:03)
+=== DBI Completed at 2025-01-23T05:33:43 for a duration of 1.49 seconds (started at 2025-01-23T05:33:41)
       </system-out>
     </testcase>
     <testcase name="HR/JOB_HISTORY.tbl" assertions="14" classname="HR.tbl" status="PASS" time="0">
@@ -233,7 +233,7 @@ Comment created.
 Comment created.
 Grant succeeded.
 Synonym created.
-=== DBI Completed at 2024-10-11T06:29:25 for a duration of .26 seconds (started at 2024-10-11T06:29:24)
+=== DBI Completed at 2025-01-23T05:33:06 for a duration of .22 seconds (started at 2025-01-23T05:33:06)
       </system-out>
     </testcase>
     <testcase name="HR/JOB_HISTORY.tfk" assertions="5" classname="HR.tfk" status="PASS" time="0">
@@ -242,7 +242,7 @@ Synonym created.
 Table altered.
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .12 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .17 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="HR/JOB_HISTORY.tidx" assertions="5" classname="HR.tidx" status="PASS" time="0">
@@ -251,17 +251,17 @@ Table altered.
 Index created.
 Index created.
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .08 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .08 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
-    <testcase name="HR/LOCATIONS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/LOCATIONS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: HR/LOCATIONS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/LOCATIONS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:07 for a duration of 2.19 seconds (started at 2024-10-11T06:30:05)
+=== DBI Completed at 2025-01-23T05:33:44 for a duration of 1.35 seconds (started at 2025-01-23T05:33:43)
       </system-out>
     </testcase>
     <testcase name="HR/LOCATIONS.tbl" assertions="15" classname="HR.tbl" status="PASS" time="0">
@@ -280,14 +280,14 @@ Comment created.
 Grant succeeded.
 Grant succeeded.
 Synonym created.
-=== DBI Completed at 2024-10-11T06:29:25 for a duration of .25 seconds (started at 2024-10-11T06:29:25)
+=== DBI Completed at 2025-01-23T05:33:06 for a duration of .21 seconds (started at 2025-01-23T05:33:06)
       </system-out>
     </testcase>
     <testcase name="HR/LOCATIONS.tfk" assertions="3" classname="HR.tfk" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/LOCATIONS.tfk
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .09 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .06 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="HR/LOCATIONS.tidx" assertions="5" classname="HR.tidx" status="PASS" time="0">
@@ -296,24 +296,24 @@ Table altered.
 Index created.
 Index created.
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .12 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .09 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
     <testcase name="HR/LOCATIONS_SEQ.seq" assertions="3" classname="HR.seq" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/LOCATIONS_SEQ.seq
 Sequence created.
-=== DBI Completed at 2024-10-11T06:29:06 for a duration of .06 seconds (started at 2024-10-11T06:29:06)
+=== DBI Completed at 2025-01-23T05:32:47 for a duration of .03 seconds (started at 2025-01-23T05:32:47)
       </system-out>
     </testcase>
-    <testcase name="HR/REGIONS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/REGIONS.cldr" assertions="6" classname="HR.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: HR/REGIONS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=HR/REGIONS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:09 for a duration of 1.9 seconds (started at 2024-10-11T06:30:07)
+=== DBI Completed at 2025-01-23T05:33:45 for a duration of 1.29 seconds (started at 2025-01-23T05:33:44)
       </system-out>
     </testcase>
     <testcase name="HR/REGIONS.tbl" assertions="8" classname="HR.tbl" status="PASS" time="0">
@@ -325,14 +325,14 @@ Table altered.
 Comment created.
 Comment created.
 Comment created.
-=== DBI Completed at 2024-10-11T06:29:25 for a duration of .15 seconds (started at 2024-10-11T06:29:25)
+=== DBI Completed at 2025-01-23T05:33:06 for a duration of .12 seconds (started at 2025-01-23T05:33:06)
       </system-out>
     </testcase>
     <testcase name="HR/SECURE_DML.proc" assertions="3" classname="HR.proc" status="PASS" time="0">
       <system-out>
 === DBI Started: HR/SECURE_DML.proc
 Procedure created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/ACCOUNT_MANAGERS.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -340,28 +340,28 @@ Procedure created.
 === DBI Started: OE/ACCOUNT_MANAGERS.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .07 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/ACTIONS_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ACTIONS_T.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .1 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .06 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/ACTION_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ACTION_T.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .08 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .09 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/ACTION_V.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ACTION_V.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/BOMBAY_INVENTORY.vw" assertions="5" classname="OE.vw" status="PASS" time="0">
@@ -370,21 +370,21 @@ Type created.
 View created.
 Warning: View created with compilation errors.
 Comment created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .08 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/CATALOG_TYP.tpb" assertions="3" classname="OE.tpb" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CATALOG_TYP.tpb
 Warning: Type Body created with compilation errors.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .06 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .06 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="OE/CATALOG_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CATALOG_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .06 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/CATEGORIES_TAB.tbl" assertions="4" classname="OE.tbl" status="PASS" time="18">
@@ -392,45 +392,45 @@ Warning: Type created with compilation errors.
 === DBI Started: OE/CATEGORIES_TAB.tbl
 Table created.
 Table altered.
-=== DBI Completed at 2024-10-11T06:29:44 for a duration of 18.45 seconds (started at 2024-10-11T06:29:25)
+=== DBI Completed at 2025-01-23T05:33:25 for a duration of 18.45 seconds (started at 2025-01-23T05:33:06)
       </system-out>
     </testcase>
     <testcase name="OE/CATEGORY_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CATEGORY_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .07 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .07 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/COMPOSITE_CATEGORY_TYP.tpb" assertions="3" classname="OE.tpb" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/COMPOSITE_CATEGORY_TYP.tpb
 Type body created.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .03 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .03 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="OE/COMPOSITE_CATEGORY_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/COMPOSITE_CATEGORY_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .02 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/CORPORATE_CUSTOMER_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CORPORATE_CUSTOMER_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
-    <testcase name="OE/CUSTOMERS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/CUSTOMERS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/CUSTOMERS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/CUSTOMERS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:12 for a duration of 2.46 seconds (started at 2024-10-11T06:30:09)
+=== DBI Completed at 2025-01-23T05:33:47 for a duration of 1.49 seconds (started at 2025-01-23T05:33:45)
       </system-out>
     </testcase>
     <testcase name="OE/CUSTOMERS.tbl" assertions="17" classname="OE.tbl" status="PASS" time="0">
@@ -451,14 +451,14 @@ Comment created.
 Comment created.
 Comment created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:44 for a duration of .38 seconds (started at 2024-10-11T06:29:44)
+=== DBI Completed at 2025-01-23T05:33:25 for a duration of .41 seconds (started at 2025-01-23T05:33:25)
       </system-out>
     </testcase>
     <testcase name="OE/CUSTOMERS.tfk" assertions="3" classname="OE.tfk" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CUSTOMERS.tfk
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .05 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .06 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/CUSTOMERS.tidx" assertions="6" classname="OE.tidx" status="PASS" time="0">
@@ -468,7 +468,7 @@ Index created.
 Index created.
 Index created.
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .16 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .17 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
     <testcase name="OE/CUSTOMERS_VIEW.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -476,38 +476,38 @@ Index created.
 === DBI Started: OE/CUSTOMERS_VIEW.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .07 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .08 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/CUSTOMER_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CUSTOMER_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/CUST_ADDRESS_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/CUST_ADDRESS_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .04 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .03 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/GET_PHONE_NUMBER_F.func" assertions="3" classname="OE.func" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/GET_PHONE_NUMBER_F.func
 Function created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .03 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
-    <testcase name="OE/INVENTORIES.cldr" assertions="6" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/INVENTORIES.cldr" assertions="6" classname="OE.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/INVENTORIES.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/INVENTORIES.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:14 for a duration of 1.95 seconds (started at 2024-10-11T06:30:12)
+=== DBI Completed at 2025-01-23T05:33:48 for a duration of 1.4 seconds (started at 2025-01-23T05:33:47)
       </system-out>
     </testcase>
     <testcase name="OE/INVENTORIES.tbl" assertions="9" classname="OE.tbl" status="PASS" time="0">
@@ -520,7 +520,7 @@ Comment created.
 Comment created.
 Comment created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:44 for a duration of .17 seconds (started at 2024-10-11T06:29:44)
+=== DBI Completed at 2025-01-23T05:33:25 for a duration of .14 seconds (started at 2025-01-23T05:33:25)
       </system-out>
     </testcase>
     <testcase name="OE/INVENTORIES.tfk" assertions="4" classname="OE.tfk" status="PASS" time="0">
@@ -528,63 +528,63 @@ Grant succeeded.
 === DBI Started: OE/INVENTORIES.tfk
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .06 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/INVENTORIES.tidx" assertions="3" classname="OE.tidx" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/INVENTORIES.tidx
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .05 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .04 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
     <testcase name="OE/INVENTORY_LIST_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/INVENTORY_LIST_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/INVENTORY_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/INVENTORY_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .04 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/LEAF_CATEGORY_TYP.tpb" assertions="3" classname="OE.tpb" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/LEAF_CATEGORY_TYP.tpb
 Type body created.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .02 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .02 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="OE/LEAF_CATEGORY_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/LEAF_CATEGORY_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .06 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/LINEITEMS_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/LINEITEMS_T.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .04 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .05 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/LINEITEM_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/LINEITEM_T.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of .03 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/LINEITEM_V.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/LINEITEM_V.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .14 seconds (started at 2024-10-11T06:29:09)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of .14 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/OC_CORPORATE_CUSTOMERS.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -592,7 +592,7 @@ Warning: Type created with compilation errors.
 === DBI Started: OE/OC_CORPORATE_CUSTOMERS.vw
 View created.
 Warning: View created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .09 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .09 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/OC_CUSTOMERS.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -600,7 +600,7 @@ Warning: View created with compilation errors.
 === DBI Started: OE/OC_CUSTOMERS.vw
 View created.
 Warning: View created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .06 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .07 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/OC_INVENTORIES.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -608,7 +608,7 @@ Warning: View created with compilation errors.
 === DBI Started: OE/OC_INVENTORIES.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .07 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:33 for a duration of .14 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/OC_ORDERS.vtrg" assertions="6" classname="OE.vtrg" status="PASS" time="0">
@@ -618,7 +618,7 @@ Trigger created.
 Trigger altered.
 Trigger created.
 Trigger altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .1 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:08 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/OC_ORDERS.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -626,7 +626,7 @@ Trigger altered.
 === DBI Started: OE/OC_ORDERS.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .11 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .11 seconds (started at 2025-01-23T05:33:33)
       </system-out>
     </testcase>
     <testcase name="OE/OC_PRODUCT_INFORMATION.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -634,17 +634,17 @@ View created.
 === DBI Started: OE/OC_PRODUCT_INFORMATION.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .09 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
-    <testcase name="OE/ORDERS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/ORDERS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/ORDERS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/ORDERS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:16 for a duration of 2.07 seconds (started at 2024-10-11T06:30:14)
+=== DBI Completed at 2025-01-23T05:33:50 for a duration of 1.28 seconds (started at 2025-01-23T05:33:48)
       </system-out>
     </testcase>
     <testcase name="OE/ORDERS.tbl" assertions="16" classname="OE.tbl" status="PASS" time="0">
@@ -664,7 +664,7 @@ Comment created.
 Comment created.
 Comment created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:44 for a duration of .33 seconds (started at 2024-10-11T06:29:44)
+=== DBI Completed at 2025-01-23T05:33:25 for a duration of .24 seconds (started at 2025-01-23T05:33:25)
       </system-out>
     </testcase>
     <testcase name="OE/ORDERS.tfk" assertions="4" classname="OE.tfk" status="PASS" time="0">
@@ -672,7 +672,7 @@ Grant succeeded.
 === DBI Started: OE/ORDERS.tfk
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .09 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/ORDERS.tidx" assertions="5" classname="OE.tidx" status="PASS" time="0">
@@ -681,14 +681,14 @@ Table altered.
 Index created.
 Index created.
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .08 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .08 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
     <testcase name="OE/ORDERS_SEQ.seq" assertions="3" classname="OE.seq" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ORDERS_SEQ.seq
 Sequence created.
-=== DBI Completed at 2024-10-11T06:29:06 for a duration of .03 seconds (started at 2024-10-11T06:29:06)
+=== DBI Completed at 2025-01-23T05:32:47 for a duration of .04 seconds (started at 2025-01-23T05:32:47)
       </system-out>
     </testcase>
     <testcase name="OE/ORDERS_VIEW.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -696,17 +696,17 @@ Sequence created.
 === DBI Started: OE/ORDERS_VIEW.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .05 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .06 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
-    <testcase name="OE/ORDER_ITEMS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/ORDER_ITEMS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/ORDER_ITEMS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/ORDER_ITEMS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:18 for a duration of 2.15 seconds (started at 2024-10-11T06:30:16)
+=== DBI Completed at 2025-01-23T05:33:51 for a duration of 1.41 seconds (started at 2025-01-23T05:33:50)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_ITEMS.tbl" assertions="10" classname="OE.tbl" status="PASS" time="0">
@@ -720,7 +720,7 @@ Comment created.
 Comment created.
 Comment created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:45 for a duration of .15 seconds (started at 2024-10-11T06:29:44)
+=== DBI Completed at 2025-01-23T05:33:26 for a duration of .13 seconds (started at 2025-01-23T05:33:25)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_ITEMS.tfk" assertions="4" classname="OE.tfk" status="PASS" time="0">
@@ -728,7 +728,7 @@ Grant succeeded.
 === DBI Started: OE/ORDER_ITEMS.tfk
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .05 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_ITEMS.tidx" assertions="5" classname="OE.tidx" status="PASS" time="0">
@@ -737,7 +737,7 @@ Table altered.
 Index created.
 Index created.
 Index created.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of .14 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:05 for a duration of .14 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_ITEMS.ttrg" assertions="4" classname="OE.ttrg" status="PASS" time="0">
@@ -745,49 +745,49 @@ Index created.
 === DBI Started: OE/ORDER_ITEMS.ttrg
 Trigger created.
 Trigger altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .07 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .07 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_ITEM_LIST_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ORDER_ITEM_LIST_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_ITEM_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ORDER_ITEM_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .02 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_LIST_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ORDER_LIST_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/ORDER_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/ORDER_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .08 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/PART_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PART_T.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .05 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/PHONE_LIST_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PHONE_LIST_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .03 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCTS.vw" assertions="5" classname="OE.vw" status="PASS" time="0">
@@ -796,7 +796,7 @@ Type created.
 View created.
 View created.
 Comment created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .07 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .08 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_DESCRIPTIONS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="4">
@@ -806,7 +806,7 @@ Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/PRODUCT_DESCRIPTIONS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:22 for a duration of 3.86 seconds (started at 2024-10-11T06:30:18)
+=== DBI Completed at 2025-01-23T05:33:55 for a duration of 3.53 seconds (started at 2025-01-23T05:33:51)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_DESCRIPTIONS.tbl" assertions="9" classname="OE.tbl" status="PASS" time="0">
@@ -819,31 +819,31 @@ Comment created.
 Comment created.
 Comment created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:45 for a duration of .13 seconds (started at 2024-10-11T06:29:45)
+=== DBI Completed at 2025-01-23T05:33:26 for a duration of .14 seconds (started at 2025-01-23T05:33:26)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_DESCRIPTIONS.tfk" assertions="3" classname="OE.tfk" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PRODUCT_DESCRIPTIONS.tfk
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .04 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .04 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_DESCRIPTIONS.tidx" assertions="3" classname="OE.tidx" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/PRODUCT_DESCRIPTIONS.tidx
 Index created.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .58 seconds (started at 2024-10-11T06:30:34)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .63 seconds (started at 2025-01-23T05:34:05)
       </system-out>
     </testcase>
-    <testcase name="OE/PRODUCT_INFORMATION.cldr" assertions="6" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/PRODUCT_INFORMATION.cldr" assertions="6" classname="OE.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/PRODUCT_INFORMATION.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/PRODUCT_INFORMATION.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:24 for a duration of 2.06 seconds (started at 2024-10-11T06:30:22)
+=== DBI Completed at 2025-01-23T05:33:56 for a duration of 1.36 seconds (started at 2025-01-23T05:33:55)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_INFORMATION.tbl" assertions="15" classname="OE.tbl" status="PASS" time="0">
@@ -862,21 +862,21 @@ Comment created.
 Comment created.
 Grant succeeded.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:45 for a duration of .3 seconds (started at 2024-10-11T06:29:45)
+=== DBI Completed at 2025-01-23T05:33:26 for a duration of .23 seconds (started at 2025-01-23T05:33:26)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_INFORMATION.tidx" assertions="3" classname="OE.tidx" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PRODUCT_INFORMATION.tidx
 Index created.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .03 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .04 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_INFORMATION_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PRODUCT_INFORMATION_TYP.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .06 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .09 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_PRICES.vw" assertions="4" classname="OE.vw" status="PASS" time="0">
@@ -884,24 +884,24 @@ Warning: Type created with compilation errors.
 === DBI Started: OE/PRODUCT_PRICES.vw
 View created.
 View created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .05 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .05 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
     <testcase name="OE/PRODUCT_REF_LIST_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PRODUCT_REF_LIST_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .07 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
-    <testcase name="OE/PROMOTIONS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/PROMOTIONS.cldr" assertions="6" classname="OE.cldr" status="PASS" time="1">
       <system-out>
 === DBI Started: OE/PROMOTIONS.cldr
 Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/PROMOTIONS.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:26 for a duration of 2.03 seconds (started at 2024-10-11T06:30:24)
+=== DBI Completed at 2025-01-23T05:33:57 for a duration of 1.3 seconds (started at 2025-01-23T05:33:56)
       </system-out>
     </testcase>
     <testcase name="OE/PROMOTIONS.tbl" assertions="4" classname="OE.tbl" status="PASS" time="0">
@@ -909,7 +909,7 @@ PL/SQL procedure successfully completed.
 === DBI Started: OE/PROMOTIONS.tbl
 Table created.
 Table altered.
-=== DBI Completed at 2024-10-11T06:29:45 for a duration of .08 seconds (started at 2024-10-11T06:29:45)
+=== DBI Completed at 2025-01-23T05:33:26 for a duration of .09 seconds (started at 2025-01-23T05:33:26)
       </system-out>
     </testcase>
     <testcase name="OE/PURCHASEORDER.tbl" assertions="5" classname="OE.tbl" status="PASS" time="0">
@@ -918,7 +918,7 @@ Table altered.
 Table created.
 Table altered.
 Table altered.
-=== DBI Completed at 2024-10-11T06:29:46 for a duration of .43 seconds (started at 2024-10-11T06:29:45)
+=== DBI Completed at 2025-01-23T05:33:26 for a duration of .44 seconds (started at 2025-01-23T05:33:26)
       </system-out>
     </testcase>
     <testcase name="OE/PURCHASEORDER.ttrg" assertions="4" classname="OE.ttrg" status="PASS" time="0">
@@ -926,35 +926,35 @@ Table altered.
 === DBI Started: OE/PURCHASEORDER.ttrg
 Trigger created.
 Trigger altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .05 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .05 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/PURCHASEORDER_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/PURCHASEORDER_T.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .09 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .11 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/REJECTION_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/REJECTION_T.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .07 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/SHIPPING_INSTRUCTIONS_T.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/SHIPPING_INSTRUCTIONS_T.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .02 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/SUBCATEGORY_REF_LIST_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/SUBCATEGORY_REF_LIST_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="OE/SYDNEY_INVENTORY.vw" assertions="5" classname="OE.vw" status="PASS" time="0">
@@ -963,7 +963,7 @@ Type created.
 View created.
 View created.
 Comment created.
-=== DBI Completed at 2024-10-11T06:29:52 for a duration of .05 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .06 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
     <testcase name="OE/TORONTO_INVENTORY.vw" assertions="5" classname="OE.vw" status="PASS" time="0">
@@ -972,7 +972,7 @@ Comment created.
 View created.
 View created.
 Comment created.
-=== DBI Completed at 2024-10-11T06:29:53 for a duration of .08 seconds (started at 2024-10-11T06:29:52)
+=== DBI Completed at 2025-01-23T05:33:34 for a duration of .07 seconds (started at 2025-01-23T05:33:34)
       </system-out>
     </testcase>
     <testcase name="OE/WAREHOUSES.cldr" assertions="6" classname="OE.cldr" status="PASS" time="3">
@@ -982,7 +982,7 @@ Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=OE/WAREHOUSES.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:30:29 for a duration of 3.22 seconds (started at 2024-10-11T06:30:26)
+=== DBI Completed at 2025-01-23T05:34:00 for a duration of 2.5 seconds (started at 2025-01-23T05:33:57)
       </system-out>
     </testcase>
     <testcase name="OE/WAREHOUSES.tbl" assertions="10" classname="OE.tbl" status="PASS" time="0">
@@ -996,42 +996,42 @@ Comment created.
 Comment created.
 Comment created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:46 for a duration of .19 seconds (started at 2024-10-11T06:29:46)
+=== DBI Completed at 2025-01-23T05:33:27 for a duration of .23 seconds (started at 2025-01-23T05:33:26)
       </system-out>
     </testcase>
     <testcase name="OE/WAREHOUSES.tfk" assertions="3" classname="OE.tfk" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/WAREHOUSES.tfk
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .06 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .05 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="OE/WAREHOUSES.tidx" assertions="3" classname="OE.tidx" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/WAREHOUSES.tidx
 Index created.
-=== DBI Completed at 2024-10-11T06:30:35 for a duration of .03 seconds (started at 2024-10-11T06:30:35)
+=== DBI Completed at 2025-01-23T05:34:06 for a duration of .03 seconds (started at 2025-01-23T05:34:06)
       </system-out>
     </testcase>
     <testcase name="OE/WAREHOUSE_TYP.tps" assertions="3" classname="OE.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: OE/WAREHOUSE_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
-    <testcase name="OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd" assertions="3" classname="OE.pxsd" status="PASS" time="3">
+    <testcase name="OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd" assertions="3" classname="OE.pxsd" status="PASS" time="2">
       <system-out>
 === DBI Started: OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2024-10-11T06:29:09 for a duration of 3.08 seconds (started at 2024-10-11T06:29:06)
+=== DBI Completed at 2025-01-23T05:32:49 for a duration of 2 seconds (started at 2025-01-23T05:32:47)
       </system-out>
     </testcase>
     <testcase name="PM/ADHEADER_TYP.tps" assertions="3" classname="PM.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: PM/ADHEADER_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .04 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .05 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="PM/PRINT_MEDIA.cldr" assertions="19" classname="PM.cldr" status="PASS" time="5">
@@ -1054,37 +1054,37 @@ Decode UNISTR Data
 4 &quot;AD_FLTEXTN&quot; updates.
 PL/SQL procedure successfully completed.
 Commit complete.
-=== DBI Completed at 2024-10-11T06:30:34 for a duration of 4.58 seconds (started at 2024-10-11T06:30:29)
+=== DBI Completed at 2025-01-23T05:34:04 for a duration of 4.68 seconds (started at 2025-01-23T05:34:00)
       </system-out>
     </testcase>
-    <testcase name="PM/PRINT_MEDIA.tbl" assertions="5" classname="PM.tbl" status="PASS" time="1">
+    <testcase name="PM/PRINT_MEDIA.tbl" assertions="5" classname="PM.tbl" status="PASS" time="2">
       <system-out>
 === DBI Started: PM/PRINT_MEDIA.tbl
 Table created.
 Index created.
 Table altered.
-=== DBI Completed at 2024-10-11T06:29:47 for a duration of .86 seconds (started at 2024-10-11T06:29:46)
+=== DBI Completed at 2025-01-23T05:33:28 for a duration of 1.6 seconds (started at 2025-01-23T05:33:27)
       </system-out>
     </testcase>
     <testcase name="PM/PRINT_MEDIA.tfk" assertions="3" classname="PM.tfk" status="PASS" time="0">
       <system-out>
 === DBI Started: PM/PRINT_MEDIA.tfk
 Table altered.
-=== DBI Completed at 2024-10-11T06:30:36 for a duration of .04 seconds (started at 2024-10-11T06:30:36)
+=== DBI Completed at 2025-01-23T05:34:07 for a duration of .04 seconds (started at 2025-01-23T05:34:07)
       </system-out>
     </testcase>
     <testcase name="PM/TEXTDOC_TAB.tps" assertions="3" classname="PM.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: PM/TEXTDOC_TAB.tps
 Warning: Type created with compilation errors.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .05 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <testcase name="PM/TEXTDOC_TYP.tps" assertions="3" classname="PM.tps" status="PASS" time="0">
       <system-out>
 === DBI Started: PM/TEXTDOC_TYP.tps
 Type created.
-=== DBI Completed at 2024-10-11T06:29:10 for a duration of .03 seconds (started at 2024-10-11T06:29:10)
+=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
       </system-out>
     </testcase>
     <system-out>
@@ -1095,12 +1095,12 @@ Type created.
 (PM/PRINT_MEDIA.tbl) Compile All is done.
     </system-out>
   </testsuite>
-  <testsuite name="install_sys.log" tests="3" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2024-10-11T06:30:45">
+  <testsuite name="install_sys.log" tests="3" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-23T05:34:15">
     <testcase name="SYS/HR.user" assertions="3" classname="SYS.user" status="PASS" time="0">
       <system-out>
 === DBI Started: SYS/HR.user
 User created.
-=== DBI Completed at 2024-10-11T06:29:04 for a duration of .18 seconds (started at 2024-10-11T06:29:04)
+=== DBI Completed at 2025-01-23T05:32:45 for a duration of .15 seconds (started at 2025-01-23T05:32:45)
       </system-out>
     </testcase>
     <testcase name="SYS/OE.user" assertions="4" classname="SYS.user" status="PASS" time="0">
@@ -1108,7 +1108,7 @@ User created.
 === DBI Started: SYS/OE.user
 User created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:04 for a duration of .08 seconds (started at 2024-10-11T06:29:04)
+=== DBI Completed at 2025-01-23T05:32:45 for a duration of .08 seconds (started at 2025-01-23T05:32:45)
       </system-out>
     </testcase>
     <testcase name="SYS/PM.user" assertions="4" classname="SYS.user" status="PASS" time="0">
@@ -1116,11 +1116,11 @@ Grant succeeded.
 === DBI Started: SYS/PM.user
 User created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:04 for a duration of .07 seconds (started at 2024-10-11T06:29:04)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .07 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
   </testsuite>
-  <testsuite name="install_system.log" tests="6" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2024-10-11T06:30:45">
+  <testsuite name="install_system.log" tests="6" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-23T05:34:15">
     <testcase name="SYSTEM/HR_usr.grnt" assertions="11" classname="SYSTEM.grnt" status="PASS" time="0">
       <system-out>
 === DBI Started: SYSTEM/HR_usr.grnt
@@ -1133,7 +1133,7 @@ Grant succeeded.
 Grant succeeded.
 Grant succeeded.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .23 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .2 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
     <testcase name="SYSTEM/MEDIA_DIR.dir" assertions="4" classname="SYSTEM.dir" status="PASS" time="0">
@@ -1141,7 +1141,7 @@ Grant succeeded.
 === DBI Started: SYSTEM/MEDIA_DIR.dir
 Directory created.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .07 seconds (started at 2024-10-11T06:29:04)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .06 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
     <testcase name="SYSTEM/OE_usr.grnt" assertions="11" classname="SYSTEM.grnt" status="PASS" time="0">
@@ -1156,7 +1156,7 @@ Grant succeeded.
 Grant succeeded.
 Grant succeeded.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .16 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .21 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
     <testcase name="SYSTEM/PM_usr.grnt" assertions="5" classname="SYSTEM.grnt" status="PASS" time="0">
@@ -1165,7 +1165,7 @@ Grant succeeded.
 Grant succeeded.
 Grant succeeded.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .05 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .06 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
     <testcase name="SYSTEM/SS_OE_XMLDIR.dir" assertions="5" classname="SYSTEM.dir" status="PASS" time="0">
@@ -1174,7 +1174,7 @@ Grant succeeded.
 Directory created.
 Grant succeeded.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .06 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .04 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
     <testcase name="SYSTEM/SUBDIR.dir" assertions="5" classname="SYSTEM.dir" status="PASS" time="0">
@@ -1183,7 +1183,7 @@ Grant succeeded.
 Directory created.
 Grant succeeded.
 Grant succeeded.
-=== DBI Completed at 2024-10-11T06:29:05 for a duration of .07 seconds (started at 2024-10-11T06:29:05)
+=== DBI Completed at 2025-01-23T05:32:46 for a duration of .06 seconds (started at 2025-01-23T05:32:46)
       </system-out>
     </testcase>
   </testsuite>

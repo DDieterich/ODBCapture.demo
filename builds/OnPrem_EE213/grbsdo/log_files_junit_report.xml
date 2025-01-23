@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="install_grbsdo.log" tests="4" errors="0" hostname="EE213CDB" id="3" time="1" timestamp="2025-01-23T05:34:48">
+  <testsuite name="install_grbsdo.log" tests="4" errors="0" hostname="EE213CDB" id="3" time="1" timestamp="2025-01-23T06:51:05">
     <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
     </testcase>
     <testcase name="./installation_prepare.sql" assertions="10" classname="..sql" status="PASS" time="0">
@@ -12,23 +12,23 @@ Grant succeeded.
 Synonym created.
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for &quot;grbsdo&quot;
- -) &quot;grbsrc&quot; last loaded on 23-Jan-2025 05:34:43
+ -) &quot;grbsrc&quot; last loaded on 23-Jan-2025 06:51:01
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2025-01-23T05:34:45 for a duration of .09 seconds (started at 2025-01-23T05:34:45)
+=== DBI Completed at 2025-01-23T06:51:02 for a duration of .11 seconds (started at 2025-01-23T06:51:02)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/GRAB_SDO.pkbsql" assertions="3" classname="ODBCAPTURE.pkbsql" status="PASS" time="0">
       <system-out>
 === DBI Started: ODBCAPTURE/GRAB_SDO.pkbsql
 Package body created.
-=== DBI Completed at 2025-01-23T05:34:46 for a duration of .12 seconds (started at 2025-01-23T05:34:46)
+=== DBI Completed at 2025-01-23T06:51:04 for a duration of .12 seconds (started at 2025-01-23T06:51:04)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/GRAB_SDO.pkssql" assertions="3" classname="ODBCAPTURE.pkssql" status="PASS" time="0">
       <system-out>
 === DBI Started: ODBCAPTURE/GRAB_SDO.pkssql
 Package created.
-=== DBI Completed at 2025-01-23T05:34:45 for a duration of .06 seconds (started at 2025-01-23T05:34:45)
+=== DBI Completed at 2025-01-23T06:51:02 for a duration of .06 seconds (started at 2025-01-23T06:51:02)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr" assertions="6" classname="ODBCAPTURE.cldr" status="PASS" time="1">
@@ -38,12 +38,12 @@ Disable Triggers and Foreign Keys
 PL/SQL procedure successfully completed.
 sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2025-01-23T05:34:46 for a duration of 1.16 seconds (started at 2025-01-23T05:34:45)
+=== DBI Completed at 2025-01-23T06:51:04 for a duration of 1.08 seconds (started at 2025-01-23T06:51:02)
       </system-out>
     </testcase>
   </testsuite>
-  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-23T05:34:48">
+  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-23T06:51:05">
   </testsuite>
-  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-23T05:34:48">
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-23T06:51:05">
   </testsuite>
 </testsuites>

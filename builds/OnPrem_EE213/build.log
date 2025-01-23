@@ -3,9 +3,11 @@ Running from /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
 
 Setup Variables
 
+Capture Version
+
 build_initialize.sql
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:32:25 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:48:44 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -16,22 +18,11 @@ Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
 
-New Session
-Connected.
+CONNECTION
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+user: SYS, db: EE213CDB, con: CDB$ROOT, tstmp: 23-JAN-25 06.48.44.904261 AM +00:00
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: CDB$ROOT, tstmp: 23-JAN-25 05.32.25.574385 AM +00:00
-
-Elapsed: 00:00:00.00
+Elapsed: 00:00:00.11
 
 Show PDBs
 
@@ -40,7 +31,7 @@ Show PDBs
 	 2 PDB$SEED			  READ ONLY  NO
 	 3 TESTPDB			  READ WRITE NO
 	 4 E213PDB1			  READ WRITE NO
-	 5 DEVPDB			  READ WRITE NO
+	 6 DEVPDB			  READ WRITE NO
 
 Create PDB
 ALTER PLUGGABLE DATABASE "DEVPDB" CLOSE IMMEDIATE INSTANCES=ALL;
@@ -53,13 +44,13 @@ create pluggable database "DEVPDB"
 
 PL/SQL procedure successfully completed.
 
-Elapsed: 00:00:13.58
+Elapsed: 00:00:12.73
 
 Open PDB
 
 Pluggable database altered.
 
-Elapsed: 00:00:06.26
+Elapsed: 00:00:06.08
 
 Show Services
 
@@ -89,7 +80,7 @@ Elapsed: 00:00:00.08
 
 Session altered.
 
-Elapsed: 00:00:00.00
+Elapsed: 00:00:00.01
 Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
@@ -99,7 +90,7 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_src
 
 /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql ss_src
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:32:45 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:49:03 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -109,28 +100,11 @@ Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.32.45.705340 AM +00:00
-
-Elapsed: 00:00:00.01
 Setup Abort on Error
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.32.45.749801 AM +00:00
+user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.49.04.006869 AM +00:00
 
 Identify this Module in V$SESSION
 
@@ -142,7 +116,7 @@ Identify this Module in V$SESSION
 
 User created.
 
-=== DBI Completed at 2025-01-23T05:32:45 for a duration of .15 seconds (started at 2025-01-23T05:32:45)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .14 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYS/OE.user
 
 User created.
@@ -150,7 +124,7 @@ User created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:45 for a duration of .08 seconds (started at 2025-01-23T05:32:45)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .09 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYS/PM.user
 
 User created.
@@ -158,7 +132,7 @@ User created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .07 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .06 seconds (started at 2025-01-23T06:49:04)
 Setup Continue on Error
 
 *****************************
@@ -169,7 +143,7 @@ Connected.
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.32.46.203027 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.49.04.454639 AM +00:00
 
 1 row selected.
 
@@ -180,7 +154,7 @@ Directory created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .06 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .05 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYSTEM/SS_OE_XMLDIR.dir
 
 Directory created.
@@ -191,7 +165,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .04 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .04 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYSTEM/SUBDIR.dir
 
 Directory created.
@@ -202,7 +176,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .06 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .05 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYSTEM/HR_usr.grnt
 
 Grant succeeded.
@@ -231,7 +205,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .2 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .12 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYSTEM/OE_usr.grnt
 
 Grant succeeded.
@@ -260,7 +234,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .21 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .11 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: SYSTEM/PM_usr.grnt
 
 Grant succeeded.
@@ -271,7 +245,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:32:46 for a duration of .06 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:04 for a duration of .05 seconds (started at 2025-01-23T06:49:04)
 
 *************************
 *  Install Application	*
@@ -295,202 +269,202 @@ Prerequisite BUILD_TYPEs for "ss_src"
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:32:47 for a duration of .18 seconds (started at 2025-01-23T05:32:46)
+=== DBI Completed at 2025-01-23T06:49:05 for a duration of .16 seconds (started at 2025-01-23T06:49:04)
 === DBI Started: HR/DEPARTMENTS_SEQ.seq
 
 Sequence created.
 
-=== DBI Completed at 2025-01-23T05:32:47 for a duration of .03 seconds (started at 2025-01-23T05:32:47)
+=== DBI Completed at 2025-01-23T06:49:05 for a duration of .03 seconds (started at 2025-01-23T06:49:05)
 === DBI Started: HR/EMPLOYEES_SEQ.seq
 
 Sequence created.
 
-=== DBI Completed at 2025-01-23T05:32:47 for a duration of .02 seconds (started at 2025-01-23T05:32:47)
+=== DBI Completed at 2025-01-23T06:49:05 for a duration of .02 seconds (started at 2025-01-23T06:49:05)
 === DBI Started: HR/LOCATIONS_SEQ.seq
 
 Sequence created.
 
-=== DBI Completed at 2025-01-23T05:32:47 for a duration of .03 seconds (started at 2025-01-23T05:32:47)
+=== DBI Completed at 2025-01-23T06:49:05 for a duration of .11 seconds (started at 2025-01-23T06:49:05)
 === DBI Started: OE/ORDERS_SEQ.seq
 
 Sequence created.
 
-=== DBI Completed at 2025-01-23T05:32:47 for a duration of .04 seconds (started at 2025-01-23T05:32:47)
+=== DBI Completed at 2025-01-23T06:49:05 for a duration of .03 seconds (started at 2025-01-23T06:49:05)
 === DBI Started: OE/localhost_8080_source_schemas_poSource_xsd_purchaseOrder.xsd.pxsd
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of 2 seconds (started at 2025-01-23T05:32:47)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of 2.02 seconds (started at 2025-01-23T06:49:05)
 === DBI Started: OE/ACTIONS_T.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .06 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .05 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/ACTION_T.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .09 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .05 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/ACTION_V.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .07 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/CATALOG_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .07 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/CATEGORY_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .07 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .05 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/COMPOSITE_CATEGORY_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .04 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/CORPORATE_CUSTOMER_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .03 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/CUSTOMER_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .09 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/CUST_ADDRESS_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .03 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .04 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/INVENTORY_LIST_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .03 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/INVENTORY_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .05 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/LEAF_CATEGORY_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .06 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .03 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/LINEITEMS_T.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .05 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .03 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/LINEITEM_T.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:07 for a duration of .03 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/LINEITEM_V.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:49 for a duration of .14 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .13 seconds (started at 2025-01-23T06:49:07)
 === DBI Started: OE/ORDER_ITEM_LIST_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:49)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .04 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/ORDER_ITEM_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .05 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/ORDER_LIST_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .13 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/ORDER_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .08 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .08 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/PART_T.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .05 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .05 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/PHONE_LIST_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .03 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .03 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/PRODUCT_INFORMATION_TYP.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .09 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .11 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/PRODUCT_REF_LIST_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .07 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .04 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/PURCHASEORDER_T.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .11 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .09 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/REJECTION_T.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .07 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .04 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/SHIPPING_INSTRUCTIONS_T.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .03 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/SUBCATEGORY_REF_LIST_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .03 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: OE/WAREHOUSE_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .07 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: PM/ADHEADER_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .05 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:08 for a duration of .06 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: PM/TEXTDOC_TAB.tps
 
 Warning: Type created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .05 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:09 for a duration of .03 seconds (started at 2025-01-23T06:49:08)
 === DBI Started: PM/TEXTDOC_TYP.tps
 
 Type created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:09 for a duration of .07 seconds (started at 2025-01-23T06:49:09)
 === DBI Started: OE/GET_PHONE_NUMBER_F.func
 
 Function created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .03 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:09 for a duration of .04 seconds (started at 2025-01-23T06:49:09)
 === DBI Started: HR/ADD_JOB_HISTORY.proc
 
 Warning: Procedure created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:09 for a duration of .03 seconds (started at 2025-01-23T06:49:09)
 === DBI Started: HR/SECURE_DML.proc
 
 Procedure created.
 
-=== DBI Completed at 2025-01-23T05:32:50 for a duration of .04 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:09 for a duration of .03 seconds (started at 2025-01-23T06:49:09)
 === DBI Started: HR/COUNTRIES.tbl
 
 Table created.
@@ -516,7 +490,7 @@ Grant succeeded.
 
 Synonym created.
 
-=== DBI Completed at 2025-01-23T05:32:51 for a duration of .29 seconds (started at 2025-01-23T05:32:50)
+=== DBI Completed at 2025-01-23T06:49:09 for a duration of .14 seconds (started at 2025-01-23T06:49:09)
 === DBI Started: HR/DEPARTMENTS.tbl
 
 Table created.
@@ -548,7 +522,7 @@ Grant succeeded.
 
 Synonym created.
 
-=== DBI Completed at 2025-01-23T05:33:05 for a duration of 14.27 seconds (started at 2025-01-23T05:32:51)
+=== DBI Completed at 2025-01-23T06:49:22 for a duration of 12.76 seconds (started at 2025-01-23T06:49:09)
 === DBI Started: HR/EMPLOYEES.tbl
 
 Table created.
@@ -610,7 +584,7 @@ Grant succeeded.
 
 Synonym created.
 
-=== DBI Completed at 2025-01-23T05:33:05 for a duration of .38 seconds (started at 2025-01-23T05:33:05)
+=== DBI Completed at 2025-01-23T06:49:22 for a duration of .43 seconds (started at 2025-01-23T06:49:22)
 === DBI Started: HR/JOBS.tbl
 
 Table created.
@@ -642,7 +616,7 @@ Grant succeeded.
 
 Synonym created.
 
-=== DBI Completed at 2025-01-23T05:33:06 for a duration of .18 seconds (started at 2025-01-23T05:33:05)
+=== DBI Completed at 2025-01-23T06:49:22 for a duration of .16 seconds (started at 2025-01-23T06:49:22)
 === DBI Started: HR/JOB_HISTORY.tbl
 
 Table created.
@@ -680,7 +654,7 @@ Grant succeeded.
 
 Synonym created.
 
-=== DBI Completed at 2025-01-23T05:33:06 for a duration of .22 seconds (started at 2025-01-23T05:33:06)
+=== DBI Completed at 2025-01-23T06:49:22 for a duration of .22 seconds (started at 2025-01-23T06:49:22)
 === DBI Started: HR/LOCATIONS.tbl
 
 Table created.
@@ -721,7 +695,7 @@ Grant succeeded.
 
 Synonym created.
 
-=== DBI Completed at 2025-01-23T05:33:06 for a duration of .21 seconds (started at 2025-01-23T05:33:06)
+=== DBI Completed at 2025-01-23T06:49:23 for a duration of .21 seconds (started at 2025-01-23T06:49:22)
 === DBI Started: HR/REGIONS.tbl
 
 Table created.
@@ -741,7 +715,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:33:06 for a duration of .12 seconds (started at 2025-01-23T05:33:06)
+=== DBI Completed at 2025-01-23T06:49:23 for a duration of .11 seconds (started at 2025-01-23T06:49:23)
 === DBI Started: OE/CATEGORIES_TAB.tbl
 
 Table created.
@@ -749,7 +723,7 @@ Table created.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:33:25 for a duration of 18.45 seconds (started at 2025-01-23T05:33:06)
+=== DBI Completed at 2025-01-23T06:49:41 for a duration of 18.45 seconds (started at 2025-01-23T06:49:23)
 === DBI Started: OE/CUSTOMERS.tbl
 
 Table created.
@@ -796,7 +770,7 @@ Comment created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:25 for a duration of .41 seconds (started at 2025-01-23T05:33:25)
+=== DBI Completed at 2025-01-23T06:49:42 for a duration of .39 seconds (started at 2025-01-23T06:49:41)
 === DBI Started: OE/INVENTORIES.tbl
 
 Table created.
@@ -819,7 +793,7 @@ Comment created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:25 for a duration of .14 seconds (started at 2025-01-23T05:33:25)
+=== DBI Completed at 2025-01-23T06:49:42 for a duration of .12 seconds (started at 2025-01-23T06:49:42)
 === DBI Started: OE/ORDERS.tbl
 
 Table created.
@@ -863,7 +837,7 @@ Comment created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:25 for a duration of .24 seconds (started at 2025-01-23T05:33:25)
+=== DBI Completed at 2025-01-23T06:49:42 for a duration of .27 seconds (started at 2025-01-23T06:49:42)
 === DBI Started: OE/ORDER_ITEMS.tbl
 
 Table created.
@@ -889,7 +863,7 @@ Comment created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:26 for a duration of .13 seconds (started at 2025-01-23T05:33:25)
+=== DBI Completed at 2025-01-23T06:49:42 for a duration of .14 seconds (started at 2025-01-23T06:49:42)
 === DBI Started: OE/PRODUCT_DESCRIPTIONS.tbl
 
 Table created.
@@ -912,7 +886,7 @@ Comment created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:26 for a duration of .14 seconds (started at 2025-01-23T05:33:26)
+=== DBI Completed at 2025-01-23T06:49:42 for a duration of .14 seconds (started at 2025-01-23T06:49:42)
 === DBI Started: OE/PRODUCT_INFORMATION.tbl
 
 Table created.
@@ -953,7 +927,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:26 for a duration of .23 seconds (started at 2025-01-23T05:33:26)
+=== DBI Completed at 2025-01-23T06:49:43 for a duration of .24 seconds (started at 2025-01-23T06:49:42)
 === DBI Started: OE/PROMOTIONS.tbl
 
 Table created.
@@ -961,7 +935,7 @@ Table created.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:33:26 for a duration of .09 seconds (started at 2025-01-23T05:33:26)
+=== DBI Completed at 2025-01-23T06:49:43 for a duration of .06 seconds (started at 2025-01-23T06:49:43)
 === DBI Started: OE/PURCHASEORDER.tbl
 
 Table created.
@@ -972,7 +946,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:33:26 for a duration of .44 seconds (started at 2025-01-23T05:33:26)
+=== DBI Completed at 2025-01-23T06:49:43 for a duration of .45 seconds (started at 2025-01-23T06:49:43)
 === DBI Started: OE/WAREHOUSES.tbl
 
 Table created.
@@ -998,7 +972,7 @@ Comment created.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:33:27 for a duration of .23 seconds (started at 2025-01-23T05:33:26)
+=== DBI Completed at 2025-01-23T06:49:43 for a duration of .2 seconds (started at 2025-01-23T06:49:43)
 === DBI Started: PM/PRINT_MEDIA.tbl
 
 Table created.
@@ -1009,7 +983,7 @@ Index created.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:33:28 for a duration of 1.6 seconds (started at 2025-01-23T05:33:27)
+=== DBI Completed at 2025-01-23T06:49:45 for a duration of 1.46 seconds (started at 2025-01-23T06:49:43)
 Compile All started
 
 PL/SQL procedure successfully completed.
@@ -1028,7 +1002,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .15 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:49 for a duration of .18 seconds (started at 2025-01-23T06:49:49)
 === DBI Started: OE/ACCOUNT_MANAGERS.vw
 
 View created.
@@ -1036,7 +1010,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .07 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:49 for a duration of .07 seconds (started at 2025-01-23T06:49:49)
 === DBI Started: OE/BOMBAY_INVENTORY.vw
 
 View created.
@@ -1047,7 +1021,7 @@ Warning: View created with compilation errors.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .08 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .11 seconds (started at 2025-01-23T06:49:49)
 === DBI Started: OE/CUSTOMERS_VIEW.vw
 
 View created.
@@ -1055,7 +1029,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .08 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .09 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/OC_CORPORATE_CUSTOMERS.vw
 
 View created.
@@ -1063,7 +1037,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .09 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .19 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/OC_CUSTOMERS.vw
 
 View created.
@@ -1071,7 +1045,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .07 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .08 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/OC_INVENTORIES.vw
 
 View created.
@@ -1079,7 +1053,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:33 for a duration of .14 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .09 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/OC_ORDERS.vw
 
 View created.
@@ -1087,7 +1061,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .11 seconds (started at 2025-01-23T05:33:33)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .14 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/OC_PRODUCT_INFORMATION.vw
 
 View created.
@@ -1095,7 +1069,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .09 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .09 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/ORDERS_VIEW.vw
 
 View created.
@@ -1103,7 +1077,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .06 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .06 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/PRODUCTS.vw
 
 View created.
@@ -1114,7 +1088,7 @@ View created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .08 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .07 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/PRODUCT_PRICES.vw
 
 View created.
@@ -1122,7 +1096,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .05 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:50 for a duration of .05 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/SYDNEY_INVENTORY.vw
 
 View created.
@@ -1133,7 +1107,7 @@ View created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .06 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:51 for a duration of .06 seconds (started at 2025-01-23T06:49:50)
 === DBI Started: OE/TORONTO_INVENTORY.vw
 
 View created.
@@ -1144,7 +1118,7 @@ View created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:33:34 for a duration of .07 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:51 for a duration of .08 seconds (started at 2025-01-23T06:49:51)
 === DBI Started: HR/COUNTRIES.cldr
 
 Disable Triggers and Foreign Keys
@@ -1158,7 +1132,7 @@ sqlldr_control=HR/COUNTRIES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:37 for a duration of 3.04 seconds (started at 2025-01-23T05:33:34)
+=== DBI Completed at 2025-01-23T06:49:53 for a duration of 2.84 seconds (started at 2025-01-23T06:49:51)
 === DBI Started: HR/DEPARTMENTS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1172,7 +1146,7 @@ sqlldr_control=HR/DEPARTMENTS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:39 for a duration of 1.52 seconds (started at 2025-01-23T05:33:37)
+=== DBI Completed at 2025-01-23T06:49:55 for a duration of 1.5 seconds (started at 2025-01-23T06:49:53)
 === DBI Started: HR/EMPLOYEES.cldr
 
 Disable Triggers and Foreign Keys
@@ -1186,7 +1160,7 @@ sqlldr_control=HR/EMPLOYEES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:40 for a duration of 1.33 seconds (started at 2025-01-23T05:33:39)
+=== DBI Completed at 2025-01-23T06:49:56 for a duration of 1.43 seconds (started at 2025-01-23T06:49:55)
 === DBI Started: HR/JOBS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1200,7 +1174,7 @@ sqlldr_control=HR/JOBS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:41 for a duration of 1.31 seconds (started at 2025-01-23T05:33:40)
+=== DBI Completed at 2025-01-23T06:49:58 for a duration of 1.38 seconds (started at 2025-01-23T06:49:56)
 === DBI Started: HR/JOB_HISTORY.cldr
 
 Disable Triggers and Foreign Keys
@@ -1214,7 +1188,7 @@ sqlldr_control=HR/JOB_HISTORY.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:43 for a duration of 1.49 seconds (started at 2025-01-23T05:33:41)
+=== DBI Completed at 2025-01-23T06:49:59 for a duration of 1.24 seconds (started at 2025-01-23T06:49:58)
 === DBI Started: HR/LOCATIONS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1228,7 +1202,7 @@ sqlldr_control=HR/LOCATIONS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:44 for a duration of 1.35 seconds (started at 2025-01-23T05:33:43)
+=== DBI Completed at 2025-01-23T06:50:00 for a duration of 1.33 seconds (started at 2025-01-23T06:49:59)
 === DBI Started: HR/REGIONS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1242,7 +1216,7 @@ sqlldr_control=HR/REGIONS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:45 for a duration of 1.29 seconds (started at 2025-01-23T05:33:44)
+=== DBI Completed at 2025-01-23T06:50:02 for a duration of 1.29 seconds (started at 2025-01-23T06:50:00)
 === DBI Started: OE/CUSTOMERS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1256,7 +1230,7 @@ sqlldr_control=OE/CUSTOMERS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:47 for a duration of 1.49 seconds (started at 2025-01-23T05:33:45)
+=== DBI Completed at 2025-01-23T06:50:03 for a duration of 1.48 seconds (started at 2025-01-23T06:50:02)
 === DBI Started: OE/INVENTORIES.cldr
 
 Disable Triggers and Foreign Keys
@@ -1270,7 +1244,7 @@ sqlldr_control=OE/INVENTORIES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:48 for a duration of 1.4 seconds (started at 2025-01-23T05:33:47)
+=== DBI Completed at 2025-01-23T06:50:05 for a duration of 1.39 seconds (started at 2025-01-23T06:50:03)
 === DBI Started: OE/ORDERS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1284,7 +1258,7 @@ sqlldr_control=OE/ORDERS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:50 for a duration of 1.28 seconds (started at 2025-01-23T05:33:48)
+=== DBI Completed at 2025-01-23T06:50:06 for a duration of 1.35 seconds (started at 2025-01-23T06:50:05)
 === DBI Started: OE/ORDER_ITEMS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1298,7 +1272,7 @@ sqlldr_control=OE/ORDER_ITEMS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:51 for a duration of 1.41 seconds (started at 2025-01-23T05:33:50)
+=== DBI Completed at 2025-01-23T06:50:07 for a duration of 1.35 seconds (started at 2025-01-23T06:50:06)
 === DBI Started: OE/PRODUCT_DESCRIPTIONS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1312,7 +1286,7 @@ sqlldr_control=OE/PRODUCT_DESCRIPTIONS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:55 for a duration of 3.53 seconds (started at 2025-01-23T05:33:51)
+=== DBI Completed at 2025-01-23T06:50:11 for a duration of 3.7 seconds (started at 2025-01-23T06:50:07)
 === DBI Started: OE/PRODUCT_INFORMATION.cldr
 
 Disable Triggers and Foreign Keys
@@ -1326,7 +1300,7 @@ sqlldr_control=OE/PRODUCT_INFORMATION.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:56 for a duration of 1.36 seconds (started at 2025-01-23T05:33:55)
+=== DBI Completed at 2025-01-23T06:50:12 for a duration of 1.4 seconds (started at 2025-01-23T06:50:11)
 === DBI Started: OE/PROMOTIONS.cldr
 
 Disable Triggers and Foreign Keys
@@ -1340,7 +1314,7 @@ sqlldr_control=OE/PROMOTIONS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:33:57 for a duration of 1.3 seconds (started at 2025-01-23T05:33:56)
+=== DBI Completed at 2025-01-23T06:50:14 for a duration of 1.34 seconds (started at 2025-01-23T06:50:12)
 === DBI Started: OE/WAREHOUSES.cldr
 
 Disable Triggers and Foreign Keys
@@ -1354,7 +1328,7 @@ sqlldr_control=OE/WAREHOUSES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:00 for a duration of 2.5 seconds (started at 2025-01-23T05:33:57)
+=== DBI Completed at 2025-01-23T06:50:16 for a duration of 2.62 seconds (started at 2025-01-23T06:50:14)
 === DBI Started: PM/PRINT_MEDIA.cldr
 
 Disable Triggers and Foreign Keys
@@ -1390,12 +1364,12 @@ PL/SQL procedure successfully completed.
 
 Commit complete.
 
-=== DBI Completed at 2025-01-23T05:34:04 for a duration of 4.68 seconds (started at 2025-01-23T05:34:00)
+=== DBI Completed at 2025-01-23T06:50:21 for a duration of 4.78 seconds (started at 2025-01-23T06:50:16)
 === DBI Started: HR/DEPARTMENTS.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:04 for a duration of .05 seconds (started at 2025-01-23T05:34:04)
+=== DBI Completed at 2025-01-23T06:50:21 for a duration of .05 seconds (started at 2025-01-23T06:50:21)
 === DBI Started: HR/EMPLOYEES.tidx
 
 Index created.
@@ -1409,7 +1383,7 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .15 seconds (started at 2025-01-23T05:34:04)
+=== DBI Completed at 2025-01-23T06:50:21 for a duration of .18 seconds (started at 2025-01-23T06:50:21)
 === DBI Started: HR/JOB_HISTORY.tidx
 
 Index created.
@@ -1420,7 +1394,7 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .08 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:21 for a duration of .08 seconds (started at 2025-01-23T06:50:21)
 === DBI Started: HR/LOCATIONS.tidx
 
 Index created.
@@ -1431,7 +1405,7 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .09 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:21 for a duration of .11 seconds (started at 2025-01-23T06:50:21)
 === DBI Started: OE/CUSTOMERS.tidx
 
 Index created.
@@ -1445,12 +1419,12 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .17 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:22 for a duration of .16 seconds (started at 2025-01-23T06:50:22)
 === DBI Started: OE/INVENTORIES.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .04 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:22 for a duration of .04 seconds (started at 2025-01-23T06:50:22)
 === DBI Started: OE/ORDERS.tidx
 
 Index created.
@@ -1461,7 +1435,7 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .08 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:22 for a duration of .11 seconds (started at 2025-01-23T06:50:22)
 === DBI Started: OE/ORDER_ITEMS.tidx
 
 Index created.
@@ -1472,42 +1446,42 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:05 for a duration of .14 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:22 for a duration of .13 seconds (started at 2025-01-23T06:50:22)
 === DBI Started: OE/PRODUCT_DESCRIPTIONS.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .63 seconds (started at 2025-01-23T05:34:05)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .77 seconds (started at 2025-01-23T06:50:22)
 === DBI Started: OE/PRODUCT_INFORMATION.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .04 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .08 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: OE/WAREHOUSES.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .03 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .06 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: OE/CATALOG_TYP.tpb
 
 Warning: Type Body created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .06 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .17 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: OE/COMPOSITE_CATEGORY_TYP.tpb
 
 Type body created.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .03 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .06 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: OE/LEAF_CATEGORY_TYP.tpb
 
 Type body created.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .02 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .08 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: HR/COUNTRIES.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .06 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .09 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: HR/DEPARTMENTS.tfk
 
 Table altered.
@@ -1515,7 +1489,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .07 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:23 for a duration of .09 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: HR/EMPLOYEES.tfk
 
 Table altered.
@@ -1526,7 +1500,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:06 for a duration of .3 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:24 for a duration of .28 seconds (started at 2025-01-23T06:50:23)
 === DBI Started: HR/JOB_HISTORY.tfk
 
 Table altered.
@@ -1537,17 +1511,17 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .17 seconds (started at 2025-01-23T05:34:06)
+=== DBI Completed at 2025-01-23T06:50:24 for a duration of .44 seconds (started at 2025-01-23T06:50:24)
 === DBI Started: HR/LOCATIONS.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .06 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:24 for a duration of .15 seconds (started at 2025-01-23T06:50:24)
 === DBI Started: OE/CUSTOMERS.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .06 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:24 for a duration of .18 seconds (started at 2025-01-23T06:50:24)
 === DBI Started: OE/INVENTORIES.tfk
 
 Table altered.
@@ -1555,7 +1529,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:25 for a duration of .36 seconds (started at 2025-01-23T06:50:24)
 === DBI Started: OE/ORDERS.tfk
 
 Table altered.
@@ -1563,7 +1537,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:25 for a duration of .28 seconds (started at 2025-01-23T06:50:25)
 === DBI Started: OE/ORDER_ITEMS.tfk
 
 Table altered.
@@ -1571,22 +1545,22 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:25 for a duration of .32 seconds (started at 2025-01-23T06:50:25)
 === DBI Started: OE/PRODUCT_DESCRIPTIONS.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .04 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:26 for a duration of .15 seconds (started at 2025-01-23T06:50:25)
 === DBI Started: OE/WAREHOUSES.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .05 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:26 for a duration of .16 seconds (started at 2025-01-23T06:50:26)
 === DBI Started: PM/PRINT_MEDIA.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .04 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:26 for a duration of .18 seconds (started at 2025-01-23T06:50:26)
 === DBI Started: HR/EMPLOYEES.ttrg
 
 Trigger created.
@@ -1600,7 +1574,7 @@ Trigger created.
 
 Trigger altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .11 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:26 for a duration of .49 seconds (started at 2025-01-23T06:50:26)
 === DBI Started: OE/ORDER_ITEMS.ttrg
 
 Trigger created.
@@ -1608,7 +1582,7 @@ Trigger created.
 
 Trigger altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .07 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:27 for a duration of .23 seconds (started at 2025-01-23T06:50:26)
 === DBI Started: OE/PURCHASEORDER.ttrg
 
 Trigger created.
@@ -1616,7 +1590,7 @@ Trigger created.
 
 Trigger altered.
 
-=== DBI Completed at 2025-01-23T05:34:07 for a duration of .05 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:27 for a duration of .09 seconds (started at 2025-01-23T06:50:27)
 === DBI Started: OE/OC_ORDERS.vtrg
 
 Trigger created.
@@ -1630,7 +1604,7 @@ Trigger created.
 
 Trigger altered.
 
-=== DBI Completed at 2025-01-23T05:34:08 for a duration of .12 seconds (started at 2025-01-23T05:34:07)
+=== DBI Completed at 2025-01-23T06:50:27 for a duration of .09 seconds (started at 2025-01-23T06:50:27)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table
@@ -1708,25 +1682,15 @@ PL/SQL procedure successfully completed.
 
 
 Switch Spooling Off
-=== DBI Completed at 2025-01-23T05:34:14 for a duration of 6.18 seconds (started at 2025-01-23T05:34:08)
+=== DBI Completed at 2025-01-23T06:50:33 for a duration of 6.49 seconds (started at 2025-01-23T06:50:27)
 not spooling currently
 
 "ss_src" Installation is Done.
-
-New Session
 Connected.
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
+CONNECTION
 ---------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.14.349040 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.50.33.864146 AM +00:00
 
 1 row selected.
 
@@ -1749,12 +1713,12 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_src
 
 report_status.sql ss_src
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:14 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:50:33 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
 
-Last Successful login time: Wed Jan 22 2025 23:34:14 -06:00
+Last Successful login time: Thu Jan 23 2025 00:50:33 -06:00
 
 Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
@@ -1780,25 +1744,25 @@ PL/SQL procedure successfully completed.
 
 
 Reporting Summary of Build Type Log Errors
-Processing file HR/COUNTRIES.log (2025-01-23 05:34:15)
-Processing file HR/DEPARTMENTS.log (2025-01-23 05:34:15)
-Processing file HR/EMPLOYEES.log (2025-01-23 05:34:15)
-Processing file HR/JOBS.log (2025-01-23 05:34:15)
-Processing file HR/JOB_HISTORY.log (2025-01-23 05:34:15)
-Processing file HR/LOCATIONS.log (2025-01-23 05:34:15)
-Processing file HR/REGIONS.log (2025-01-23 05:34:15)
-Processing file OE/CUSTOMERS.log (2025-01-23 05:34:15)
-Processing file OE/INVENTORIES.log (2025-01-23 05:34:15)
-Processing file OE/ORDERS.log (2025-01-23 05:34:15)
-Processing file OE/ORDER_ITEMS.log (2025-01-23 05:34:15)
-Processing file OE/PRODUCT_DESCRIPTIONS.log (2025-01-23 05:34:15)
-Processing file OE/PRODUCT_INFORMATION.log (2025-01-23 05:34:15)
-Processing file OE/PROMOTIONS.log (2025-01-23 05:34:15)
-Processing file OE/WAREHOUSES.log (2025-01-23 05:34:15)
-Processing file PM/PRINT_MEDIA.log (2025-01-23 05:34:15)
-Processing file install_ss_src.log (2025-01-23 05:34:15)
-Processing file install_sys.log (2025-01-23 05:34:15)
-Processing file install_system.log (2025-01-23 05:34:15)
+Processing file HR/COUNTRIES.log (2025-01-23 06:50:34)
+Processing file HR/DEPARTMENTS.log (2025-01-23 06:50:34)
+Processing file HR/EMPLOYEES.log (2025-01-23 06:50:34)
+Processing file HR/JOBS.log (2025-01-23 06:50:34)
+Processing file HR/JOB_HISTORY.log (2025-01-23 06:50:34)
+Processing file HR/LOCATIONS.log (2025-01-23 06:50:34)
+Processing file HR/REGIONS.log (2025-01-23 06:50:34)
+Processing file OE/CUSTOMERS.log (2025-01-23 06:50:34)
+Processing file OE/INVENTORIES.log (2025-01-23 06:50:34)
+Processing file OE/ORDERS.log (2025-01-23 06:50:34)
+Processing file OE/ORDER_ITEMS.log (2025-01-23 06:50:34)
+Processing file OE/PRODUCT_DESCRIPTIONS.log (2025-01-23 06:50:34)
+Processing file OE/PRODUCT_INFORMATION.log (2025-01-23 06:50:34)
+Processing file OE/PROMOTIONS.log (2025-01-23 06:50:34)
+Processing file OE/WAREHOUSES.log (2025-01-23 06:50:34)
+Processing file PM/PRINT_MEDIA.log (2025-01-23 06:50:34)
+Processing file install_ss_src.log (2025-01-23 06:50:34)
+Processing file install_sys.log (2025-01-23 06:50:34)
+Processing file install_system.log (2025-01-23 06:50:34)
 
 PL/SQL procedure successfully completed.
 
@@ -1846,7 +1810,7 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../custom_
 
 /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql custom_data_load
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:17 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:50:37 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -1856,23 +1820,6 @@ Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.17.986120 AM +00:00
-
-Elapsed: 00:00:00.00
 Identify this Module in V$SESSION
 
 *****************************
@@ -1883,7 +1830,7 @@ Connected.
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.18.088386 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.50.37.223042 AM +00:00
 
 
 Type altered.
@@ -1959,23 +1906,13 @@ Commit complete.
 
 
 "SS Custom Data Load" Installation is Done.
-
-New Session
 Connected.
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
+CONNECTION
 ---------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.18.500471 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.50.37.653429 AM +00:00
 
-Elapsed: 00:00:00.00
+Elapsed: 00:00:00.01
 O/S Message: No such file or directory
 Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
@@ -1986,12 +1923,12 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../custom_
 
 report_status.sql custom_data_load
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:18 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:50:37 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
 
-Last Successful login time: Wed Jan 22 2025 23:34:18 -06:00
+Last Successful login time: Thu Jan 23 2025 00:50:37 -06:00
 
 Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
@@ -2015,7 +1952,7 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../grbsrc
 
 /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql grbsrc
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:18 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:50:37 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -2025,28 +1962,11 @@ Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.18.740895 AM +00:00
-
-Elapsed: 00:00:00.00
 Setup Abort on Error
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.18.744870 AM +00:00
+user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.50.37.936059 AM +00:00
 
 Identify this Module in V$SESSION
 
@@ -2324,7 +2244,7 @@ XS Admin Cloud Grant "ADMIN_ANY_SEC_POLICY" to "ODBCAPTURE"
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:20 for a duration of 2.24 seconds (started at 2025-01-23T05:34:18)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of 2.14 seconds (started at 2025-01-23T06:50:37)
 Setup Continue on Error
 
 *****************************
@@ -2335,7 +2255,7 @@ Connected.
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.21.078157 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.50.40.159191 AM +00:00
 
 1 row selected.
 
@@ -2367,7 +2287,7 @@ Grant succeeded.
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .37 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .22 seconds (started at 2025-01-23T06:50:40)
 
 *************************
 *  Install Application	*
@@ -2391,42 +2311,42 @@ Prerequisite BUILD_TYPEs for "grbsrc"
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .12 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .19 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/ODBCAPTURE_VERSION.func
 
 Function created.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .04 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .04 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/COMMON_UTIL.pkssql
 
 Warning: Package created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .02 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .04 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/FH2.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .08 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .07 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/GRAB_DATA.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .05 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .09 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/GRAB_SCRIPTS.pkssql
 
 Warning: Package created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .02 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .04 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/ROOT_SCRIPTS.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .04 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .05 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/ZIP_UTIL_PKG.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:21 for a duration of .04 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:40 for a duration of .04 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/BUILD_CONF.tbl
 
 Table created.
@@ -2449,7 +2369,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .17 seconds (started at 2025-01-23T05:34:21)
+=== DBI Completed at 2025-01-23T06:50:41 for a duration of .21 seconds (started at 2025-01-23T06:50:40)
 === DBI Started: ODBCAPTURE/BUILD_PATH.tbl
 
 Table created.
@@ -2469,7 +2389,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .12 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:41 for a duration of .12 seconds (started at 2025-01-23T06:50:41)
 === DBI Started: ODBCAPTURE/BUILD_TYPE_TIMING.tbl
 
 Table created.
@@ -2486,22 +2406,22 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .06 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:41 for a duration of .07 seconds (started at 2025-01-23T06:50:41)
 === DBI Started: ODBCAPTURE/DBA_DEPENDENCIES_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .04 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:41 for a duration of .04 seconds (started at 2025-01-23T06:50:41)
 === DBI Started: ODBCAPTURE/DBA_OBJECTS_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .02 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:41 for a duration of .03 seconds (started at 2025-01-23T06:50:41)
 === DBI Started: ODBCAPTURE/DBA_TAB_PRIVS_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .34 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:41 for a duration of .29 seconds (started at 2025-01-23T06:50:41)
 === DBI Started: ODBCAPTURE/DLOAD_CONF.tbl
 
 Table created.
@@ -2542,7 +2462,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:22 for a duration of .31 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .31 seconds (started at 2025-01-23T06:50:41)
 === DBI Started: ODBCAPTURE/ELEMENT_CONF.tbl
 
 Table created.
@@ -2586,7 +2506,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .22 seconds (started at 2025-01-23T05:34:22)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .26 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/METADATA_TRANSFORM_PARAMS.tbl
 
 Table created.
@@ -2609,7 +2529,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .14 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .13 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJECT_CONF.tbl
 
 Table created.
@@ -2638,47 +2558,47 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .17 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .16 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_COMMENTS_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .03 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .04 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_CONTEXT_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .04 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .04 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_DATA_LOAD_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .05 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .04 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_FKEY_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .04 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .04 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_INDEX_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .04 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .03 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_OBJECT_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .04 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .04 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_SYNONYM_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:23 for a duration of .03 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:42 for a duration of .03 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_TRIGGER_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:24 for a duration of .32 seconds (started at 2025-01-23T05:34:23)
+=== DBI Completed at 2025-01-23T06:50:43 for a duration of .47 seconds (started at 2025-01-23T06:50:42)
 === DBI Started: ODBCAPTURE/ROLE_CONF.tbl
 
 Table created.
@@ -2704,7 +2624,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:24 for a duration of .24 seconds (started at 2025-01-23T05:34:24)
+=== DBI Completed at 2025-01-23T06:50:43 for a duration of .22 seconds (started at 2025-01-23T06:50:43)
 === DBI Started: ODBCAPTURE/SCHEMA_CONF.tbl
 
 Table created.
@@ -2745,12 +2665,12 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:24 for a duration of .53 seconds (started at 2025-01-23T05:34:24)
+=== DBI Completed at 2025-01-23T06:50:43 for a duration of .28 seconds (started at 2025-01-23T06:50:43)
 === DBI Started: ODBCAPTURE/SCHEMA_OBJECTS_TAB.tbl
 
 Table created.
 
-=== DBI Completed at 2025-01-23T05:34:24 for a duration of .07 seconds (started at 2025-01-23T05:34:24)
+=== DBI Completed at 2025-01-23T06:50:43 for a duration of .04 seconds (started at 2025-01-23T06:50:43)
 === DBI Started: ODBCAPTURE/TSPACE_CONF.tbl
 
 Table created.
@@ -2770,7 +2690,7 @@ Comment created.
 
 Comment created.
 
-=== DBI Completed at 2025-01-23T05:34:25 for a duration of .12 seconds (started at 2025-01-23T05:34:24)
+=== DBI Completed at 2025-01-23T06:50:44 for a duration of .14 seconds (started at 2025-01-23T06:50:43)
 === DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.tbl
 
 Table created.
@@ -2778,7 +2698,7 @@ Table created.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:25 for a duration of .08 seconds (started at 2025-01-23T05:34:25)
+=== DBI Completed at 2025-01-23T06:50:44 for a duration of .06 seconds (started at 2025-01-23T06:50:44)
 === DBI Started: ODBCAPTURE/ZIP_FILES.tbl
 
 Table created.
@@ -2786,7 +2706,7 @@ Table created.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:25 for a duration of .09 seconds (started at 2025-01-23T05:34:25)
+=== DBI Completed at 2025-01-23T06:50:44 for a duration of .1 seconds (started at 2025-01-23T06:50:44)
 Compile All started
 
 PL/SQL procedure successfully completed.
@@ -2799,7 +2719,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .06 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:45 for a duration of .06 seconds (started at 2025-01-23T06:50:45)
 === DBI Started: ODBCAPTURE/BUILD_PATH_REVIEW.vw
 
 View created.
@@ -2807,7 +2727,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .05 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:45 for a duration of .05 seconds (started at 2025-01-23T06:50:45)
 === DBI Started: ODBCAPTURE/DBA_DEPENDENCIES_VIEW.vw
 
 View created.
@@ -2815,7 +2735,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .06 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .06 seconds (started at 2025-01-23T06:50:45)
 === DBI Started: ODBCAPTURE/DBA_OBJECTS_VIEW.vw
 
 View created.
@@ -2823,7 +2743,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .19 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .21 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/DBA_TAB_PRIVS_VIEW.vw
 
 View created.
@@ -2831,7 +2751,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .06 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .06 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_COMMENTS_VIEW.vw
 
 View created.
@@ -2839,7 +2759,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .09 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .08 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_CONTEXT_VIEW.vw
 
 View created.
@@ -2847,7 +2767,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .06 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .07 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_DATA_LOAD_VIEW.vw
 
 View created.
@@ -2855,7 +2775,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .07 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .08 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_FKEY_VIEW.vw
 
 View created.
@@ -2863,7 +2783,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .09 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .1 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_INDEX_VIEW.vw
 
 View created.
@@ -2871,7 +2791,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:27 for a duration of .06 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .08 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_OBJECT_VIEW.vw
 
 View created.
@@ -2879,7 +2799,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .13 seconds (started at 2025-01-23T05:34:27)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .11 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_SYNONYM_VIEW.vw
 
 View created.
@@ -2887,7 +2807,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .05 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_TRIGGER_VIEW.vw
 
 View created.
@@ -2895,7 +2815,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .09 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:46 for a duration of .08 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/PRIV_OBJ_DIR_VIEW.vw
 
 View created.
@@ -2903,7 +2823,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .1 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .07 seconds (started at 2025-01-23T06:50:46)
 === DBI Started: ODBCAPTURE/PRIV_OBJ_HACL_VIEW.vw
 
 View created.
@@ -2911,7 +2831,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_OBJ_INSTALL_VW.vw
 
 View created.
@@ -2919,7 +2839,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .07 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_OBJ_QUEUE_VIEW.vw
 
 View created.
@@ -2927,7 +2847,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .08 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .08 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_OBJ_WACL_VIEW.vw
 
 View created.
@@ -2935,7 +2855,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_QUEUE_REGISTER_VIEW.vw
 
 View created.
@@ -2943,7 +2863,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .07 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_QUEUE_SUBSCRIBE_VIEW.vw
 
 View created.
@@ -2951,7 +2871,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .07 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .08 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_QUEUE_SYSPRIVS_VIEW.vw
 
 View created.
@@ -2959,7 +2879,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .09 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_ROLE_PRIVILEGES_VIEW.vw
 
 View created.
@@ -2967,7 +2887,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .07 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_SYSOBJ_PRIVILEGES_VIEW.vw
 
 View created.
@@ -2975,7 +2895,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/PRIV_SYSTEM_PRIVILEGES_VIEW.vw
 
 View created.
@@ -2983,7 +2903,7 @@ View created.
 
 Warning: View created with compilation errors.
 
-=== DBI Completed at 2025-01-23T05:34:28 for a duration of .09 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/UOR_INSTALL_VIEW.vw
 
 View created.
@@ -2991,7 +2911,7 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:29 for a duration of .06 seconds (started at 2025-01-23T05:34:28)
+=== DBI Completed at 2025-01-23T06:50:47 for a duration of .06 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/BUILD_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -3005,7 +2925,7 @@ sqlldr_control=ODBCAPTURE/BUILD_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:30 for a duration of 1.21 seconds (started at 2025-01-23T05:34:29)
+=== DBI Completed at 2025-01-23T06:50:49 for a duration of 1.22 seconds (started at 2025-01-23T06:50:47)
 === DBI Started: ODBCAPTURE/BUILD_PATH.cldr
 
 Disable Triggers and Foreign Keys
@@ -3019,7 +2939,7 @@ sqlldr_control=ODBCAPTURE/BUILD_PATH.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:31 for a duration of 1.06 seconds (started at 2025-01-23T05:34:30)
+=== DBI Completed at 2025-01-23T06:50:50 for a duration of 1.1 seconds (started at 2025-01-23T06:50:49)
 === DBI Started: ODBCAPTURE/ELEMENT_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -3033,7 +2953,7 @@ sqlldr_control=ODBCAPTURE/ELEMENT_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:32 for a duration of 1.33 seconds (started at 2025-01-23T05:34:31)
+=== DBI Completed at 2025-01-23T06:50:51 for a duration of 1.37 seconds (started at 2025-01-23T06:50:50)
 === DBI Started: ODBCAPTURE/METADATA_TRANSFORM_PARAMS.cldr
 
 Disable Triggers and Foreign Keys
@@ -3047,7 +2967,7 @@ sqlldr_control=ODBCAPTURE/METADATA_TRANSFORM_PARAMS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:33 for a duration of 1.34 seconds (started at 2025-01-23T05:34:32)
+=== DBI Completed at 2025-01-23T06:50:52 for a duration of 1.29 seconds (started at 2025-01-23T06:50:51)
 === DBI Started: ODBCAPTURE/ROLE_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -3061,7 +2981,7 @@ sqlldr_control=ODBCAPTURE/ROLE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:35 for a duration of 1.11 seconds (started at 2025-01-23T05:34:33)
+=== DBI Completed at 2025-01-23T06:50:53 for a duration of 1.08 seconds (started at 2025-01-23T06:50:52)
 === DBI Started: ODBCAPTURE/SCHEMA_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -3075,21 +2995,7 @@ sqlldr_control=ODBCAPTURE/SCHEMA_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:36 for a duration of 1.08 seconds (started at 2025-01-23T05:34:35)
-=== DBI Started: ODBCAPTURE/TSPACE_CONF.cldr
-
-Disable Triggers and Foreign Keys
-
-PL/SQL procedure successfully completed.
-
-
-sqlldr_control=ODBCAPTURE/TSPACE_CONF.ctl
-  0 Rows successfully loaded.
-
-
-PL/SQL procedure successfully completed.
-
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of 1.07 seconds (started at 2025-01-23T05:34:36)
+=== DBI Completed at 2025-01-23T06:50:54 for a duration of 1.06 seconds (started at 2025-01-23T06:50:53)
 === DBI Started: ODBCAPTURE/DBA_DEPENDENCIES_TAB.tidx
 
 Index created.
@@ -3097,47 +3003,47 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .32 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .43 seconds (started at 2025-01-23T06:50:54)
 === DBI Started: ODBCAPTURE/DBA_OBJECTS_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .18 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .2 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/DBA_TAB_PRIVS_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .06 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .04 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_COMMENTS_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .04 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .04 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_CONTEXT_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .03 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .04 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_DATA_LOAD_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .04 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .04 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_FKEY_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:37 for a duration of .04 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .05 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_INDEX_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .04 seconds (started at 2025-01-23T05:34:37)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .04 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_OBJECT_TAB.tidx
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .05 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:55 for a duration of .05 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_SYNONYM_TAB.tidx
 
 Index created.
@@ -3145,7 +3051,7 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .06 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:56 for a duration of .16 seconds (started at 2025-01-23T06:50:55)
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_TRIGGER_TAB.tidx
 
 Index created.
@@ -3153,37 +3059,37 @@ Index created.
 
 Index created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .07 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:56 for a duration of .11 seconds (started at 2025-01-23T06:50:56)
 === DBI Started: ODBCAPTURE/COMMON_UTIL.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .12 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:56 for a duration of .13 seconds (started at 2025-01-23T06:50:56)
 === DBI Started: ODBCAPTURE/FH2.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .15 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:56 for a duration of .18 seconds (started at 2025-01-23T06:50:56)
 === DBI Started: ODBCAPTURE/GRAB_DATA.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:38 for a duration of .24 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:56 for a duration of .25 seconds (started at 2025-01-23T06:50:56)
 === DBI Started: ODBCAPTURE/GRAB_SCRIPTS.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .69 seconds (started at 2025-01-23T05:34:38)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .68 seconds (started at 2025-01-23T06:50:56)
 === DBI Started: ODBCAPTURE/ROOT_SCRIPTS.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .06 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .07 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/ZIP_UTIL_PKG.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .09 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .09 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/BUILD_PATH.tfk
 
 Table altered.
@@ -3191,7 +3097,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .07 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .07 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/DLOAD_CONF.tfk
 
 Table altered.
@@ -3199,7 +3105,7 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .2 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .07 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/OBJECT_CONF.tfk
 
 Table altered.
@@ -3210,22 +3116,22 @@ Table altered.
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .11 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .11 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/ROLE_CONF.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:39 for a duration of .03 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .03 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/SCHEMA_CONF.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:40 for a duration of .12 seconds (started at 2025-01-23T05:34:39)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .04 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ODBCAPTURE/TSPACE_CONF.tfk
 
 Table altered.
 
-=== DBI Completed at 2025-01-23T05:34:40 for a duration of .11 seconds (started at 2025-01-23T05:34:40)
+=== DBI Completed at 2025-01-23T06:50:57 for a duration of .04 seconds (started at 2025-01-23T06:50:57)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table
@@ -3285,25 +3191,15 @@ PL/SQL procedure successfully completed.
 
 
 Switch Spooling Off
-=== DBI Completed at 2025-01-23T05:34:43 for a duration of 3.12 seconds (started at 2025-01-23T05:34:40)
+=== DBI Completed at 2025-01-23T06:51:00 for a duration of 2.81 seconds (started at 2025-01-23T06:50:57)
 not spooling currently
 
 "grbsrc" Installation is Done.
-
-New Session
 Connected.
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
+CONNECTION
 ---------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.43.435214 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.00.807089 AM +00:00
 
 1 row selected.
 
@@ -3320,12 +3216,12 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../grbsrc
 
 report_status.sql grbsrc
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:43 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:00 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
 
-Last Successful login time: Wed Jan 22 2025 23:34:43 -06:00
+Last Successful login time: Thu Jan 23 2025 00:51:00 -06:00
 
 Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
@@ -3340,7 +3236,7 @@ PL/SQL procedure successfully completed.
 
 
 sqlldr_control=./odbcapture_installation_logs.ctl
-  10 Rows successfully loaded.
+  9 Rows successfully loaded.
 
 old   2:    if '&_RC.' != '0' then
 new   2:    if '0' != '0' then
@@ -3351,16 +3247,15 @@ PL/SQL procedure successfully completed.
 
 
 Reporting Summary of Build Type Log Errors
-Processing file ODBCAPTURE/BUILD_CONF.log (2025-01-23 05:34:43)
-Processing file ODBCAPTURE/BUILD_PATH.log (2025-01-23 05:34:43)
-Processing file ODBCAPTURE/ELEMENT_CONF.log (2025-01-23 05:34:43)
-Processing file ODBCAPTURE/METADATA_TRANSFORM_PARAMS.log (2025-01-23 05:34:43)
-Processing file ODBCAPTURE/ROLE_CONF.log (2025-01-23 05:34:43)
-Processing file ODBCAPTURE/SCHEMA_CONF.log (2025-01-23 05:34:43)
-Processing file ODBCAPTURE/TSPACE_CONF.log (2025-01-23 05:34:43)
-Processing file install_grbsrc.log (2025-01-23 05:34:43)
-Processing file install_sys.log (2025-01-23 05:34:43)
-Processing file install_system.log (2025-01-23 05:34:43)
+Processing file ODBCAPTURE/BUILD_CONF.log (2025-01-23 06:51:01)
+Processing file ODBCAPTURE/BUILD_PATH.log (2025-01-23 06:51:01)
+Processing file ODBCAPTURE/ELEMENT_CONF.log (2025-01-23 06:51:01)
+Processing file ODBCAPTURE/METADATA_TRANSFORM_PARAMS.log (2025-01-23 06:51:01)
+Processing file ODBCAPTURE/ROLE_CONF.log (2025-01-23 06:51:01)
+Processing file ODBCAPTURE/SCHEMA_CONF.log (2025-01-23 06:51:01)
+Processing file install_grbsrc.log (2025-01-23 06:51:01)
+Processing file install_sys.log (2025-01-23 06:51:01)
+Processing file install_system.log (2025-01-23 06:51:01)
 
 PL/SQL procedure successfully completed.
 
@@ -3389,7 +3284,6 @@ renamed 'ODBCAPTURE/ELEMENT_CONF.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo
 renamed 'ODBCAPTURE/METADATA_TRANSFORM_PARAMS.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/grbsrc/ODBCAPTURE/METADATA_TRANSFORM_PARAMS.log'
 renamed 'ODBCAPTURE/ROLE_CONF.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/grbsrc/ODBCAPTURE/ROLE_CONF.log'
 renamed 'ODBCAPTURE/SCHEMA_CONF.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/grbsrc/ODBCAPTURE/SCHEMA_CONF.log'
-renamed 'ODBCAPTURE/TSPACE_CONF.log' -> '/home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/grbsrc/ODBCAPTURE/TSPACE_CONF.log'
 
 Move back to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213
 
@@ -3399,7 +3293,7 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../grbsdo
 
 /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql grbsdo
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:45 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:02 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -3409,28 +3303,11 @@ Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.45.354834 AM +00:00
-
-Elapsed: 00:00:00.00
 Setup Abort on Error
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.45.358577 AM +00:00
+user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.02.729646 AM +00:00
 
 Identify this Module in V$SESSION
 
@@ -3448,7 +3325,7 @@ Connected.
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.45.433475 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.02.815544 AM +00:00
 
 
 *************************
@@ -3470,16 +3347,16 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for "grbsdo"
- -) "grbsrc" last loaded on 23-Jan-2025 05:34:43
+ -) "grbsrc" last loaded on 23-Jan-2025 06:51:01
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:45 for a duration of .09 seconds (started at 2025-01-23T05:34:45)
+=== DBI Completed at 2025-01-23T06:51:02 for a duration of .11 seconds (started at 2025-01-23T06:51:02)
 === DBI Started: ODBCAPTURE/GRAB_SDO.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:45 for a duration of .06 seconds (started at 2025-01-23T05:34:45)
+=== DBI Completed at 2025-01-23T06:51:02 for a duration of .06 seconds (started at 2025-01-23T06:51:02)
 === DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -3493,12 +3370,12 @@ sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:46 for a duration of 1.16 seconds (started at 2025-01-23T05:34:45)
+=== DBI Completed at 2025-01-23T06:51:04 for a duration of 1.08 seconds (started at 2025-01-23T06:51:02)
 === DBI Started: ODBCAPTURE/GRAB_SDO.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:46 for a duration of .12 seconds (started at 2025-01-23T05:34:46)
+=== DBI Completed at 2025-01-23T06:51:04 for a duration of .12 seconds (started at 2025-01-23T06:51:04)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table
@@ -3558,29 +3435,19 @@ PL/SQL procedure successfully completed.
 
 
 Switch Spooling Off
-=== DBI Completed at 2025-01-23T05:34:48 for a duration of 1.37 seconds (started at 2025-01-23T05:34:46)
+=== DBI Completed at 2025-01-23T06:51:05 for a duration of 1.29 seconds (started at 2025-01-23T06:51:04)
 not spooling currently
 
 "grbsdo" Installation is Done.
-
-New Session
 Connected.
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
+CONNECTION
 ---------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.48.317617 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.05.554071 AM +00:00
 
 1 row selected.
 
-Elapsed: 00:00:00.00
+Elapsed: 00:00:00.01
 Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
@@ -3590,12 +3457,12 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../grbsdo
 
 report_status.sql grbsdo
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:48 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:05 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
 
-Last Successful login time: Wed Jan 22 2025 23:34:48 -06:00
+Last Successful login time: Thu Jan 23 2025 00:51:05 -06:00
 
 Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
@@ -3621,10 +3488,10 @@ PL/SQL procedure successfully completed.
 
 
 Reporting Summary of Build Type Log Errors
-Processing file ODBCAPTURE/USER_DEFINED_TYPE_CONF.log (2025-01-23 05:34:48)
-Processing file install_grbsdo.log (2025-01-23 05:34:48)
-Processing file install_sys.log (2025-01-23 05:34:48)
-Processing file install_system.log (2025-01-23 05:34:48)
+Processing file ODBCAPTURE/USER_DEFINED_TYPE_CONF.log (2025-01-23 06:51:05)
+Processing file install_grbsdo.log (2025-01-23 06:51:05)
+Processing file install_sys.log (2025-01-23 06:51:05)
+Processing file install_system.log (2025-01-23 06:51:05)
 
 PL/SQL procedure successfully completed.
 
@@ -3657,7 +3524,7 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../grbxrep
 
 /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql grbxrep
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:49 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:06 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -3667,28 +3534,11 @@ Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.49.427715 AM +00:00
-
-Elapsed: 00:00:00.00
 Setup Abort on Error
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.49.431806 AM +00:00
+user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.06.660983 AM +00:00
 
 Identify this Module in V$SESSION
 
@@ -3700,7 +3550,7 @@ Identify this Module in V$SESSION
 
 Grant succeeded.
 
-=== DBI Completed at 2025-01-23T05:34:49 for a duration of .03 seconds (started at 2025-01-23T05:34:49)
+=== DBI Completed at 2025-01-23T06:51:06 for a duration of .04 seconds (started at 2025-01-23T06:51:06)
 Setup Continue on Error
 
 *****************************
@@ -3711,7 +3561,7 @@ Connected.
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.49.538447 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.06.777251 AM +00:00
 
 1 row selected.
 
@@ -3735,16 +3585,16 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for "grbxrep"
- -) "grbsrc" last loaded on 23-Jan-2025 05:34:43
+ -) "grbsrc" last loaded on 23-Jan-2025 06:51:01
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:49 for a duration of .08 seconds (started at 2025-01-23T05:34:49)
+=== DBI Completed at 2025-01-23T06:51:06 for a duration of .08 seconds (started at 2025-01-23T06:51:06)
 === DBI Started: ODBCAPTURE/GRAB_XDB_REPO.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:49 for a duration of .03 seconds (started at 2025-01-23T05:34:49)
+=== DBI Completed at 2025-01-23T06:51:06 for a duration of .03 seconds (started at 2025-01-23T06:51:06)
 Compile All started
 
 PL/SQL procedure successfully completed.
@@ -3757,12 +3607,12 @@ View created.
 
 View created.
 
-=== DBI Completed at 2025-01-23T05:34:50 for a duration of .12 seconds (started at 2025-01-23T05:34:50)
+=== DBI Completed at 2025-01-23T06:51:07 for a duration of .08 seconds (started at 2025-01-23T06:51:07)
 === DBI Started: ODBCAPTURE/GRAB_XDB_REPO.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:50 for a duration of .06 seconds (started at 2025-01-23T05:34:50)
+=== DBI Completed at 2025-01-23T06:51:07 for a duration of .09 seconds (started at 2025-01-23T06:51:07)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table
@@ -3822,25 +3672,15 @@ PL/SQL procedure successfully completed.
 
 
 Switch Spooling Off
-=== DBI Completed at 2025-01-23T05:34:51 for a duration of .99 seconds (started at 2025-01-23T05:34:50)
+=== DBI Completed at 2025-01-23T06:51:08 for a duration of .99 seconds (started at 2025-01-23T06:51:07)
 not spooling currently
 
 "grbxrep" Installation is Done.
-
-New Session
 Connected.
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
+CONNECTION
 ---------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.51.672690 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.08.923894 AM +00:00
 
 1 row selected.
 
@@ -3854,12 +3694,12 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../grbxrep
 
 report_status.sql grbxrep
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:51 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:08 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
 
-Last Successful login time: Wed Jan 22 2025 23:34:51 -06:00
+Last Successful login time: Thu Jan 23 2025 00:51:08 -06:00
 
 Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
@@ -3885,9 +3725,9 @@ PL/SQL procedure successfully completed.
 
 
 Reporting Summary of Build Type Log Errors
-Processing file install_grbxrep.log (2025-01-23 05:34:52)
-Processing file install_sys.log (2025-01-23 05:34:52)
-Processing file install_system.log (2025-01-23 05:34:52)
+Processing file install_grbxrep.log (2025-01-23 06:51:09)
+Processing file install_sys.log (2025-01-23 06:51:09)
+Processing file install_system.log (2025-01-23 06:51:09)
 
 PL/SQL procedure successfully completed.
 
@@ -3919,7 +3759,7 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_grb
 
 /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../util/run_build.sql ss_grb
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:52 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:09 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
@@ -3929,28 +3769,11 @@ Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-
-New Session
-Connected.
-
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.00
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.52.840981 AM +00:00
-
-Elapsed: 00:00:00.01
 Setup Abort on Error
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.52.845480 AM +00:00
+user: SYS, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.09.940616 AM +00:00
 
 Identify this Module in V$SESSION
 
@@ -3968,7 +3791,7 @@ Connected.
 
 CONNECTION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.52.917586 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.10.016685 AM +00:00
 
 
 *************************
@@ -3990,19 +3813,19 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for "ss_grb"
- -) "grbxrep" last loaded on 23-Jan-2025 05:34:52
- -) "grbsdo" last loaded on 23-Jan-2025 05:34:48
- -) "grbsrc" last loaded on 23-Jan-2025 05:34:43
- -) "ss_src" last loaded on 23-Jan-2025 05:34:15
+ -) "grbxrep" last loaded on 23-Jan-2025 06:51:09
+ -) "grbsdo" last loaded on 23-Jan-2025 06:51:05
+ -) "grbsrc" last loaded on 23-Jan-2025 06:51:01
+ -) "ss_src" last loaded on 23-Jan-2025 06:50:34
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:53 for a duration of .17 seconds (started at 2025-01-23T05:34:52)
+=== DBI Completed at 2025-01-23T06:51:10 for a duration of .11 seconds (started at 2025-01-23T06:51:10)
 === DBI Started: ODBCAPTURE/GRAB_SS_TYPES.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-23T05:34:53 for a duration of .06 seconds (started at 2025-01-23T05:34:53)
+=== DBI Completed at 2025-01-23T06:51:10 for a duration of .09 seconds (started at 2025-01-23T06:51:10)
 === DBI Started: ODBCAPTURE/BUILD_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4016,7 +3839,7 @@ sqlldr_control=ODBCAPTURE/BUILD_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:53 for a duration of .31 seconds (started at 2025-01-23T05:34:53)
+=== DBI Completed at 2025-01-23T06:51:10 for a duration of .34 seconds (started at 2025-01-23T06:51:10)
 === DBI Started: ODBCAPTURE/BUILD_PATH.cldr
 
 Disable Triggers and Foreign Keys
@@ -4032,7 +3855,7 @@ sqlldr_control=ODBCAPTURE/BUILD_PATH.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:53 for a duration of .37 seconds (started at 2025-01-23T05:34:53)
+=== DBI Completed at 2025-01-23T06:51:10 for a duration of .34 seconds (started at 2025-01-23T06:51:10)
 === DBI Started: ODBCAPTURE/DLOAD_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4048,7 +3871,7 @@ sqlldr_control=ODBCAPTURE/DLOAD_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:55 for a duration of 1.36 seconds (started at 2025-01-23T05:34:53)
+=== DBI Completed at 2025-01-23T06:51:12 for a duration of 1.28 seconds (started at 2025-01-23T06:51:10)
 === DBI Started: ODBCAPTURE/OBJECT_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4065,7 +3888,7 @@ sqlldr_control=ODBCAPTURE/OBJECT_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:56 for a duration of 1.34 seconds (started at 2025-01-23T05:34:55)
+=== DBI Completed at 2025-01-23T06:51:13 for a duration of 1.3 seconds (started at 2025-01-23T06:51:12)
 === DBI Started: ODBCAPTURE/ROLE_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4080,7 +3903,7 @@ sqlldr_control=ODBCAPTURE/ROLE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:56 for a duration of .32 seconds (started at 2025-01-23T05:34:56)
+=== DBI Completed at 2025-01-23T06:51:13 for a duration of .31 seconds (started at 2025-01-23T06:51:13)
 === DBI Started: ODBCAPTURE/SCHEMA_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4095,7 +3918,7 @@ sqlldr_control=ODBCAPTURE/SCHEMA_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:57 for a duration of .35 seconds (started at 2025-01-23T05:34:56)
+=== DBI Completed at 2025-01-23T06:51:14 for a duration of .43 seconds (started at 2025-01-23T06:51:13)
 === DBI Started: ODBCAPTURE/TSPACE_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4110,7 +3933,7 @@ sqlldr_control=ODBCAPTURE/TSPACE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:57 for a duration of .33 seconds (started at 2025-01-23T05:34:57)
+=== DBI Completed at 2025-01-23T06:51:15 for a duration of 1.09 seconds (started at 2025-01-23T06:51:14)
 === DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -4124,12 +3947,12 @@ sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-23T05:34:57 for a duration of .34 seconds (started at 2025-01-23T05:34:57)
+=== DBI Completed at 2025-01-23T06:51:15 for a duration of .28 seconds (started at 2025-01-23T06:51:15)
 === DBI Started: ODBCAPTURE/GRAB_SS_TYPES.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-23T05:34:58 for a duration of .16 seconds (started at 2025-01-23T05:34:57)
+=== DBI Completed at 2025-01-23T06:51:15 for a duration of .16 seconds (started at 2025-01-23T06:51:15)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table
@@ -4189,25 +4012,15 @@ PL/SQL procedure successfully completed.
 
 
 Switch Spooling Off
-=== DBI Completed at 2025-01-23T05:34:59 for a duration of 1.08 seconds (started at 2025-01-23T05:34:58)
+=== DBI Completed at 2025-01-23T06:51:16 for a duration of 1.13 seconds (started at 2025-01-23T06:51:15)
 not spooling currently
 
 "ss_grb" Installation is Done.
-
-New Session
 Connected.
 
-Reset Output Connections
-
-PL/SQL procedure successfully completed.
-
-Elapsed: 00:00:00.01
-
-Show Database Connection
-
-'DB:'||NAME||',CON:'||SYS_CONTEXT('USERENV','CON_NAME')||',TSTMP:'||SYSTIMESTAMP
+CONNECTION
 ---------------------------------------------------------------------------------------------------------------------------
-db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 05.34.59.234477 AM +00:00
+user: SYSTEM, db: EE213CDB, con: DEVPDB, tstmp: 23-JAN-25 06.51.16.967333 AM +00:00
 
 1 row selected.
 
@@ -4221,12 +4034,12 @@ Move to /home/duane/DMSTEX_dev/ODBCapture.demo/builds/OnPrem_EE213/../../ss_grb
 
 report_status.sql ss_grb
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed Jan 22 23:34:59 2025
+SQL*Plus: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:16 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle.  All rights reserved.
 
-Last Successful login time: Wed Jan 22 2025 23:34:59 -06:00
+Last Successful login time: Thu Jan 23 2025 00:51:16 -06:00
 
 Connected to:
 Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
@@ -4252,17 +4065,17 @@ PL/SQL procedure successfully completed.
 
 
 Reporting Summary of Build Type Log Errors
-Processing file ODBCAPTURE/BUILD_CONF.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/BUILD_PATH.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/DLOAD_CONF.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/OBJECT_CONF.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/ROLE_CONF.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/SCHEMA_CONF.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/TSPACE_CONF.log (2025-01-23 05:34:59)
-Processing file ODBCAPTURE/USER_DEFINED_TYPE_CONF.log (2025-01-23 05:34:59)
-Processing file install_ss_grb.log (2025-01-23 05:34:59)
-Processing file install_sys.log (2025-01-23 05:34:59)
-Processing file install_system.log (2025-01-23 05:34:59)
+Processing file ODBCAPTURE/BUILD_CONF.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/BUILD_PATH.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/DLOAD_CONF.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/OBJECT_CONF.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/ROLE_CONF.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/SCHEMA_CONF.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/TSPACE_CONF.log (2025-01-23 06:51:17)
+Processing file ODBCAPTURE/USER_DEFINED_TYPE_CONF.log (2025-01-23 06:51:17)
+Processing file install_ss_grb.log (2025-01-23 06:51:17)
+Processing file install_sys.log (2025-01-23 06:51:17)
+Processing file install_system.log (2025-01-23 06:51:17)
 
 PL/SQL procedure successfully completed.
 

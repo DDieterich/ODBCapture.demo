@@ -2,3 +2,4 @@
 "HR","ss_src","N",,,"USERS","512M","Oracle Sample Schema Human Resources"
 "OE","ss_src","N",,,"USERS","512M","Oracle Sample Schema Order Entry"
 "PM","ss_src","N",,,"USERS","512M","Oracle Sample Schema Product Media"
+"ODBCAPTURE","grbsrc","N",,,"USERS","512M","Oracle Database Source Code Capture Application"

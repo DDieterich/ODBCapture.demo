@@ -43,6 +43,7 @@ PDB_SYSTEM="SYSTEM/${SYS_PASS}@OnPrem_EE213_${PDB_NAME}"
 
 ########################################
 
+capture_version
 build_init
 for BTYPE in 'ss_src' 'custom_data_load' 'grbsrc' 'grbsdo' 'grbxrep' 'ss_grb'
 do

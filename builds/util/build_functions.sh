@@ -2,10 +2,33 @@
 # Source this file using '.'
 
 ########################################
+function capture_version {
+   echo ""
+   echo "Capture Version"
+   VERSION_FUNC="${HOME_DIR}/../../grbsrc/ODBCAPTURE/ODBCAPTURE_VERSION.func"
+   BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD 2>&1)"
+   if [ "$?" != 0 ]
+   then
+      BRANCH_NAME='No Branch Name'
+   fi
+   VERSION_ABBR="${BRANCH_NAME:0:20}"
+   # 'Branch main at f2c736d0cc6fd80d961414dcae37df2bed0d69e2 - https://github.com/DMSTEX/DMSTEX.git'
+   VERSION_NOTE="Branch ${BRANCH_NAME} at $(git rev-parse HEAD 2>&1)" &&
+   VERSION_NOTE="${VERSION_NOTE} - $(git config --get remote.origin.url 2>&1)"
+   if [ $? = 0 ]
+   then
+      echo "${VERSION_NOTE}" > "${HOME_DIR}/version.txt"
+   else
+      echo "${VERSION_ABBR}" > "${HOME_DIR}/version.txt"
+   fi
+   sed -i "1,\$s/^   return ['].*['][;]\$/   return '${VERSION_ABBR}';/1" "${VERSION_FUNC}"
+   }
+
+########################################
 function build_init {
    echo ""
    echo "build_initialize.sql"
-   sqlplus "${SYS_LOGIN}" "@build_initialize.sql" "${PDB_NAME}" "${SYS_LOGIN}"
+   sqlplus "${SYS_LOGIN}" "@build_initialize.sql" "${PDB_NAME}"
    retcd="${?}"
    if [ "${retcd}" != "0" ]
    then
@@ -36,7 +59,7 @@ function run_build {
    cd "${HOME_DIR}/../../${BUILD_TYPE}"
    echo ""
    echo "${BUTIL_PATH}/run_build.sql ${BUILD_TYPE}"
-   sqlplus "${PDB_SYS}" "@${BUTIL_PATH}/run_build.sql" "${BUTIL_PATH}" "${PDB_SYS}" "${PDB_SYSTEM}" "${USR_PASS}"
+   sqlplus "${PDB_SYS}" "@${BUTIL_PATH}/run_build.sql" "${PDB_SYSTEM}" "${USR_PASS}"
    retcd="${?}"
    if [ "${retcd}" != "0" ]
    then

@@ -75,3 +75,31 @@ For each of the following folders, repeat steps 1 and 2 above, in this order:
 2. grbsdo
 3. grbxrep
 4. ss_grb
+
+
+## Generation/Capture Instructions
+
+To generate the source code from the database after installation, log into the database as ODBCAPTURE and run these commands.  Some modification will be needed if:
+* Not running on Linux
+* Database cannot write to `/opt/install_files'
+
+```
+----------------------------------------
+-- Sample Schema Capture
+execute ODBCAPTURE.FH2.clear_buffers;
+set serveroutput on size unlimited format word_wrapped
+execute ODBCAPTURE.COMMON_UTIL.update_view_tabs;
+execute ODBCAPTURE.GRAB_SCRIPTS.all_scripts('ss_src');
+execute ODBCAPTURE.GRAB_SCRIPTS.all_scripts('ss_grb');
+delete from zip_files where file_name = 'ss.zip';
+execute ODBCAPTURE.FH2.write_scripts('ss.zip', '/opt/install_files');
+commit;
+```
+
+After those commands are complete, there will be an `/opt/install_files/ss.zip` file ready.  The ZIP file will contain 2 folders that match the source code from the original:
+* ss_src
+* ss_grb
+
+An alternative is to use `execute ODBCAPTURE.FH2.write_scripts('ss.zip');` instead, then download the ZIP file from the ODBCAPTURE.ZIP_FILES table.
+
+SQL*Plus can be used to download a ZIP file from the database using [Ottmar’s Notes](https://ogobrecht.com/posts/2020-01-01-download-blobs-with-sqlplus).

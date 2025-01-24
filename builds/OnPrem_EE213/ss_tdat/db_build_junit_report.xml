@@ -36,7 +36,7 @@
     <testcase name="TRIGGER:db_object_status" classname="HR.UPDATE_JOB_HISTORY" time="0"/>
     <testcase name="VIEW:db_object_status" classname="HR.EMP_DETAILS_VIEW" time="0"/>
    </testsuite>
-  <testsuite name="OE_schema_build" tests="138" failures="2" time="0" timestamp="2025-01-24T19:34:20">
+  <testsuite name="OE_schema_build" tests="138" failures="0" time="0" timestamp="2025-01-24T19:34:20">
     <testcase name="FUNCTION:db_object_status" classname="OE.GET_PHONE_NUMBER_F" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.CUSTOMERS_PK" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.CUST_ACCOUNT_MANAGER_IX" time="0"/>
@@ -129,13 +129,7 @@
     <testcase name="TYPE:db_object_status" classname="OE.ACTIONS_T" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.ACTION_T" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.ACTION_V" time="0"/>
-    <testcase name="TYPE:db_object_status" classname="OE.CATALOG_TYP" time="0">
-      <error message="TYPE failed">
-** Object Status is INVALID
-Line 3, Col 8: PLS-00201: identifier &apos;COMPOSITE_CATEGORY_TYP&apos; must be declared
-Line 0, Col 0: PL/SQL: Compilation unit analysis terminated
-      </error>
-    </testcase>
+    <testcase name="TYPE:db_object_status" classname="OE.CATALOG_TYP" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.CATEGORY_TYP" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.COMPOSITE_CATEGORY_TYP" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.CORPORATE_CUSTOMER_TYP" time="0"/>
@@ -165,14 +159,7 @@ Line 0, Col 0: PL/SQL: Compilation unit analysis terminated
     <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075926$" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075929$" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.WAREHOUSE_TYP" time="0"/>
-    <testcase name="TYPE BODY:db_object_status" classname="OE.CATALOG_TYP" time="0">
-      <error message="TYPE BODY failed">
-** Object Status is INVALID
-Line 0, Col 0: ORA-04045: errors during recompilation/revalidation of OE.CATALOG_TYP
-ORA-22345: recompile type OE.CATALOG_TYP before attempting this operation
-
-      </error>
-    </testcase>
+    <testcase name="TYPE BODY:db_object_status" classname="OE.CATALOG_TYP" time="0"/>
     <testcase name="TYPE BODY:db_object_status" classname="OE.COMPOSITE_CATEGORY_TYP" time="0"/>
     <testcase name="TYPE BODY:db_object_status" classname="OE.LEAF_CATEGORY_TYP" time="0"/>
     <testcase name="VIEW:db_object_status" classname="OE.ACCOUNT_MANAGERS" time="0"/>

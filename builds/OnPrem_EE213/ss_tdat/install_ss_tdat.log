@@ -1,0 +1,281 @@
+=== DBI Started: ./installation_prepare.sql
+
+Create Temp Publicly Updateable Table
+
+Table created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+
+Check for Prerequisite BUILD_TYPEs
+Prerequisite BUILD_TYPEs for "ss_tdat"
+ -) "ss_src" last loaded on 24-Jan-2025 19:35:48
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:35:54 for a duration of .22 seconds (started at 2025-01-24T19:35:54)
+=== DBI Started: HR/DEPARTMENTS.cldr
+
+Disable Triggers and Foreign Keys
+alter table "HR"."DEPARTMENTS" DISABLE constraint "DEPT_LOC_FK";
+alter table "HR"."DEPARTMENTS" DISABLE constraint "DEPT_MGR_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/DEPARTMENTS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:35:56 for a duration of 2.43 seconds (started at 2025-01-24T19:35:54)
+=== DBI Started: HR/EMPLOYEES.cldr
+
+Disable Triggers and Foreign Keys
+alter trigger "HR"."SECURE_EMPLOYEES" DISABLE;
+alter trigger "HR"."UPDATE_JOB_HISTORY" DISABLE;
+alter table "HR"."EMPLOYEES" DISABLE constraint "EMP_DEPT_FK";
+alter table "HR"."EMPLOYEES" DISABLE constraint "EMP_JOB_FK";
+alter table "HR"."EMPLOYEES" DISABLE constraint "EMP_MANAGER_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/EMPLOYEES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:35:58 for a duration of 2.17 seconds (started at 2025-01-24T19:35:56)
+=== DBI Started: HR/JOBS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/JOBS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:01 for a duration of 2.21 seconds (started at 2025-01-24T19:35:58)
+=== DBI Started: HR/JOB_HISTORY.cldr
+
+Disable Triggers and Foreign Keys
+alter table "HR"."JOB_HISTORY" DISABLE constraint "JHIST_DEPT_FK";
+alter table "HR"."JOB_HISTORY" DISABLE constraint "JHIST_EMP_FK";
+alter table "HR"."JOB_HISTORY" DISABLE constraint "JHIST_JOB_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/JOB_HISTORY.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:03 for a duration of 2.36 seconds (started at 2025-01-24T19:36:01)
+=== DBI Started: OE/CUSTOMERS.cldr
+
+Disable Triggers and Foreign Keys
+alter table "OE"."CUSTOMERS" DISABLE constraint "CUSTOMERS_ACCOUNT_MANAGER_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/CUSTOMERS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:06 for a duration of 2.93 seconds (started at 2025-01-24T19:36:03)
+=== DBI Started: OE/INVENTORIES.cldr
+
+Disable Triggers and Foreign Keys
+alter table "OE"."INVENTORIES" DISABLE constraint "INVENTORIES_PRODUCT_ID_FK";
+alter table "OE"."INVENTORIES" DISABLE constraint "INVENTORIES_WAREHOUSES_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/INVENTORIES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:08 for a duration of 2.39 seconds (started at 2025-01-24T19:36:06)
+=== DBI Started: OE/ORDERS.cldr
+
+Disable Triggers and Foreign Keys
+alter table "OE"."ORDERS" DISABLE constraint "ORDERS_CUSTOMER_ID_FK";
+alter table "OE"."ORDERS" DISABLE constraint "ORDERS_SALES_REP_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/ORDERS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:11 for a duration of 2.29 seconds (started at 2025-01-24T19:36:08)
+=== DBI Started: OE/ORDER_ITEMS.cldr
+
+Disable Triggers and Foreign Keys
+alter trigger "OE"."INSERT_ORD_LINE" DISABLE;
+alter table "OE"."ORDER_ITEMS" DISABLE constraint "ORDER_ITEMS_ORDER_ID_FK";
+alter table "OE"."ORDER_ITEMS" DISABLE constraint "ORDER_ITEMS_PRODUCT_ID_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/ORDER_ITEMS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:13 for a duration of 2.21 seconds (started at 2025-01-24T19:36:11)
+=== DBI Started: OE/PROMOTIONS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/PROMOTIONS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:15 for a duration of 2.19 seconds (started at 2025-01-24T19:36:13)
+=== DBI Started: OE/WAREHOUSES.cldr
+
+Disable Triggers and Foreign Keys
+alter table "OE"."WAREHOUSES" DISABLE constraint "WAREHOUSES_LOCATION_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/WAREHOUSES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:19 for a duration of 3.7 seconds (started at 2025-01-24T19:36:15)
+=== DBI Started: PM/PRINT_MEDIA.cldr
+
+Disable Triggers and Foreign Keys
+alter table "PM"."PRINT_MEDIA" DISABLE constraint "PRINTMEDIA_FK";
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=PM/PRINT_MEDIA.ctl
+
+
+PL/SQL procedure successfully completed.
+
+Decode Binary Data
+------------------
+4 "AD_COMPOSITE" updates.
+4 "AD_HEADER" updates.
+4 "AD_PHOTO" updates.
+12 "AD_TEXTDOCS_NTAB" updates.
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+Decode UNISTR Data
+------------------
+4 "AD_FLTEXTN" updates.
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+=== DBI Completed at 2025-01-24T19:36:25 for a duration of 6.26 seconds (started at 2025-01-24T19:36:19)
+=== DBI Started: ./installation_finalize.sql
+
+Drop Temp Publicly Updateable Table
+
+Synonym dropped.
+
+
+Table dropped.
+
+
+fix_invalid_public_synonyms
+
+Re-create Invalid Public Synonyms
+
+PL/SQL procedure successfully completed.
+
+
+compile_all
+Compile All started
+HR Compiled.
+OE Compiled.
+PM Compiled.
+Compile All is done.
+
+PL/SQL procedure successfully completed.
+
+
+alter_foreign_keys_ENABLE
+Alter Foreign Keys started.
+  ENABLE 'HR','OE','PM'
+alter table "HR"."COUNTRIES" ENABLE constraint "COUNTR_REG_FK";
+alter table "HR"."DEPARTMENTS" ENABLE constraint "DEPT_LOC_FK";
+alter table "HR"."DEPARTMENTS" ENABLE constraint "DEPT_MGR_FK";
+alter table "HR"."EMPLOYEES" ENABLE constraint "EMP_DEPT_FK";
+alter table "HR"."EMPLOYEES" ENABLE constraint "EMP_JOB_FK";
+alter table "HR"."EMPLOYEES" ENABLE constraint "EMP_MANAGER_FK";
+alter table "HR"."JOB_HISTORY" ENABLE constraint "JHIST_DEPT_FK";
+alter table "HR"."JOB_HISTORY" ENABLE constraint "JHIST_EMP_FK";
+alter table "HR"."JOB_HISTORY" ENABLE constraint "JHIST_JOB_FK";
+alter table "HR"."LOCATIONS" ENABLE constraint "LOC_C_ID_FK";
+alter table "OE"."CUSTOMERS" ENABLE constraint "CUSTOMERS_ACCOUNT_MANAGER_FK";
+alter table "OE"."INVENTORIES" ENABLE constraint "INVENTORIES_PRODUCT_ID_FK";
+alter table "OE"."INVENTORIES" ENABLE constraint "INVENTORIES_WAREHOUSES_FK";
+alter table "OE"."ORDERS" ENABLE constraint "ORDERS_CUSTOMER_ID_FK";
+alter table "OE"."ORDERS" ENABLE constraint "ORDERS_SALES_REP_FK";
+alter table "OE"."ORDER_ITEMS" ENABLE constraint "ORDER_ITEMS_ORDER_ID_FK";
+alter table "OE"."ORDER_ITEMS" ENABLE constraint "ORDER_ITEMS_PRODUCT_ID_FK";
+alter table "OE"."PRODUCT_DESCRIPTIONS" ENABLE constraint "PD_PRODUCT_ID_FK";
+alter table "OE"."WAREHOUSES" ENABLE constraint "WAREHOUSES_LOCATION_FK";
+alter table "PM"."PRINT_MEDIA" ENABLE constraint "PRINTMEDIA_FK";
+Alter Foreign Keys is done.
+
+PL/SQL procedure successfully completed.
+
+
+alter_triggers_ENABLE
+Alter Triggers started.
+  ENABLE 'HR','OE','PM'
+alter trigger "HR"."SECURE_EMPLOYEES" ENABLE;
+alter trigger "HR"."UPDATE_JOB_HISTORY" ENABLE;
+alter trigger "OE"."INSERT_ORD_LINE" ENABLE;
+alter trigger "OE"."ORDERS_ITEMS_TRG" ENABLE;
+alter trigger "OE"."ORDERS_TRG" ENABLE;
+alter trigger "OE"."PURCHASEORDER$xd" ENABLE;
+Alter Triggers is done.
+
+PL/SQL procedure successfully completed.
+
+
+update_id_sequences
+Update ID Sequences started
+Identity Sequence Updates is done.
+
+PL/SQL procedure successfully completed.
+
+
+Switch Spooling Off

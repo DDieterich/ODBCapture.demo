@@ -1,49 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="install_grbsdo.log" tests="4" errors="0" hostname="EE213CDB" id="3" time="2" timestamp="2025-01-23T20:54:29">
-    <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
+  <testsuite name="install_grbsdo.log" tests="4" errors="0" hostname="EE213CDB" id="3" time="2" timestamp="2025-01-24T19:37:22">
+    <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
     </testcase>
-    <testcase name="./installation_prepare.sql" assertions="10" classname="..sql" status="PASS" time="0">
+    <testcase name="./installation_prepare.sql" assertions="20" classname="..sql" status="PASS" time="0">
       <system-out>
-=== DBI Started: ./installation_prepare.sql
-Create Temp Publicly Updateable Table
-Table created.
-Grant succeeded.
-Synonym created.
-Check for Prerequisite BUILD_TYPEs
-Prerequisite BUILD_TYPEs for &quot;grbsdo&quot;
- -) &quot;grbsrc&quot; last loaded on 23-Jan-2025 20:54:23
-PL/SQL procedure successfully completed.
-=== DBI Completed at 2025-01-23T20:54:25 for a duration of .07 seconds (started at 2025-01-23T20:54:24)
+=== DBI Started: ./installation_prepare.sql
+
+Create Temp Publicly Updateable Table
+
+Table created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+
+Check for Prerequisite BUILD_TYPEs
+Prerequisite BUILD_TYPEs for &quot;grbsdo&quot;
+ -) &quot;grbsrc&quot; last loaded on 24-Jan-2025 19:37:14
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:37:17 for a duration of .17 seconds (started at 2025-01-24T19:37:17)
       </system-out>
     </testcase>
-    <testcase name="ODBCAPTURE/GRAB_SDO.pkbsql" assertions="3" classname="ODBCAPTURE.pkbsql" status="PASS" time="0">
+    <testcase name="ODBCAPTURE/GRAB_SDO.pkbsql" assertions="5" classname="ODBCAPTURE.pkbsql" status="PASS" time="0">
       <system-out>
-=== DBI Started: ODBCAPTURE/GRAB_SDO.pkbsql
-Package body created.
-=== DBI Completed at 2025-01-23T20:54:26 for a duration of .11 seconds (started at 2025-01-23T20:54:26)
+=== DBI Started: ODBCAPTURE/GRAB_SDO.pkbsql
+
+Package body created.
+
+=== DBI Completed at 2025-01-24T19:37:19 for a duration of .16 seconds (started at 2025-01-24T19:37:19)
       </system-out>
     </testcase>
-    <testcase name="ODBCAPTURE/GRAB_SDO.pkssql" assertions="3" classname="ODBCAPTURE.pkssql" status="PASS" time="0">
+    <testcase name="ODBCAPTURE/GRAB_SDO.pkssql" assertions="5" classname="ODBCAPTURE.pkssql" status="PASS" time="0">
       <system-out>
-=== DBI Started: ODBCAPTURE/GRAB_SDO.pkssql
-Package created.
-=== DBI Completed at 2025-01-23T20:54:25 for a duration of .06 seconds (started at 2025-01-23T20:54:25)
+=== DBI Started: ODBCAPTURE/GRAB_SDO.pkssql
+
+Package created.
+
+=== DBI Completed at 2025-01-24T19:37:17 for a duration of .08 seconds (started at 2025-01-24T19:37:17)
       </system-out>
     </testcase>
-    <testcase name="ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr" assertions="6" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+    <testcase name="ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr" assertions="13" classname="ODBCAPTURE.cldr" status="PASS" time="2">
       <system-out>
-=== DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr
-Disable Triggers and Foreign Keys
-PL/SQL procedure successfully completed.
-sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
-PL/SQL procedure successfully completed.
-=== DBI Completed at 2025-01-23T20:54:26 for a duration of 1.71 seconds (started at 2025-01-23T20:54:25)
+=== DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:37:19 for a duration of 2.12 seconds (started at 2025-01-24T19:37:17)
       </system-out>
     </testcase>
   </testsuite>
-  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-23T20:54:29">
+  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-24T19:37:22">
   </testsuite>
-  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-23T20:54:29">
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-24T19:37:22">
   </testsuite>
 </testsuites>

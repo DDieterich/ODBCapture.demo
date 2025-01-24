@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="install_ss_tdat.log" tests="12" errors="0" hostname="EE213CDB" id="3" time="29" timestamp="2025-01-24T19:36:32">
+    <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
+    </testcase>
+    <testcase name="./installation_prepare.sql" assertions="20" classname="..sql" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ./installation_prepare.sql
+
+Create Temp Publicly Updateable Table
+
+Table created.
+
+
+Grant succeeded.
+
+
+Synonym created.
+
+
+Check for Prerequisite BUILD_TYPEs
+Prerequisite BUILD_TYPEs for &quot;ss_tdat&quot;
+ -) &quot;ss_src&quot; last loaded on 24-Jan-2025 19:35:48
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:35:54 for a duration of .22 seconds (started at 2025-01-24T19:35:54)
+      </system-out>
+    </testcase>
+    <testcase name="HR/DEPARTMENTS.cldr" assertions="15" classname="HR.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: HR/DEPARTMENTS.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;HR&quot;.&quot;DEPARTMENTS&quot; DISABLE constraint &quot;DEPT_LOC_FK&quot;;
+alter table &quot;HR&quot;.&quot;DEPARTMENTS&quot; DISABLE constraint &quot;DEPT_MGR_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/DEPARTMENTS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:35:56 for a duration of 2.43 seconds (started at 2025-01-24T19:35:54)
+      </system-out>
+    </testcase>
+    <testcase name="HR/EMPLOYEES.cldr" assertions="18" classname="HR.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: HR/EMPLOYEES.cldr
+
+Disable Triggers and Foreign Keys
+alter trigger &quot;HR&quot;.&quot;SECURE_EMPLOYEES&quot; DISABLE;
+alter trigger &quot;HR&quot;.&quot;UPDATE_JOB_HISTORY&quot; DISABLE;
+alter table &quot;HR&quot;.&quot;EMPLOYEES&quot; DISABLE constraint &quot;EMP_DEPT_FK&quot;;
+alter table &quot;HR&quot;.&quot;EMPLOYEES&quot; DISABLE constraint &quot;EMP_JOB_FK&quot;;
+alter table &quot;HR&quot;.&quot;EMPLOYEES&quot; DISABLE constraint &quot;EMP_MANAGER_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/EMPLOYEES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:35:58 for a duration of 2.17 seconds (started at 2025-01-24T19:35:56)
+      </system-out>
+    </testcase>
+    <testcase name="HR/JOBS.cldr" assertions="13" classname="HR.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: HR/JOBS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/JOBS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:01 for a duration of 2.21 seconds (started at 2025-01-24T19:35:58)
+      </system-out>
+    </testcase>
+    <testcase name="HR/JOB_HISTORY.cldr" assertions="16" classname="HR.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: HR/JOB_HISTORY.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;HR&quot;.&quot;JOB_HISTORY&quot; DISABLE constraint &quot;JHIST_DEPT_FK&quot;;
+alter table &quot;HR&quot;.&quot;JOB_HISTORY&quot; DISABLE constraint &quot;JHIST_EMP_FK&quot;;
+alter table &quot;HR&quot;.&quot;JOB_HISTORY&quot; DISABLE constraint &quot;JHIST_JOB_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=HR/JOB_HISTORY.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:03 for a duration of 2.36 seconds (started at 2025-01-24T19:36:01)
+      </system-out>
+    </testcase>
+    <testcase name="OE/CUSTOMERS.cldr" assertions="14" classname="OE.cldr" status="PASS" time="3">
+      <system-out>
+=== DBI Started: OE/CUSTOMERS.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;OE&quot;.&quot;CUSTOMERS&quot; DISABLE constraint &quot;CUSTOMERS_ACCOUNT_MANAGER_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/CUSTOMERS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:06 for a duration of 2.93 seconds (started at 2025-01-24T19:36:03)
+      </system-out>
+    </testcase>
+    <testcase name="OE/INVENTORIES.cldr" assertions="15" classname="OE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: OE/INVENTORIES.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;OE&quot;.&quot;INVENTORIES&quot; DISABLE constraint &quot;INVENTORIES_PRODUCT_ID_FK&quot;;
+alter table &quot;OE&quot;.&quot;INVENTORIES&quot; DISABLE constraint &quot;INVENTORIES_WAREHOUSES_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/INVENTORIES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:08 for a duration of 2.39 seconds (started at 2025-01-24T19:36:06)
+      </system-out>
+    </testcase>
+    <testcase name="OE/ORDERS.cldr" assertions="15" classname="OE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: OE/ORDERS.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;OE&quot;.&quot;ORDERS&quot; DISABLE constraint &quot;ORDERS_CUSTOMER_ID_FK&quot;;
+alter table &quot;OE&quot;.&quot;ORDERS&quot; DISABLE constraint &quot;ORDERS_SALES_REP_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/ORDERS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:11 for a duration of 2.29 seconds (started at 2025-01-24T19:36:08)
+      </system-out>
+    </testcase>
+    <testcase name="OE/ORDER_ITEMS.cldr" assertions="16" classname="OE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: OE/ORDER_ITEMS.cldr
+
+Disable Triggers and Foreign Keys
+alter trigger &quot;OE&quot;.&quot;INSERT_ORD_LINE&quot; DISABLE;
+alter table &quot;OE&quot;.&quot;ORDER_ITEMS&quot; DISABLE constraint &quot;ORDER_ITEMS_ORDER_ID_FK&quot;;
+alter table &quot;OE&quot;.&quot;ORDER_ITEMS&quot; DISABLE constraint &quot;ORDER_ITEMS_PRODUCT_ID_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/ORDER_ITEMS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:13 for a duration of 2.21 seconds (started at 2025-01-24T19:36:11)
+      </system-out>
+    </testcase>
+    <testcase name="OE/PROMOTIONS.cldr" assertions="13" classname="OE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: OE/PROMOTIONS.cldr
+
+Disable Triggers and Foreign Keys
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/PROMOTIONS.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:15 for a duration of 2.19 seconds (started at 2025-01-24T19:36:13)
+      </system-out>
+    </testcase>
+    <testcase name="OE/WAREHOUSES.cldr" assertions="14" classname="OE.cldr" status="PASS" time="4">
+      <system-out>
+=== DBI Started: OE/WAREHOUSES.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;OE&quot;.&quot;WAREHOUSES&quot; DISABLE constraint &quot;WAREHOUSES_LOCATION_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=OE/WAREHOUSES.ctl
+
+
+PL/SQL procedure successfully completed.
+
+=== DBI Completed at 2025-01-24T19:36:19 for a duration of 3.7 seconds (started at 2025-01-24T19:36:15)
+      </system-out>
+    </testcase>
+    <testcase name="PM/PRINT_MEDIA.cldr" assertions="35" classname="PM.cldr" status="PASS" time="6">
+      <system-out>
+=== DBI Started: PM/PRINT_MEDIA.cldr
+
+Disable Triggers and Foreign Keys
+alter table &quot;PM&quot;.&quot;PRINT_MEDIA&quot; DISABLE constraint &quot;PRINTMEDIA_FK&quot;;
+
+PL/SQL procedure successfully completed.
+
+
+sqlldr_control=PM/PRINT_MEDIA.ctl
+
+
+PL/SQL procedure successfully completed.
+
+Decode Binary Data
+------------------
+4 &quot;AD_COMPOSITE&quot; updates.
+4 &quot;AD_HEADER&quot; updates.
+4 &quot;AD_PHOTO&quot; updates.
+12 &quot;AD_TEXTDOCS_NTAB&quot; updates.
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+Decode UNISTR Data
+------------------
+4 &quot;AD_FLTEXTN&quot; updates.
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+=== DBI Completed at 2025-01-24T19:36:25 for a duration of 6.26 seconds (started at 2025-01-24T19:36:19)
+      </system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-24T19:36:32">
+  </testsuite>
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-24T19:36:32">
+  </testsuite>
+</testsuites>

@@ -32,11 +32,11 @@ Files/Folders              | Description
 ---------------------------|-------------
 builds                     | Build Scripts and Logs
 custom_data_load           | Special Data Load not handled by ODBCapture
-orig_install               | Original Schema Installation Documentation
 grb_linked_install_scripts | Common Scripts Linked by Installation Scripts
 grbsdo                     | ODBCapture Optional Spatial Data Option
 grbsrc                     | ODBCapture Main Installation Scripts
 grbxrep                    | ODBCapture XML DB Repository Objects/Data
+orig_install               | Original Schema Installation Documentation
 ss_grb                     | ODBCapture Configuration Data for Sample Schema
 ss_src                     | Sample Schema Source Code (includes data)
 

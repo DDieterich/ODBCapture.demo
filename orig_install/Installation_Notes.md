@@ -5,7 +5,6 @@
 * Load ODBCapture in PDB
 * Clone `https://github.com/oracle-samples/db-sample-schemas.git`
 
-
 ### Human Resources Installation
 
 * cd db-sample-schemas/human_resources

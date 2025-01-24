@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="install_grbxrep.log" tests="4" errors="0" hostname="EE213CDB" id="3" time="0" timestamp="2025-01-23T06:51:09">
+  <testsuite name="install_grbxrep.log" tests="4" errors="0" hostname="EE213CDB" id="3" time="0" timestamp="2025-01-23T20:54:32">
     <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
     </testcase>
     <testcase name="./installation_prepare.sql" assertions="10" classname="..sql" status="PASS" time="0">
@@ -12,23 +12,23 @@ Grant succeeded.
 Synonym created.
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for &quot;grbxrep&quot;
- -) &quot;grbsrc&quot; last loaded on 23-Jan-2025 06:51:01
+ -) &quot;grbsrc&quot; last loaded on 23-Jan-2025 20:54:23
 PL/SQL procedure successfully completed.
-=== DBI Completed at 2025-01-23T06:51:06 for a duration of .08 seconds (started at 2025-01-23T06:51:06)
+=== DBI Completed at 2025-01-23T20:54:30 for a duration of .09 seconds (started at 2025-01-23T20:54:30)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/GRAB_XDB_REPO.pkbsql" assertions="3" classname="ODBCAPTURE.pkbsql" status="PASS" time="0">
       <system-out>
 === DBI Started: ODBCAPTURE/GRAB_XDB_REPO.pkbsql
 Package body created.
-=== DBI Completed at 2025-01-23T06:51:07 for a duration of .09 seconds (started at 2025-01-23T06:51:07)
+=== DBI Completed at 2025-01-23T20:54:31 for a duration of .05 seconds (started at 2025-01-23T20:54:31)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/GRAB_XDB_REPO.pkssql" assertions="3" classname="ODBCAPTURE.pkssql" status="PASS" time="0">
       <system-out>
 === DBI Started: ODBCAPTURE/GRAB_XDB_REPO.pkssql
 Package created.
-=== DBI Completed at 2025-01-23T06:51:06 for a duration of .03 seconds (started at 2025-01-23T06:51:06)
+=== DBI Completed at 2025-01-23T20:54:30 for a duration of .02 seconds (started at 2025-01-23T20:54:30)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/OBJ_INSTALL_XDB_REPO_VIEW.vw" assertions="4" classname="ODBCAPTURE.vw" status="PASS" time="0">
@@ -36,7 +36,7 @@ Package created.
 === DBI Started: ODBCAPTURE/OBJ_INSTALL_XDB_REPO_VIEW.vw
 View created.
 View created.
-=== DBI Completed at 2025-01-23T06:51:07 for a duration of .08 seconds (started at 2025-01-23T06:51:07)
+=== DBI Completed at 2025-01-23T20:54:31 for a duration of .12 seconds (started at 2025-01-23T20:54:30)
       </system-out>
     </testcase>
     <system-out>
@@ -45,15 +45,15 @@ View created.
 (ODBCAPTURE/GRAB_XDB_REPO.pkssql) Compile All is done.
     </system-out>
   </testsuite>
-  <testsuite name="install_sys.log" tests="1" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-23T06:51:09">
+  <testsuite name="install_sys.log" tests="1" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-23T20:54:32">
     <testcase name="SYS/ODBCAPTURE_usr.sgrnt" assertions="3" classname="SYS.sgrnt" status="PASS" time="0">
       <system-out>
 === DBI Started: SYS/ODBCAPTURE_usr.sgrnt
 Grant succeeded.
-=== DBI Completed at 2025-01-23T06:51:06 for a duration of .04 seconds (started at 2025-01-23T06:51:06)
+=== DBI Completed at 2025-01-23T20:54:29 for a duration of .07 seconds (started at 2025-01-23T20:54:29)
       </system-out>
     </testcase>
   </testsuite>
-  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-23T06:51:09">
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-23T20:54:32">
   </testsuite>
 </testsuites>

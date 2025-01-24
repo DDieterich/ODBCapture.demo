@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 23.0.0.0.0 - Production on Thu Jan 23 00:51:11 2025
+SQL*Loader: Release 23.0.0.0.0 - Production on Thu Jan 23 14:54:35 2025
 Version 23.4.0.24.05
 
 Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
@@ -28,12 +28,12 @@ USERNAME                            FIRST   128   ,  O(") CHARACTER
 TABLE_NAME                           NEXT   128   ,  O(") CHARACTER            
 BUILD_TYPE                           NEXT    10   ,  O(") CHARACTER            
 ORDER_BY_COLUMNS                     NEXT  4000   ,  O(") CHARACTER            
+LOADING_METHOD                       NEXT    50   ,  O(") CHARACTER            
 BEFORE_SELECT_SQL                    NEXT  4000   ,  O(") CHARACTER            
 COLUMNS_REMOVED                      NEXT  4000   ,  O(") CHARACTER            
 WHERE_CLAUSE                         NEXT  4000   ,  O(") CHARACTER            
 AFTER_ORDER_BY_SQL                   NEXT  4000   ,  O(") CHARACTER            
 NOTES                                NEXT  4000   ,  O(") CHARACTER            
-LOADING_METHOD                       NEXT    50   ,  O(") CHARACTER            
 
 value used for ROWS parameter changed from 250 to 43
 
@@ -52,8 +52,8 @@ Total logical records read:            24
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Thu Jan 23 00:51:11 2025
-Run ended on Thu Jan 23 00:51:12 2025
+Run began on Thu Jan 23 14:54:35 2025
+Run ended on Thu Jan 23 14:54:36 2025
 
-Elapsed time was:     00:00:00.26
+Elapsed time was:     00:00:00.31
 CPU time was:         00:00:00.03

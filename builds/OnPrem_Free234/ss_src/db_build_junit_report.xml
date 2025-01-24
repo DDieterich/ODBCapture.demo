@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="HR_schema_build" tests="34" failures="0" time="0" timestamp="2024-10-11T06:29:05">
-    <testcase name="INDEX:db_object_status" classname="HR.COUNTRY_C_ID_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.DEPT_ID_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.DEPT_LOCATION_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.EMP_DEPARTMENT_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.EMP_EMAIL_UK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.EMP_EMP_ID_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.EMP_JOB_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.EMP_MANAGER_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.EMP_NAME_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.JHIST_DEPARTMENT_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.JHIST_EMPLOYEE_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.JHIST_EMP_ID_ST_DATE_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.JHIST_JOB_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.JOB_ID_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.LOC_CITY_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.LOC_COUNTRY_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.LOC_ID_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.LOC_STATE_PROVINCE_IX" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="HR.REG_ID_PK" time="0"/>
-    <testcase name="PROCEDURE:db_object_status" classname="HR.ADD_JOB_HISTORY" time="0"/>
-    <testcase name="PROCEDURE:db_object_status" classname="HR.SECURE_DML" time="0"/>
-    <testcase name="SEQUENCE:db_object_status" classname="HR.DEPARTMENTS_SEQ" time="0"/>
-    <testcase name="SEQUENCE:db_object_status" classname="HR.EMPLOYEES_SEQ" time="0"/>
-    <testcase name="SEQUENCE:db_object_status" classname="HR.LOCATIONS_SEQ" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.COUNTRIES" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.DEPARTMENTS" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.EMPLOYEES" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.JOBS" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.JOB_HISTORY" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.LOCATIONS" time="0"/>
-    <testcase name="TABLE:db_object_status" classname="HR.REGIONS" time="0"/>
-    <testcase name="TRIGGER:db_object_status" classname="HR.SECURE_EMPLOYEES" time="0"/>
-    <testcase name="TRIGGER:db_object_status" classname="HR.UPDATE_JOB_HISTORY" time="0"/>
-    <testcase name="VIEW:db_object_status" classname="HR.EMP_DETAILS_VIEW" time="0"/>
-   </testsuite>
-  <testsuite name="OE_schema_build" tests="138" failures="2" time="0" timestamp="2024-10-11T06:29:06">
+  <testsuite name="OE_schema_build" tests="138" failures="2" time="0" timestamp="2025-01-24T00:24:55">
     <testcase name="FUNCTION:db_object_status" classname="OE.GET_PHONE_NUMBER_F" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.CUSTOMERS_PK" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.CUST_ACCOUNT_MANAGER_IX" time="0"/>
@@ -58,44 +22,44 @@
     <testcase name="INDEX:db_object_status" classname="OE.PROD_NAME_IX" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.PROD_SUPPLIER_IX" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.PROMO_ID_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008243" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008244" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008245" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008246" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008269" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008270" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008271" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008272" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008273" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_FK0000075797N00008$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_FK0000075797N00010$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075806C00022$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075806C00023$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00004$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00005$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00008$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00012$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00017$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00026$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075824C00033$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075825C00004$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075828C00005$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075828C00010$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075852C00003$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075852C00012$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000075852C00013$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008438" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008439" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008440" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008441" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008464" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008465" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008466" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008467" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_C008468" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_FK0000071316N00008$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_FK0000071316N00010$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071325C00022$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071325C00023$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00004$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00005$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00008$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00012$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00017$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00026$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071343C00033$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071344C00004$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071347C00005$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071347C00010$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071371C00003$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071371C00012$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="OE.SYS_IL0000071371C00013$$" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.WAREHOUSES_PK" time="0"/>
     <testcase name="INDEX:db_object_status" classname="OE.WHS_LOCATION_IX" time="0"/>
     <testcase name="LOB:db_object_status" classname="OE.EXTRADATA67_L" time="0"/>
     <testcase name="LOB:db_object_status" classname="OE.NAMESPACES68_L" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075806C00022$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075806C00023$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075825C00004$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075828C00005$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075828C00010$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075852C00003$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075852C00012$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000075852C00013$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071325C00022$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071325C00023$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071344C00004$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071347C00005$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071347C00010$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071371C00003$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071371C00012$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="OE.SYS_LOB0000071371C00013$$" time="0"/>
     <testcase name="LOB:db_object_status" classname="OE.SYS_XDBPD$62_L" time="0"/>
     <testcase name="LOB:db_object_status" classname="OE.SYS_XDBPD$63_L" time="0"/>
     <testcase name="LOB:db_object_status" classname="OE.SYS_XDBPD$64_L" time="0"/>
@@ -159,16 +123,16 @@ Line 0, Col 0: PL/SQL: Compilation unit analysis terminated
     <testcase name="TYPE:db_object_status" classname="OE.REJECTION_T" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.SHIPPING_INSTRUCTIONS_T" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.SUBCATEGORY_REF_LIST_TYP" time="0"/>
-    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075921$" time="0"/>
-    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075922$" time="0"/>
-    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075923$" time="0"/>
-    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075925$" time="0"/>
-    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000075928$" time="0"/>
+    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000071441$" time="0"/>
+    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000071442$" time="0"/>
+    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000071443$" time="0"/>
+    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000071445$" time="0"/>
+    <testcase name="TYPE:db_object_status" classname="OE.SYS_YOID0000071448$" time="0"/>
     <testcase name="TYPE:db_object_status" classname="OE.WAREHOUSE_TYP" time="0"/>
     <testcase name="TYPE BODY:db_object_status" classname="OE.CATALOG_TYP" time="0">
       <error message="TYPE BODY failed">
 ** Object Status is INVALID
-Line 0, Col 0: ORA-04045: errors during recompilation/revalidation of OE.CATALOG_TYP
+Line 0, Col 0: ORA-04045: errors during recompilation or revalidation of OE.CATALOG_TYP
 ORA-22345: recompile type OE.CATALOG_TYP before attempting this operation
 
       </error>
@@ -189,28 +153,64 @@ ORA-22345: recompile type OE.CATALOG_TYP before attempting this operation
     <testcase name="VIEW:db_object_status" classname="OE.SYDNEY_INVENTORY" time="0"/>
     <testcase name="VIEW:db_object_status" classname="OE.TORONTO_INVENTORY" time="0"/>
    </testsuite>
-  <testsuite name="PM_schema_build" tests="22" failures="0" time="0" timestamp="2024-10-11T06:29:10">
+  <testsuite name="PM_schema_build" tests="22" failures="0" time="0" timestamp="2025-01-24T00:24:59">
     <testcase name="INDEX:db_object_status" classname="PM.PRINTMEDIA_PK" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_C008275" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_FK0000075860N00007$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075860C00003$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075860C00004$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075860C00005$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075860C00006$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075860C00009$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075860C00015$$" time="0"/>
-    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000075861C00004$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075860C00003$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075860C00004$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075860C00005$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075860C00006$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075860C00009$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075860C00015$$" time="0"/>
-    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000075861C00004$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_C008470" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_FK0000071379N00007$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071379C00003$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071379C00004$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071379C00005$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071379C00006$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071379C00009$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071379C00015$$" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="PM.SYS_IL0000071380C00004$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071379C00003$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071379C00004$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071379C00005$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071379C00006$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071379C00009$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071379C00015$$" time="0"/>
+    <testcase name="LOB:db_object_status" classname="PM.SYS_LOB0000071380C00004$$" time="0"/>
     <testcase name="TABLE:db_object_status" classname="PM.PRINT_MEDIA" time="0"/>
     <testcase name="TABLE:db_object_status" classname="PM.TEXTDOCS_NESTEDTAB" time="0"/>
     <testcase name="TYPE:db_object_status" classname="PM.ADHEADER_TYP" time="0"/>
     <testcase name="TYPE:db_object_status" classname="PM.TEXTDOC_TAB" time="0"/>
     <testcase name="TYPE:db_object_status" classname="PM.TEXTDOC_TYP" time="0"/>
+   </testsuite>
+  <testsuite name="HR_schema_build" tests="34" failures="0" time="0" timestamp="2025-01-24T00:24:55">
+    <testcase name="INDEX:db_object_status" classname="HR.COUNTRY_C_ID_PK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.DEPT_ID_PK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.DEPT_LOCATION_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.EMP_DEPARTMENT_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.EMP_EMAIL_UK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.EMP_EMP_ID_PK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.EMP_JOB_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.EMP_MANAGER_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.EMP_NAME_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.JHIST_DEPARTMENT_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.JHIST_EMPLOYEE_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.JHIST_EMP_ID_ST_DATE_PK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.JHIST_JOB_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.JOB_ID_PK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.LOC_CITY_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.LOC_COUNTRY_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.LOC_ID_PK" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.LOC_STATE_PROVINCE_IX" time="0"/>
+    <testcase name="INDEX:db_object_status" classname="HR.REG_ID_PK" time="0"/>
+    <testcase name="PROCEDURE:db_object_status" classname="HR.ADD_JOB_HISTORY" time="0"/>
+    <testcase name="PROCEDURE:db_object_status" classname="HR.SECURE_DML" time="0"/>
+    <testcase name="SEQUENCE:db_object_status" classname="HR.DEPARTMENTS_SEQ" time="0"/>
+    <testcase name="SEQUENCE:db_object_status" classname="HR.EMPLOYEES_SEQ" time="0"/>
+    <testcase name="SEQUENCE:db_object_status" classname="HR.LOCATIONS_SEQ" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.COUNTRIES" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.DEPARTMENTS" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.EMPLOYEES" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.JOBS" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.JOB_HISTORY" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.LOCATIONS" time="0"/>
+    <testcase name="TABLE:db_object_status" classname="HR.REGIONS" time="0"/>
+    <testcase name="TRIGGER:db_object_status" classname="HR.SECURE_EMPLOYEES" time="0"/>
+    <testcase name="TRIGGER:db_object_status" classname="HR.UPDATE_JOB_HISTORY" time="0"/>
+    <testcase name="VIEW:db_object_status" classname="HR.EMP_DETAILS_VIEW" time="0"/>
    </testsuite>
 </testsuites>

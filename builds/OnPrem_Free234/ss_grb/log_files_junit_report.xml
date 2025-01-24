@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="install_ss_grb.log" tests="11" errors="0" hostname="FREE" id="3" time="6" timestamp="2025-01-24T00:26:50">
+    <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
+    </testcase>
+    <testcase name="./installation_prepare.sql" assertions="13" classname="..sql" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ./installation_prepare.sql
+Create Temp Publicly Updateable Table
+Table created.
+Grant succeeded.
+Synonym created.
+Check for Prerequisite BUILD_TYPEs
+Prerequisite BUILD_TYPEs for &quot;ss_grb&quot;
+ -) &quot;grbsdo&quot; last loaded on 24-Jan-2025 00:26:38
+ -) &quot;grbsrc&quot; last loaded on 24-Jan-2025 00:26:34
+ -) &quot;grbxrep&quot; last loaded on 24-Jan-2025 00:26:41
+ -) &quot;ss_src&quot; last loaded on 24-Jan-2025 00:26:07
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:42 for a duration of .08 seconds (started at 2025-01-24T00:26:42)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/BUILD_CONF.cldr" assertions="6" classname="ODBCAPTURE.cldr" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/BUILD_CONF.cldr
+Disable Triggers and Foreign Keys
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/BUILD_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:42 for a duration of .14 seconds (started at 2025-01-24T00:26:42)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/BUILD_PATH.cldr" assertions="8" classname="ODBCAPTURE.cldr" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/BUILD_PATH.cldr
+Disable Triggers and Foreign Keys
+alter table &quot;ODBCAPTURE&quot;.&quot;BUILD_PATH&quot; DISABLE constraint &quot;BUILD_PATH_FK1&quot;;
+alter table &quot;ODBCAPTURE&quot;.&quot;BUILD_PATH&quot; DISABLE constraint &quot;BUILD_PATH_FK2&quot;;
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/BUILD_PATH.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:42 for a duration of .17 seconds (started at 2025-01-24T00:26:42)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/DLOAD_CONF.cldr" assertions="8" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: ODBCAPTURE/DLOAD_CONF.cldr
+Disable Triggers and Foreign Keys
+alter table &quot;ODBCAPTURE&quot;.&quot;DLOAD_CONF&quot; DISABLE constraint &quot;DLOAD_CONF_FK1&quot;;
+alter table &quot;ODBCAPTURE&quot;.&quot;DLOAD_CONF&quot; DISABLE constraint &quot;DLOAD_CONF_FK2&quot;;
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/DLOAD_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:44 for a duration of 1.81 seconds (started at 2025-01-24T00:26:42)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/GRAB_SS_TYPES.pkbsql" assertions="3" classname="ODBCAPTURE.pkbsql" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/GRAB_SS_TYPES.pkbsql
+Package body created.
+=== DBI Completed at 2025-01-24T00:26:49 for a duration of .17 seconds (started at 2025-01-24T00:26:48)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/GRAB_SS_TYPES.pkssql" assertions="3" classname="ODBCAPTURE.pkssql" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/GRAB_SS_TYPES.pkssql
+Package created.
+=== DBI Completed at 2025-01-24T00:26:42 for a duration of .07 seconds (started at 2025-01-24T00:26:42)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/OBJECT_CONF.cldr" assertions="9" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: ODBCAPTURE/OBJECT_CONF.cldr
+Disable Triggers and Foreign Keys
+alter table &quot;ODBCAPTURE&quot;.&quot;OBJECT_CONF&quot; DISABLE constraint &quot;OBJECT_CONF_FK1&quot;;
+alter table &quot;ODBCAPTURE&quot;.&quot;OBJECT_CONF&quot; DISABLE constraint &quot;OBJECT_CONF_FK2&quot;;
+alter table &quot;ODBCAPTURE&quot;.&quot;OBJECT_CONF&quot; DISABLE constraint &quot;OBJECT_CONF_FK3&quot;;
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/OBJECT_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:46 for a duration of 1.8 seconds (started at 2025-01-24T00:26:44)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/ROLE_CONF.cldr" assertions="7" classname="ODBCAPTURE.cldr" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/ROLE_CONF.cldr
+Disable Triggers and Foreign Keys
+alter table &quot;ODBCAPTURE&quot;.&quot;ROLE_CONF&quot; DISABLE constraint &quot;ROLE_CONF_FK1&quot;;
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/ROLE_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:46 for a duration of .15 seconds (started at 2025-01-24T00:26:46)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/SCHEMA_CONF.cldr" assertions="7" classname="ODBCAPTURE.cldr" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/SCHEMA_CONF.cldr
+Disable Triggers and Foreign Keys
+alter table &quot;ODBCAPTURE&quot;.&quot;SCHEMA_CONF&quot; DISABLE constraint &quot;SCHEMA_CONF_FK1&quot;;
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/SCHEMA_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:46 for a duration of .17 seconds (started at 2025-01-24T00:26:46)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/TSPACE_CONF.cldr" assertions="7" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+      <system-out>
+=== DBI Started: ODBCAPTURE/TSPACE_CONF.cldr
+Disable Triggers and Foreign Keys
+alter table &quot;ODBCAPTURE&quot;.&quot;TSPACE_CONF&quot; DISABLE constraint &quot;TSPACE_CONF_FK1&quot;;
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/TSPACE_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:48 for a duration of 1.99 seconds (started at 2025-01-24T00:26:46)
+      </system-out>
+    </testcase>
+    <testcase name="ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr" assertions="6" classname="ODBCAPTURE.cldr" status="PASS" time="0">
+      <system-out>
+=== DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr
+Disable Triggers and Foreign Keys
+PL/SQL procedure successfully completed.
+sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
+PL/SQL procedure successfully completed.
+=== DBI Completed at 2025-01-24T00:26:48 for a duration of .14 seconds (started at 2025-01-24T00:26:48)
+      </system-out>
+    </testcase>
+  </testsuite>
+  <testsuite name="install_sys.log" tests="0" errors="0" hostname="FREE" id="1" time="0" timestamp="2025-01-24T00:26:50">
+  </testsuite>
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="FREE" id="2" time="0" timestamp="2025-01-24T00:26:50">
+  </testsuite>
+</testsuites>

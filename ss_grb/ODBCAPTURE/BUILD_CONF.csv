@@ -1,5 +1,6 @@
 "BUILD_SEQ","BUILD_TYPE","NOTES"
 10,"ss_src","Oracle Sample Schema Source"
+20,"ss_tdat","Oracle Sample Schema Test Data"
 30,"grbsrc","ODBCapture Source Code Script Generation"
 32,"grbsdo","SDO,LCTR (Placeholder) - Spatial - Oracle Locator - Graph (MDSYS, MDDATA)"
 34,"grbxrep","Oracle XDB Repository"

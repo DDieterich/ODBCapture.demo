@@ -29,7 +29,7 @@ begin
           '   ,COUNTRY_ID      CHAR(2)  ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_cust_address;
--- 
+--
 function dat_cust_address
       (in_ca  in  oe.cust_address_typ)
    return varchar2
@@ -61,7 +61,7 @@ begin
           '   ,CUST_ORDERS        ' || grab_ss_types.ctl_order_list(in_spaces||'   ')   || CHR(10) || in_spaces ||
           '   )';
 end ctl_customer;
--- 
+--
 function dat_customer
       (in_cust  in  oe.customer_typ)
    return varchar2
@@ -95,7 +95,7 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
    return ret_txt;
 end ctl_inventory_list;
--- 
+--
 function dat_inventory_list
       (in_il  in  oe.inventory_list_typ)
    return varchar2
@@ -128,7 +128,7 @@ begin
           '   ,QUANTITY_ON_HAND  FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
           '   )';
 end ctl_inventory;
--- 
+--
 function dat_inventory
       (in_inv  in  oe.inventory_typ)
    return varchar2
@@ -155,7 +155,7 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
    return ret_txt;
 end ctl_order_item_list;
--- 
+--
 function dat_order_item_list
       (in_oil  in  oe.order_item_list_typ)
    return varchar2
@@ -191,7 +191,7 @@ begin
           '   ,PRODUCT_ID    FILLER FLOAT EXTERNAL ' || TERMINATED_BY_OTC              || CHR(10) || in_spaces ||
           '   )';
 end ctl_order_item;
--- 
+--
 function dat_order_item
       (in_oi  in  oe.order_item_typ)
    return varchar2
@@ -222,7 +222,7 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
    return ret_txt;
 end ctl_order_list;
--- 
+--
 function dat_order_list
       (in_ol  in  oe.order_list_typ)
    return varchar2
@@ -260,7 +260,7 @@ begin
           '   ,ORDER_ITEM_LIST ' || grab_ss_types.ctl_order_item_list(in_spaces||'   ') || CHR(10) || in_spaces ||
           '   )';
 end ctl_order;
--- 
+--
 function dat_order
       (in_ord  in  oe.order_typ)
    return varchar2
@@ -293,7 +293,7 @@ begin
    grab_data.grb_cldr_array_lvl := grab_data.grb_cldr_array_lvl - 1;
    return ret_txt;
 end ctl_phone_list;
--- 
+--
 function dat_phone_list
       (in_pl  in  oe.phone_list_typ)
    return varchar2
@@ -336,7 +336,7 @@ begin
           '   ,INVENTORY_LIST       ' || grab_ss_types.ctl_inventory_list('INVENTORY_LIST',in_spaces||'   ')                    || CHR(10) || in_spaces ||
           '   )';
 end ctl_product_information;
--- 
+--
 function dat_product_information
       (in_pi  in  oe.product_information_typ)
    return varchar2
@@ -368,7 +368,7 @@ begin
           '   ,LOCATION_ID     FLOAT EXTERNAL ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_warehouse;
--- 
+--
 function dat_warehouse
       (in_wh  in  oe.warehouse_typ)
    return varchar2
@@ -394,7 +394,7 @@ begin
           '-- Add this after "LOAD DATA" because LOGO includes Base64 multi-line data.'   || CHR(10) || in_spaces ||
           'CONTINUEIF LAST = ''' || CHR(25) || '''   -- CHR(25)';
 end ctl_adheader;
--- 
+--
 function dat_adheader
       (in_ah  in  pm.adheader_typ)
    return clob
@@ -438,7 +438,7 @@ begin
           '   )'                                     || CHR(10) ||
           ''                                         || CHR(10) ;
 end ctl_textdoc_tab;
--- 
+--
 function dat_textdoc_tab
       (in_tdtab  in  pm.textdoc_tab)
    return clob
@@ -473,7 +473,7 @@ begin
           '   ,FORMATTED_DOC   CHAR(1572864) ' || TERMINATED_BY_OTC || CHR(10) || in_spaces ||
           '   )';
 end ctl_textdoc;
--- 
+--
 function dat_textdoc
       (in_tdtyp  in  pm.textdoc_typ)
    return clob
@@ -485,7 +485,7 @@ end dat_textdoc;
 
 
 ------------------------------------------------------------
--- 
+--
 procedure grb_cldr_define
       (io_fh        in out nocopy fh2.sf_ptr_type
       ,in_position  in            integer
@@ -564,7 +564,7 @@ end grb_cldr_define;
 
 
 ------------------------------------------------------------
--- 
+--
 procedure grb_cldr_value
       (io_fh        in out nocopy fh2.sf_ptr_type
       ,in_position  in            integer

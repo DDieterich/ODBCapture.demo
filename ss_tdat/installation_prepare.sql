@@ -41,12 +41,8 @@ declare
       end if;
    end;
 begin
-   dbms_output.put_line('Prerequisite BUILD_TYPEs for "ss_grb"');
-   do_it('grbsdo');
-   do_it('grbsrc');
-   do_it('grbxrep');
+   dbms_output.put_line('Prerequisite BUILD_TYPEs for "ss_tdat"');
    do_it('ss_src');
-   do_it('ss_tdat');
 end;
 /
 

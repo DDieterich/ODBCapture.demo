@@ -45,7 +45,7 @@ PDB_SYSTEM="SYSTEM/${SYS_PASS}@OnPrem_Free234_${PDB_NAME}"
 
 capture_version
 build_init
-for BTYPE in 'ss_src' 'custom_data_load' 'grbsrc' 'grbsdo' 'grbxrep' 'ss_grb'
+for BTYPE in 'ss_src' 'custom_data_load' 'ss_tdat' 'grbsrc' 'grbsdo' 'grbxrep' 'ss_grb'
 do
    clear_log_files "${BTYPE}"
    run_build  "${BTYPE}"

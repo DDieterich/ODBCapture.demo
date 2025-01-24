@@ -46,6 +46,7 @@ begin
    do_it('grbsrc');
    do_it('grbxrep');
    do_it('ss_src');
+   do_it('ss_tdat');
 end;
 /
 

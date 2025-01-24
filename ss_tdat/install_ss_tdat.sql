@@ -29,6 +29,7 @@ set escape ""
 ----------------------------------------
 -- DATA_LOAD Install
 
+@dbi.sql "HR/DEPARTMENTS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/EMPLOYEES.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/JOBS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/JOB_HISTORY.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."

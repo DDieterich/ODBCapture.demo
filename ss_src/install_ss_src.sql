@@ -147,7 +147,6 @@ prompt Compile All is done.
 -- DATA_LOAD Install
 
 @dbi.sql "HR/COUNTRIES.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
-@dbi.sql "HR/DEPARTMENTS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/LOCATIONS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "HR/REGIONS.cldr" "HR" "&INSTALL_SYSTEM_CONNECT."
 @dbi.sql "OE/PRODUCT_DESCRIPTIONS.cldr" "OE" "&INSTALL_SYSTEM_CONNECT."

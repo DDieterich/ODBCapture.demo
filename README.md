@@ -3,6 +3,8 @@
 
 ## Oracle's Copyright from the Original Source
 
+Taken from [Source Found on GitHub](https://github.com/oracle-samples/db-sample-schemas)
+
 ```
 Copyright (c) 2023 Oracle and/or its affiliates. All rights reserved.
 
@@ -28,7 +30,7 @@ DEALINGS IN THE SOFTWARE.
 ## Overview
 
 This repository is a demonstration of using [ODBCapture](http://ODBCapture.org)
-to capture the source code from Oracle's Sample Schema
+to capture the source code from [Oracle's Sample Schema](https://docs.oracle.com/en/database/oracle/oracle-database/23/comsc/schema-diagrams.html)
 
 Files/Folders              | Description
 ---------------------------|-------------

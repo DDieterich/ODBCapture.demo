@@ -13,4 +13,4 @@ Files/Folders          | Description
 -----------------------|-------------
 Installation_Notes.md  | Description and Logs from Original Install
 oe_oc_v3.log           | OE (Order Entry) Installation Log File
-pm_p_lob.log           | SQL*Loader Log File for PRINT_MEDIA Table
+pm_p_lob.log           | SQL\*Loader Log File for PRINT_MEDIA Table

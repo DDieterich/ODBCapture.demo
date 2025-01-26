@@ -60,14 +60,14 @@ ss_src                     | Sample Schema Source Code (includes data)
     2. Connect to Database as SYS: `sqlplus SYS/PASSWORD@TNS_ALIAS as sysdba`
     3. Run Main Installation Script: `@install.sql "SYSTEM/PASSWORD@TNS_ALIAS"`
     4. Run installation reports: `@report_status.sql "SYSTEM/PASSWORD"`
-    5. Exit from SQL*Plus: `exit`
+    5. Exit from SQL\*Plus: `exit`
     6. Review results from installation reports
 9. Install Custom Loaded Data
     1. Move to Installation Folder: `cd ../custom_data_load`
     2. Connect to Database as SYS: `sqlplus SYS/PASSWORD@TNS_ALIAS as sysdba`
     3. Run Main Installation Script: `@install.sql "SYSTEM/PASSWORD@TNS_ALIAS"`
     4. Run the installation reports: `@report_status.sql "SYSTEM/PASSWORD"`
-    5. Exit from SQL*Plus: `exit`
+    5. Exit from SQL\*Plus: `exit`
     6. Review results from installation reports
 
 ### ODBCapture Installation
@@ -104,6 +104,10 @@ After those commands are complete, there will be an `/opt/install_files/ss.zip` 
 * ss_src
 * ss_grb
 
-An alternative is to use `execute ODBCAPTURE.FH2.write_scripts('ss.zip');` instead, then download the ZIP file from the ODBCAPTURE.ZIP_FILES table.
+An alternative is to use `execute ODBCAPTURE.FH2.write_scripts('ss.zip');` instead, then download the ZIP file from the ODBCAPTURE.ZIP_FILES table.Retreival of that ZIP file can be done using one of the following.
 
-SQL*Plus can be used to download a ZIP file from the database using [Ottmar’s Notes](https://ogobrecht.com/posts/2020-01-01-download-blobs-with-sqlplus).
+* APEX GUI Application
+* SQL-Developer
+* SQL-Developer Plug for VS Code
+
+The [capture_files.sql](https://github.com/DDieterich/ODBCapture/blob/main/builds/util/capture_files.sql) SQL script can also be used for source code capture if the ODBCAPTURE_INSTALLATION_LOGS table has been created and includes records for all the needed BUILD TYPES.  This SQL script runs correctly in SQL\*Plus, but will require Base64 decoding before it can be unzipped.

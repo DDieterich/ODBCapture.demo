@@ -42,7 +42,8 @@ grbsrc                     | ODBCapture Main Installation Scripts
 grbxrep                    | ODBCapture XML DB Repository Objects/Data
 orig_install               | Original Schema Installation Documentation
 ss_grb                     | ODBCapture Configuration Data for Sample Schema
-ss_src                     | Sample Schema Source Code (includes data)
+ss_src                     | Sample Schema Source Code (includes configuration data)
+ss_tdat                    | Sample Schema Test Data
 
 
 ## Installation Instructions
@@ -75,10 +76,11 @@ ss_src                     | Sample Schema Source Code (includes data)
 *Note:* The sample build scripts in the `builds` folder include these installations.
 
 For each of the following folders, repeat steps 1 and 2 above, in this order:
-1. grbsrc
-2. grbsdo
-3. grbxrep
-4. ss_grb
+1. ss_tdat
+2. grbsrc
+3. grbsdo
+4. grbxrep
+5. ss_grb
 
 
 ## Generation/Capture Instructions
@@ -94,15 +96,17 @@ execute ODBCAPTURE.FH2.clear_buffers;
 set serveroutput on size unlimited format word_wrapped
 execute ODBCAPTURE.COMMON_UTIL.update_view_tabs;
 execute ODBCAPTURE.GRAB_SCRIPTS.all_scripts('ss_src');
+execute ODBCAPTURE.GRAB_SCRIPTS.all_scripts('ss_tdat');
 execute ODBCAPTURE.GRAB_SCRIPTS.all_scripts('ss_grb');
 delete from zip_files where file_name = 'ss.zip';
 execute ODBCAPTURE.FH2.write_scripts('ss.zip', '/opt/install_files');
 commit;
 ```
 
-After those commands are complete, there will be an `/opt/install_files/ss.zip` file ready.  The ZIP file will contain 2 folders that match the source code from the original:
-* ss_src
+After those commands are complete, there will be an `/opt/install_files/ss.zip` file ready.  The ZIP file will contain 3 folders that match the source code from the original:
 * ss_grb
+* ss_src
+* ss_tdat
 
 An alternative is to use `execute ODBCAPTURE.FH2.write_scripts('ss.zip');` instead, then download the ZIP file from the ODBCAPTURE.ZIP_FILES table.Retreival of that ZIP file can be done using one of the following.
 

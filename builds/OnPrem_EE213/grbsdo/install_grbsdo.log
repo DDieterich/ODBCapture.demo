@@ -13,16 +13,16 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for "grbsdo"
- -) "grbsrc" last loaded on 24-Jan-2025 19:37:14
+ -) "grbsrc" last loaded on 07-Feb-2025 06:30:42
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:17 for a duration of .17 seconds (started at 2025-01-24T19:37:17)
+=== DBI Completed at 2025-02-07T06:30:48 for a duration of .27 seconds (started at 2025-02-07T06:30:48)
 === DBI Started: ODBCAPTURE/GRAB_SDO.pkssql
 
 Package created.
 
-=== DBI Completed at 2025-01-24T19:37:17 for a duration of .08 seconds (started at 2025-01-24T19:37:17)
+=== DBI Completed at 2025-02-07T06:30:48 for a duration of .11 seconds (started at 2025-02-07T06:30:48)
 === DBI Started: ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr
 
 Disable Triggers and Foreign Keys
@@ -35,12 +35,12 @@ sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:19 for a duration of 2.12 seconds (started at 2025-01-24T19:37:17)
+=== DBI Completed at 2025-02-07T06:30:51 for a duration of 3.06 seconds (started at 2025-02-07T06:30:48)
 === DBI Started: ODBCAPTURE/GRAB_SDO.pkbsql
 
 Package body created.
 
-=== DBI Completed at 2025-01-24T19:37:19 for a duration of .16 seconds (started at 2025-01-24T19:37:19)
+=== DBI Completed at 2025-02-07T06:30:51 for a duration of .17 seconds (started at 2025-02-07T06:30:51)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table

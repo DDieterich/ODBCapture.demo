@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 24 13:36:05 2025
+SQL*Loader: Release 19.0.0.0.0 - Production on Fri Feb 7 00:28:57 2025
 Version 19.22.0.0.0
 
 Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
@@ -95,15 +95,15 @@ Table "OE"."CUSTOMERS":
 
 
 Space allocated for bind array:                 791000 bytes(250 rows)
-Read   buffer bytes: 1048576
+Read   buffer bytes: 3146157
 
 Total logical records skipped:          1
 Total logical records read:           319
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 24 13:36:05 2025
-Run ended on Fri Jan 24 13:36:06 2025
+Run began on Fri Feb 07 00:28:57 2025
+Run ended on Fri Feb 07 00:28:59 2025
 
-Elapsed time was:     00:00:00.83
-CPU time was:         00:00:00.15
+Elapsed time was:     00:00:01.08
+CPU time was:         00:00:00.22

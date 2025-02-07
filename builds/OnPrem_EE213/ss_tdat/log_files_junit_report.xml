@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="install_ss_tdat.log" tests="12" errors="0" hostname="EE213CDB" id="3" time="29" timestamp="2025-01-24T19:36:32">
+  <testsuite name="install_ss_tdat.log" tests="12" errors="0" hostname="EE213CDB" id="3" time="52" timestamp="2025-02-07T06:29:37">
     <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
     </testcase>
     <testcase name="./installation_prepare.sql" assertions="20" classname="..sql" status="PASS" time="0">
@@ -20,14 +20,14 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for &quot;ss_tdat&quot;
- -) &quot;ss_src&quot; last loaded on 24-Jan-2025 19:35:48
+ -) &quot;ss_src&quot; last loaded on 07-Feb-2025 06:28:29
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:35:54 for a duration of .22 seconds (started at 2025-01-24T19:35:54)
+=== DBI Completed at 2025-02-07T06:28:39 for a duration of .17 seconds (started at 2025-02-07T06:28:39)
       </system-out>
     </testcase>
-    <testcase name="HR/DEPARTMENTS.cldr" assertions="15" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/DEPARTMENTS.cldr" assertions="15" classname="HR.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: HR/DEPARTMENTS.cldr
 
@@ -43,10 +43,10 @@ sqlldr_control=HR/DEPARTMENTS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:35:56 for a duration of 2.43 seconds (started at 2025-01-24T19:35:54)
+=== DBI Completed at 2025-02-07T06:28:42 for a duration of 3.38 seconds (started at 2025-02-07T06:28:39)
       </system-out>
     </testcase>
-    <testcase name="HR/EMPLOYEES.cldr" assertions="18" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/EMPLOYEES.cldr" assertions="18" classname="HR.cldr" status="PASS" time="4">
       <system-out>
 === DBI Started: HR/EMPLOYEES.cldr
 
@@ -65,10 +65,10 @@ sqlldr_control=HR/EMPLOYEES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:35:58 for a duration of 2.17 seconds (started at 2025-01-24T19:35:56)
+=== DBI Completed at 2025-02-07T06:28:46 for a duration of 4.27 seconds (started at 2025-02-07T06:28:42)
       </system-out>
     </testcase>
-    <testcase name="HR/JOBS.cldr" assertions="13" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/JOBS.cldr" assertions="13" classname="HR.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: HR/JOBS.cldr
 
@@ -82,10 +82,10 @@ sqlldr_control=HR/JOBS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:01 for a duration of 2.21 seconds (started at 2025-01-24T19:35:58)
+=== DBI Completed at 2025-02-07T06:28:50 for a duration of 3.49 seconds (started at 2025-02-07T06:28:46)
       </system-out>
     </testcase>
-    <testcase name="HR/JOB_HISTORY.cldr" assertions="16" classname="HR.cldr" status="PASS" time="2">
+    <testcase name="HR/JOB_HISTORY.cldr" assertions="16" classname="HR.cldr" status="PASS" time="5">
       <system-out>
 === DBI Started: HR/JOB_HISTORY.cldr
 
@@ -102,10 +102,10 @@ sqlldr_control=HR/JOB_HISTORY.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:03 for a duration of 2.36 seconds (started at 2025-01-24T19:36:01)
+=== DBI Completed at 2025-02-07T06:28:55 for a duration of 5.06 seconds (started at 2025-02-07T06:28:50)
       </system-out>
     </testcase>
-    <testcase name="OE/CUSTOMERS.cldr" assertions="14" classname="OE.cldr" status="PASS" time="3">
+    <testcase name="OE/CUSTOMERS.cldr" assertions="14" classname="OE.cldr" status="PASS" time="4">
       <system-out>
 === DBI Started: OE/CUSTOMERS.cldr
 
@@ -120,10 +120,10 @@ sqlldr_control=OE/CUSTOMERS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:06 for a duration of 2.93 seconds (started at 2025-01-24T19:36:03)
+=== DBI Completed at 2025-02-07T06:28:59 for a duration of 3.71 seconds (started at 2025-02-07T06:28:55)
       </system-out>
     </testcase>
-    <testcase name="OE/INVENTORIES.cldr" assertions="15" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/INVENTORIES.cldr" assertions="15" classname="OE.cldr" status="PASS" time="4">
       <system-out>
 === DBI Started: OE/INVENTORIES.cldr
 
@@ -139,10 +139,10 @@ sqlldr_control=OE/INVENTORIES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:08 for a duration of 2.39 seconds (started at 2025-01-24T19:36:06)
+=== DBI Completed at 2025-02-07T06:29:03 for a duration of 3.88 seconds (started at 2025-02-07T06:28:59)
       </system-out>
     </testcase>
-    <testcase name="OE/ORDERS.cldr" assertions="15" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/ORDERS.cldr" assertions="15" classname="OE.cldr" status="PASS" time="5">
       <system-out>
 === DBI Started: OE/ORDERS.cldr
 
@@ -158,10 +158,10 @@ sqlldr_control=OE/ORDERS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:11 for a duration of 2.29 seconds (started at 2025-01-24T19:36:08)
+=== DBI Completed at 2025-02-07T06:29:08 for a duration of 5.45 seconds (started at 2025-02-07T06:29:03)
       </system-out>
     </testcase>
-    <testcase name="OE/ORDER_ITEMS.cldr" assertions="16" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/ORDER_ITEMS.cldr" assertions="16" classname="OE.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: OE/ORDER_ITEMS.cldr
 
@@ -178,10 +178,10 @@ sqlldr_control=OE/ORDER_ITEMS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:13 for a duration of 2.21 seconds (started at 2025-01-24T19:36:11)
+=== DBI Completed at 2025-02-07T06:29:11 for a duration of 3.05 seconds (started at 2025-02-07T06:29:08)
       </system-out>
     </testcase>
-    <testcase name="OE/PROMOTIONS.cldr" assertions="13" classname="OE.cldr" status="PASS" time="2">
+    <testcase name="OE/PROMOTIONS.cldr" assertions="13" classname="OE.cldr" status="PASS" time="5">
       <system-out>
 === DBI Started: OE/PROMOTIONS.cldr
 
@@ -195,10 +195,10 @@ sqlldr_control=OE/PROMOTIONS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:15 for a duration of 2.19 seconds (started at 2025-01-24T19:36:13)
+=== DBI Completed at 2025-02-07T06:29:16 for a duration of 4.53 seconds (started at 2025-02-07T06:29:11)
       </system-out>
     </testcase>
-    <testcase name="OE/WAREHOUSES.cldr" assertions="14" classname="OE.cldr" status="PASS" time="4">
+    <testcase name="OE/WAREHOUSES.cldr" assertions="14" classname="OE.cldr" status="PASS" time="8">
       <system-out>
 === DBI Started: OE/WAREHOUSES.cldr
 
@@ -213,10 +213,10 @@ sqlldr_control=OE/WAREHOUSES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:19 for a duration of 3.7 seconds (started at 2025-01-24T19:36:15)
+=== DBI Completed at 2025-02-07T06:29:23 for a duration of 7.66 seconds (started at 2025-02-07T06:29:16)
       </system-out>
     </testcase>
-    <testcase name="PM/PRINT_MEDIA.cldr" assertions="35" classname="PM.cldr" status="PASS" time="6">
+    <testcase name="PM/PRINT_MEDIA.cldr" assertions="35" classname="PM.cldr" status="PASS" time="8">
       <system-out>
 === DBI Started: PM/PRINT_MEDIA.cldr
 
@@ -245,19 +245,19 @@ Commit complete.
 
 Decode UNISTR Data
 ------------------
-4 &quot;AD_FLTEXTN&quot; updates.
+4 &quot;PRINT_MEDIA&quot; updates.
 
 PL/SQL procedure successfully completed.
 
 
 Commit complete.
 
-=== DBI Completed at 2025-01-24T19:36:25 for a duration of 6.26 seconds (started at 2025-01-24T19:36:19)
+=== DBI Completed at 2025-02-07T06:29:31 for a duration of 8.12 seconds (started at 2025-02-07T06:29:23)
       </system-out>
     </testcase>
   </testsuite>
-  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-24T19:36:32">
+  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-02-07T06:29:37">
   </testsuite>
-  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-24T19:36:32">
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-02-07T06:29:37">
   </testsuite>
 </testsuites>

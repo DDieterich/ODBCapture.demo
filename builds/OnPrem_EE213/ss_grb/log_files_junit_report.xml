@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="install_ss_grb.log" tests="11" errors="0" hostname="EE213CDB" id="3" time="11" timestamp="2025-01-24T19:37:42">
+  <testsuite name="install_ss_grb.log" tests="11" errors="0" hostname="EE213CDB" id="3" time="14" timestamp="2025-02-07T06:31:21">
     <testcase name="./installation_finalize.sql" assertions="" classname="..sql" status="PASS" time="">
     </testcase>
     <testcase name="./installation_prepare.sql" assertions="24" classname="..sql" status="PASS" time="0">
@@ -20,15 +20,15 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for &quot;ss_grb&quot;
- -) &quot;grbsdo&quot; last loaded on 24-Jan-2025 19:37:22
- -) &quot;grbsrc&quot; last loaded on 24-Jan-2025 19:37:14
- -) &quot;grbxrep&quot; last loaded on 24-Jan-2025 19:37:28
- -) &quot;ss_src&quot; last loaded on 24-Jan-2025 19:35:48
- -) &quot;ss_tdat&quot; last loaded on 24-Jan-2025 19:36:32
+ -) &quot;grbsdo&quot; last loaded on 07-Feb-2025 06:30:55
+ -) &quot;grbsrc&quot; last loaded on 07-Feb-2025 06:30:42
+ -) &quot;grbxrep&quot; last loaded on 07-Feb-2025 06:31:01
+ -) &quot;ss_src&quot; last loaded on 07-Feb-2025 06:28:29
+ -) &quot;ss_tdat&quot; last loaded on 07-Feb-2025 06:29:37
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:30 for a duration of .17 seconds (started at 2025-01-24T19:37:30)
+=== DBI Completed at 2025-02-07T06:31:04 for a duration of .19 seconds (started at 2025-02-07T06:31:03)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/BUILD_CONF.cldr" assertions="13" classname="ODBCAPTURE.cldr" status="PASS" time="1">
@@ -45,7 +45,7 @@ sqlldr_control=ODBCAPTURE/BUILD_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:31 for a duration of .58 seconds (started at 2025-01-24T19:37:30)
+=== DBI Completed at 2025-02-07T06:31:04 for a duration of .61 seconds (started at 2025-02-07T06:31:04)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/BUILD_PATH.cldr" assertions="15" classname="ODBCAPTURE.cldr" status="PASS" time="1">
@@ -64,10 +64,10 @@ sqlldr_control=ODBCAPTURE/BUILD_PATH.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:32 for a duration of .58 seconds (started at 2025-01-24T19:37:31)
+=== DBI Completed at 2025-02-07T06:31:05 for a duration of .63 seconds (started at 2025-02-07T06:31:04)
       </system-out>
     </testcase>
-    <testcase name="ODBCAPTURE/DLOAD_CONF.cldr" assertions="15" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+    <testcase name="ODBCAPTURE/DLOAD_CONF.cldr" assertions="15" classname="ODBCAPTURE.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: ODBCAPTURE/DLOAD_CONF.cldr
 
@@ -83,7 +83,7 @@ sqlldr_control=ODBCAPTURE/DLOAD_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:34 for a duration of 2.06 seconds (started at 2025-01-24T19:37:32)
+=== DBI Completed at 2025-02-07T06:31:08 for a duration of 3.31 seconds (started at 2025-02-07T06:31:05)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/GRAB_SS_TYPES.pkbsql" assertions="5" classname="ODBCAPTURE.pkbsql" status="PASS" time="0">
@@ -92,7 +92,7 @@ PL/SQL procedure successfully completed.
 
 Package body created.
 
-=== DBI Completed at 2025-01-24T19:37:40 for a duration of .2 seconds (started at 2025-01-24T19:37:40)
+=== DBI Completed at 2025-02-07T06:31:17 for a duration of .21 seconds (started at 2025-02-07T06:31:17)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/GRAB_SS_TYPES.pkssql" assertions="5" classname="ODBCAPTURE.pkssql" status="PASS" time="0">
@@ -101,10 +101,10 @@ Package body created.
 
 Package created.
 
-=== DBI Completed at 2025-01-24T19:37:30 for a duration of .15 seconds (started at 2025-01-24T19:37:30)
+=== DBI Completed at 2025-02-07T06:31:04 for a duration of .14 seconds (started at 2025-02-07T06:31:04)
       </system-out>
     </testcase>
-    <testcase name="ODBCAPTURE/OBJECT_CONF.cldr" assertions="16" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+    <testcase name="ODBCAPTURE/OBJECT_CONF.cldr" assertions="16" classname="ODBCAPTURE.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: ODBCAPTURE/OBJECT_CONF.cldr
 
@@ -121,7 +121,7 @@ sqlldr_control=ODBCAPTURE/OBJECT_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:36 for a duration of 2.25 seconds (started at 2025-01-24T19:37:34)
+=== DBI Completed at 2025-02-07T06:31:11 for a duration of 3.12 seconds (started at 2025-02-07T06:31:08)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/ROLE_CONF.cldr" assertions="14" classname="ODBCAPTURE.cldr" status="PASS" time="1">
@@ -139,7 +139,7 @@ sqlldr_control=ODBCAPTURE/ROLE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:37 for a duration of .61 seconds (started at 2025-01-24T19:37:36)
+=== DBI Completed at 2025-02-07T06:31:12 for a duration of .59 seconds (started at 2025-02-07T06:31:11)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/SCHEMA_CONF.cldr" assertions="14" classname="ODBCAPTURE.cldr" status="PASS" time="1">
@@ -157,10 +157,10 @@ sqlldr_control=ODBCAPTURE/SCHEMA_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:37 for a duration of .57 seconds (started at 2025-01-24T19:37:37)
+=== DBI Completed at 2025-02-07T06:31:13 for a duration of .69 seconds (started at 2025-02-07T06:31:12)
       </system-out>
     </testcase>
-    <testcase name="ODBCAPTURE/TSPACE_CONF.cldr" assertions="14" classname="ODBCAPTURE.cldr" status="PASS" time="2">
+    <testcase name="ODBCAPTURE/TSPACE_CONF.cldr" assertions="14" classname="ODBCAPTURE.cldr" status="PASS" time="3">
       <system-out>
 === DBI Started: ODBCAPTURE/TSPACE_CONF.cldr
 
@@ -175,7 +175,7 @@ sqlldr_control=ODBCAPTURE/TSPACE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:39 for a duration of 1.99 seconds (started at 2025-01-24T19:37:37)
+=== DBI Completed at 2025-02-07T06:31:16 for a duration of 3.29 seconds (started at 2025-02-07T06:31:13)
       </system-out>
     </testcase>
     <testcase name="ODBCAPTURE/USER_DEFINED_TYPE_CONF.cldr" assertions="13" classname="ODBCAPTURE.cldr" status="PASS" time="1">
@@ -192,12 +192,12 @@ sqlldr_control=ODBCAPTURE/USER_DEFINED_TYPE_CONF.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:37:40 for a duration of .52 seconds (started at 2025-01-24T19:37:39)
+=== DBI Completed at 2025-02-07T06:31:17 for a duration of .56 seconds (started at 2025-02-07T06:31:16)
       </system-out>
     </testcase>
   </testsuite>
-  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-01-24T19:37:42">
+  <testsuite name="install_sys.log" tests="0" errors="0" hostname="EE213CDB" id="1" time="0" timestamp="2025-02-07T06:31:21">
   </testsuite>
-  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-01-24T19:37:42">
+  <testsuite name="install_system.log" tests="0" errors="0" hostname="EE213CDB" id="2" time="0" timestamp="2025-02-07T06:31:21">
   </testsuite>
 </testsuites>

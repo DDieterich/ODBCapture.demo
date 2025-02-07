@@ -13,11 +13,11 @@ Synonym created.
 
 Check for Prerequisite BUILD_TYPEs
 Prerequisite BUILD_TYPEs for "ss_tdat"
- -) "ss_src" last loaded on 24-Jan-2025 19:35:48
+ -) "ss_src" last loaded on 07-Feb-2025 06:28:29
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:35:54 for a duration of .22 seconds (started at 2025-01-24T19:35:54)
+=== DBI Completed at 2025-02-07T06:28:39 for a duration of .17 seconds (started at 2025-02-07T06:28:39)
 === DBI Started: HR/DEPARTMENTS.cldr
 
 Disable Triggers and Foreign Keys
@@ -32,7 +32,7 @@ sqlldr_control=HR/DEPARTMENTS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:35:56 for a duration of 2.43 seconds (started at 2025-01-24T19:35:54)
+=== DBI Completed at 2025-02-07T06:28:42 for a duration of 3.38 seconds (started at 2025-02-07T06:28:39)
 === DBI Started: HR/EMPLOYEES.cldr
 
 Disable Triggers and Foreign Keys
@@ -50,7 +50,7 @@ sqlldr_control=HR/EMPLOYEES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:35:58 for a duration of 2.17 seconds (started at 2025-01-24T19:35:56)
+=== DBI Completed at 2025-02-07T06:28:46 for a duration of 4.27 seconds (started at 2025-02-07T06:28:42)
 === DBI Started: HR/JOBS.cldr
 
 Disable Triggers and Foreign Keys
@@ -63,7 +63,7 @@ sqlldr_control=HR/JOBS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:01 for a duration of 2.21 seconds (started at 2025-01-24T19:35:58)
+=== DBI Completed at 2025-02-07T06:28:50 for a duration of 3.49 seconds (started at 2025-02-07T06:28:46)
 === DBI Started: HR/JOB_HISTORY.cldr
 
 Disable Triggers and Foreign Keys
@@ -79,7 +79,7 @@ sqlldr_control=HR/JOB_HISTORY.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:03 for a duration of 2.36 seconds (started at 2025-01-24T19:36:01)
+=== DBI Completed at 2025-02-07T06:28:55 for a duration of 5.06 seconds (started at 2025-02-07T06:28:50)
 === DBI Started: OE/CUSTOMERS.cldr
 
 Disable Triggers and Foreign Keys
@@ -93,7 +93,7 @@ sqlldr_control=OE/CUSTOMERS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:06 for a duration of 2.93 seconds (started at 2025-01-24T19:36:03)
+=== DBI Completed at 2025-02-07T06:28:59 for a duration of 3.71 seconds (started at 2025-02-07T06:28:55)
 === DBI Started: OE/INVENTORIES.cldr
 
 Disable Triggers and Foreign Keys
@@ -108,7 +108,7 @@ sqlldr_control=OE/INVENTORIES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:08 for a duration of 2.39 seconds (started at 2025-01-24T19:36:06)
+=== DBI Completed at 2025-02-07T06:29:03 for a duration of 3.88 seconds (started at 2025-02-07T06:28:59)
 === DBI Started: OE/ORDERS.cldr
 
 Disable Triggers and Foreign Keys
@@ -123,7 +123,7 @@ sqlldr_control=OE/ORDERS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:11 for a duration of 2.29 seconds (started at 2025-01-24T19:36:08)
+=== DBI Completed at 2025-02-07T06:29:08 for a duration of 5.45 seconds (started at 2025-02-07T06:29:03)
 === DBI Started: OE/ORDER_ITEMS.cldr
 
 Disable Triggers and Foreign Keys
@@ -139,7 +139,7 @@ sqlldr_control=OE/ORDER_ITEMS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:13 for a duration of 2.21 seconds (started at 2025-01-24T19:36:11)
+=== DBI Completed at 2025-02-07T06:29:11 for a duration of 3.05 seconds (started at 2025-02-07T06:29:08)
 === DBI Started: OE/PROMOTIONS.cldr
 
 Disable Triggers and Foreign Keys
@@ -152,7 +152,7 @@ sqlldr_control=OE/PROMOTIONS.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:15 for a duration of 2.19 seconds (started at 2025-01-24T19:36:13)
+=== DBI Completed at 2025-02-07T06:29:16 for a duration of 4.53 seconds (started at 2025-02-07T06:29:11)
 === DBI Started: OE/WAREHOUSES.cldr
 
 Disable Triggers and Foreign Keys
@@ -166,7 +166,7 @@ sqlldr_control=OE/WAREHOUSES.ctl
 
 PL/SQL procedure successfully completed.
 
-=== DBI Completed at 2025-01-24T19:36:19 for a duration of 3.7 seconds (started at 2025-01-24T19:36:15)
+=== DBI Completed at 2025-02-07T06:29:23 for a duration of 7.66 seconds (started at 2025-02-07T06:29:16)
 === DBI Started: PM/PRINT_MEDIA.cldr
 
 Disable Triggers and Foreign Keys
@@ -194,14 +194,14 @@ Commit complete.
 
 Decode UNISTR Data
 ------------------
-4 "AD_FLTEXTN" updates.
+4 "PRINT_MEDIA" updates.
 
 PL/SQL procedure successfully completed.
 
 
 Commit complete.
 
-=== DBI Completed at 2025-01-24T19:36:25 for a duration of 6.26 seconds (started at 2025-01-24T19:36:19)
+=== DBI Completed at 2025-02-07T06:29:31 for a duration of 8.12 seconds (started at 2025-02-07T06:29:23)
 === DBI Started: ./installation_finalize.sql
 
 Drop Temp Publicly Updateable Table

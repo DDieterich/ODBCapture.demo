@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 24 13:37:13 2025
+SQL*Loader: Release 19.0.0.0.0 - Production on Fri Feb 7 00:30:41 2025
 Version 19.22.0.0.0
 
 Copyright (c) 1982, 2024, Oracle and/or its affiliates.  All rights reserved.
@@ -26,7 +26,7 @@ Insert option in effect for this table: APPEND
 LOAD_DTM                                                  SYSDATE
 BUILD_TYPE                          FIRST    10   ,  O(") CHARACTER            
 CAPVER                                                    CONSTANT
-    Value is 'Dev_V2.1'
+    Value is 'Dev_V2.2'
 FILE_NAME                            NEXT   512   ,  O(") CHARACTER            
 CONTENTS                          DERIVED     *  EOF      CHARACTER            
     Dynamic LOBFILE.  Filename in field FILE_NAME
@@ -47,8 +47,8 @@ Total logical records read:             9
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 24 13:37:13 2025
-Run ended on Fri Jan 24 13:37:14 2025
+Run began on Fri Feb 07 00:30:41 2025
+Run ended on Fri Feb 07 00:30:42 2025
 
-Elapsed time was:     00:00:00.70
-CPU time was:         00:00:00.14
+Elapsed time was:     00:00:00.75
+CPU time was:         00:00:00.09
